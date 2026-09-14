@@ -1,0 +1,115 @@
+/* --- RESETEO Y ESTILO BASE (Dark Mode Museo) --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: radial-gradient(#1f1f1f 1px, transparent 1px);
+    background-size: 30px 30px; 
+    padding-top: 80px; /* Espacio para que el menú fijo no tape el texto */
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #d4af37;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    z-index: 100;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+nav a:hover { color: #fff; }
+
+/* El truco dinámico: la clase activo */
+nav a.activo {
+    color: #d4af37; /* Dorado */
+    border-bottom: 2px solid #d4af37;
+}
+
+/* --- CONTENEDORES Y TEXTOS --- */
+.contenedor {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #d4af37;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* Cajas de las preguntas */
+.caja-pregunta {
+    background: #121212;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #d4af37;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.caja-pregunta h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.caja-pregunta p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+/* --- BOTONES DEL INDEX (Portada) --- */
+.menu-portada {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn-portada {
+    background: #1a1a1a;
+    color: #d4af37;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-portada:hover {
+    background: #2a2a2a;
+    border-color: #d4af37;
+}
