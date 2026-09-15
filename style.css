@@ -1,115 +1,467 @@
-/* --- RESETEO Y ESTILO BASE (Dark Mode Museo) --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ==============================================
+   RESETEO BASE
+============================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #0a0a0a;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: radial-gradient(#1f1f1f 1px, transparent 1px);
-    background-size: 30px 30px; 
-    padding-top: 80px; /* Espacio para que el menú fijo no tape el texto */
-}
-
-/* --- MENÚ DE NAVEGACIÓN --- */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    border-bottom: 1px solid #d4af37;
-    padding: 15px 0;
+    background-color: #171311; /* Fondo piedra oscura puro, sin imágenes que se rompan */
+    color: #e8dcc7;
+    font-family: 'EB Garamond', serif;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    z-index: 100;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
 }
 
-nav a {
-    color: #888;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 5px 15px;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-nav a:hover { color: #fff; }
-
-/* El truco dinámico: la clase activo */
-nav a.activo {
-    color: #d4af37; /* Dorado */
-    border-bottom: 2px solid #d4af37;
-}
-
-/* --- CONTENEDORES Y TEXTOS --- */
-.contenedor {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-h1 {
-    color: #d4af37;
-    font-size: 2.5rem;
+/* ==============================================
+   CONTENEDOR PRINCIPAL
+============================================== */
+.portada-contenedor {
+    width: 100%;
+    max-width: 1300px; /* Bien ancho para compus */
+    background-color: #1e1916;
+    border: 3px solid #a67c52; /* Borde bronce */
+    border-radius: 12px;
+    padding: 30px 15px;
     text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+}
+
+/* ==============================================
+   CABECERA Y TÍTULOS
+============================================== */
+.curso-info {
+    font-family: 'Cinzel', serif;
+    color: #a67c52;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.titulo-principal {
+    font-family: 'Cinzel', serif;
+    color: #d4af37; /* Dorado */
+    font-size: 2.2rem;
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .subtitulo {
-    text-align: center;
-    color: #888;
+    font-size: 1.2rem;
     font-style: italic;
+    color: #bfa178;
     margin-bottom: 40px;
 }
 
-/* Cajas de las preguntas */
-.caja-pregunta {
-    background: #121212;
-    padding: 30px;
-    margin-bottom: 20px;
+/* ==============================================
+   BOTONES DEL MENÚ (DIAPOSITIVAS)
+============================================== */
+.menu-diapositivas {
+    display: flex;
+    flex-direction: column; /* En celu, uno abajo del otro */
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.btn-diapositiva {
+    background-color: #110d0c;
+    border: 2px solid #5c4731;
+    color: #d4af37;
+    text-decoration: none;
+    padding: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
     border-radius: 8px;
-    border-left: 4px solid #d4af37;
+    transition: all 0.3s ease;
+}
+
+.btn-diapositiva:hover {
+    background-color: #3b2e26;
+    border-color: #d4af37;
+    color: #fff;
+}
+
+/* ==============================================
+   FOOTER (INTEGRANTES E INSTRUCTORES)
+============================================== */
+.portada-footer {
+    border-top: 1px solid #5c4731;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloque h3 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.bloque p {
+    font-size: 1.1rem;
+    color: #bfa178;
+    line-height: 1.4;
+}
+
+/* ==============================================
+   VERSIÓN COMPUTADORA (LETRAS GIGANTES PARA PROYECTOR)
+============================================== */
+@media (min-width: 768px) {
+    .portada-contenedor {
+        padding: 60px 40px;
+    }
+
+    /* Títulos inmensos */
+    .curso-info { font-size: 1.8rem; margin-bottom: 20px; }
+    .titulo-principal { font-size: 5rem; letter-spacing: 3px; }
+    .subtitulo { font-size: 2.2rem; margin-bottom: 60px; }
+
+    /* Botones en cuadrícula 2x2, el quinto ocupa todo abajo */
+    .menu-diapositivas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto 60px auto;
+    }
+    
+    .btn-destacado {
+        grid-column: 1 / -1; /* Ocupa las dos columnas */
+    }
+
+    .btn-diapositiva {
+        font-size: 2rem; /* Letras de botones gigantes */
+        padding: 25px;
+    }
+
+    /* El footer se divide izquierda y derecha */
+    .portada-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .align-right {
+        text-align: right;
+    }
+
+    .bloque h3 { font-size: 1.6rem; }
+    .bloque p { font-size: 1.4rem; }
+}
+
+/* ==============================================
+   ESTILOS PARA LAS PÁGINAS INTERNAS (PERSONAS 1-5)
+============================================== */
+.body-interno {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+/* Menú superior */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #5c4731;
+    padding-bottom: 15px;
+}
+
+nav a {
+    color: #bfa178;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+    border-color: #5c4731;
+}
+
+nav a.activo {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    background-color: #1e1916;
+}
+
+/* Contenedor de la información */
+.contenedor-interno {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.titulo-seccion {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.expositor-tag {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Cajas de Preguntas normales */
+.caja-pregunta {
+    background-color: #1e1916;
+    border-left: 5px solid #d4af37;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .caja-pregunta h2 {
+    font-family: 'Cinzel', serif;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 15px;
 }
 
 .caja-pregunta p {
     font-size: 1.1rem;
+    color: #cfc2ad;
     line-height: 1.6;
-    color: #bbb;
 }
 
-/* --- BOTONES DEL INDEX (Portada) --- */
-.menu-portada {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.btn-portada {
-    background: #1a1a1a;
-    color: #d4af37;
-    text-decoration: none;
-    padding: 15px;
-    text-align: center;
-    font-size: 1.2rem;
-    border: 1px solid #333;
+/* NUEVO: Caja de Detalle Histórico */
+.caja-detalle {
+    background-color: #120e0c; /* Más oscuro */
+    border: 1px dashed #a67c52; /* Borde punteado de época */
+    padding: 20px;
+    margin-top: -15px;
+    margin-bottom: 30px;
     border-radius: 5px;
-    transition: 0.3s;
 }
 
-.btn-portada:hover {
-    background: #2a2a2a;
-    border-color: #d4af37;
+.caja-detalle h3 {
+    font-family: 'Cinzel', serif;
+    color: #a67c52;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.caja-detalle p {
+    font-size: 1.05rem;
+    color: #a09485;
+    font-style: italic; /* Letra cursiva para diferenciarlo */
+    line-height: 1.5;
+}
+
+/* Media Queries para PC (Letras gigantes) */
+@media (min-width: 768px) {
+    nav a { font-size: 1.4rem; padding: 10px 20px; }
+    .titulo-seccion { font-size: 3.5rem; }
+    .expositor-tag { font-size: 1.5rem; margin-bottom: 60px; }
+    
+    .caja-pregunta { padding: 40px; margin-bottom: 40px; }
+    .caja-pregunta h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .caja-pregunta p { font-size: 1.8rem; line-height: 1.7; }
+    
+    .caja-detalle { padding: 30px; margin-top: -20px; margin-bottom: 40px; }
+    .caja-detalle h3 { font-size: 1.5rem; }
+    .caja-detalle p { font-size: 1.5rem; }
+}
+/* ==============================================
+   TEMÁTICA EXCLUSIVA: PERSONA 1 (CAMILA)
+   Inspiración: La túnica de colores y la noche estrellada
+============================================== */
+
+/* Fondo especial para la página 1 con destellos nocturnos */
+.tema-origenes {
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(45, 60, 80, 0.4) 0%, transparent 40%), /* Luz azul noche */
+        radial-gradient(circle at 20% 80%, rgba(166, 124, 82, 0.15) 0%, transparent 40%), /* Luz tierra */
+        linear-gradient(rgba(22, 18, 15, 0.95), rgba(22, 18, 15, 0.95)), 
+        url('https://www.transparenttextures.com/patterns/stardust.png'); /* Textura de estrellas sutil */
+    background-color: #171311;
+}
+
+/* La línea debajo del título simula los hilos de la túnica de colores */
+.tema-origenes .titulo-seccion {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #8b0000, #d4af37, #004d40, #5c4731) 1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* Las cajas de preguntas de Camila tienen distintos colores de época por la túnica */
+.tema-origenes .caja-1 { border-left-color: #8b0000; } /* Rojo carmesí */
+.tema-origenes .caja-2 { border-left-color: #004d40; } /* Verde profundo */
+.tema-origenes .caja-3 { border-left-color: #d4af37; } /* Dorado */
+
+/* Un pequeño icono temático antes de los detalles */
+.tema-origenes .caja-detalle h3::before {
+    content: "✨ ";
+    font-size: 1.2rem;
+}
+/* ==============================================
+   TEMÁTICA EXCLUSIVA: PERSONA 2 (SOL)
+   Inspiración: El pozo de tierra seca, la traición y la plata
+============================================== */
+
+/* Fondo especial más oscuro con textura de tierra agrietada/pozo */
+.tema-traicion {
+    background-image: 
+        radial-gradient(circle at 50% 10%, rgba(20, 25, 30, 0.6) 0%, transparent 60%), /* Sombras frías */
+        linear-gradient(rgba(12, 10, 9, 0.96), rgba(12, 10, 9, 0.96)), 
+        url('https://www.transparenttextures.com/patterns/cracked-earth.png'); /* Tierra seca */
+    background-color: #0c0a09;
+}
+
+/* La línea debajo del título pasa a ser plateada/gris */
+.tema-traicion .titulo-seccion {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #2c3e50, #95a5a6, #2c3e50) 1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #bdc3c7; /* Color plata en lugar de oro */
+}
+
+/* Resaltamos el nombre de Sol en color plata */
+.tema-traicion .expositor-tag strong {
+    color: #95a5a6;
+}
+
+/* Cajas de Sol (Tonos fríos, oscuros y plata por la venta de esclavos) */
+.tema-traicion .caja-1 { border-left-color: #34495e; } /* Azul oscuro / Noche */
+.tema-traicion .caja-2 { border-left-color: #7f8c8d; } /* Plata desgastada */
+
+/* Un icono temático de cadenas para representar la esclavitud */
+.tema-traicion .caja-detalle h3::before {
+    content: "⛓️ ";
+    font-size: 1.2rem;
+}
+/* ==============================================
+   TEMÁTICA EXCLUSIVA: PERSONA 3 (LUZ)
+   Inspiración: El Faraón, el oro, los sueños y el desierto
+============================================== */
+
+/* Fondo con un brillo superior dorado y textura de arena sutil */
+.tema-ascenso {
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%), /* Luz dorada desde arriba */
+        linear-gradient(rgba(15, 12, 10, 0.95), rgba(15, 12, 10, 0.95)), 
+        url('https://www.transparenttextures.com/patterns/sandpaper.png'); /* Textura de arena */
+    background-color: #0f0c0a;
+}
+
+/* La línea del título brilla en puro oro */
+.tema-ascenso .titulo-seccion {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #996515, #f1c40f, #996515) 1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #f1c40f; 
+}
+
+/* Resaltamos el nombre de Luz en dorado */
+.tema-ascenso .expositor-tag strong {
+    color: #f1c40f;
+}
+
+/* Cajas de Luz (Colores de la realeza egipcia: Lapislázuli y Oro) */
+.tema-ascenso .caja-1 { border-left-color: #2980b9; } /* Azul Lapislázuli */
+.tema-ascenso .caja-2 { border-left-color: #d4af37; } /* Oro */
+
+/* Un icono de espiga de trigo por el sueño de los 7 años de abundancia */
+.tema-ascenso .caja-detalle h3::before {
+    content: "🌾 ";
+    font-size: 1.2rem;
+}
+/* ==============================================
+   TEMÁTICA EXCLUSIVA: PERSONA 4 (EMILIANO)
+   Inspiración: El palacio, la realeza (púrpura) y el perdón
+============================================== */
+
+/* Fondo con tonos púrpura oscuro y textura de mármol/piedra lisa */
+.tema-reencuentro {
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(75, 0, 130, 0.15) 0%, transparent 50%), /* Brillo púrpura imperial */
+        linear-gradient(rgba(18, 15, 18, 0.95), rgba(18, 15, 18, 0.95)), 
+        url('https://www.transparenttextures.com/patterns/white-diamond-dark.png');
+    background-color: #120f12;
+}
+
+/* La línea del título tiene colores de autoridad y redención */
+.tema-reencuentro .titulo-seccion {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #4a235a, #9b59b6, #4a235a) 1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #c39bd3;
+}
+
+/* Resaltamos el nombre de Emiliano */
+.tema-reencuentro .expositor-tag strong {
+    color: #c39bd3;
+}
+
+/* Cajas de Emiliano (Púrpura y Bronce) */
+.tema-reencuentro .caja-1 { border-left-color: #5b2c6f; } /* Púrpura oscuro */
+.tema-reencuentro .caja-2 { border-left-color: #a67c52; } /* Bronce */
+
+/* Un icono de balanza para representar la "prueba" a la que los somete */
+.tema-reencuentro .caja-detalle h3::before {
+    content: "⚖️ ";
+    font-size: 1.2rem;
+}
+/* ==============================================
+   TEMÁTICA EXCLUSIVA: PERSONA 5 (FEDERICO)
+   Inspiración: La tierra fértil de Gosén, esperanza y legado
+============================================== */
+
+/* Fondo especial oscuro con un resplandor verde muy sutil */
+.tema-desenlace {
+    background-image: 
+        radial-gradient(circle at 80% 80%, rgba(34, 139, 34, 0.12) 0%, transparent 60%), /* Luz verde fértil */
+        linear-gradient(rgba(14, 16, 14, 0.96), rgba(14, 16, 14, 0.96)), 
+        url('https://www.transparenttextures.com/patterns/woven-light.png'); /* Textura suave */
+    background-color: #0e100e;
+}
+
+/* La línea del título representa la vida y los pastos de Gosén */
+.tema-desenlace .titulo-seccion {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #196f3d, #2ecc71, #196f3d) 1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #7dcea0;
+}
+
+/* Resaltamos tu nombre en un verde claro elegante */
+.tema-desenlace .expositor-tag strong {
+    color: #7dcea0;
+}
+
+/* Tus cajas (Verde esmeralda y Oro/Tierra por los rebaños) */
+.tema-desenlace .caja-1 { border-left-color: #27ae60; } 
+.tema-desenlace .caja-2 { border-left-color: #d4ac0d; } 
+
+/* Un icono de rama de olivo/tierra fértil para tus detalles */
+.tema-desenlace .caja-detalle h3::before {
+    content: "🌿 ";
+    font-size: 1.2rem;
 }
