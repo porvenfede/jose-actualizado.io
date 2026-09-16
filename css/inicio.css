@@ -1,7 +1,7 @@
 /* =========================================================
    LA HISTORIA DE JOSÉ — INICIO
    PC: modo presentación / PowerPoint
-   TABLET Y CELULAR: página web normal
+   TABLET Y CELULAR: página web adaptada
    ========================================================= */
 
 
@@ -9,8 +9,20 @@
    BASE
    ========================================================= */
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 body.pagina-inicio {
     margin: 0;
+    width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
 
@@ -22,7 +34,7 @@ body.pagina-inicio {
 
 
 /* =========================================================
-   ELIMINAR LA "CORTINA" DEL CONTENEDOR GENERAL
+   CONTENEDOR GENERAL
    ========================================================= */
 
 body.pagina-inicio .portada-contenedor {
@@ -347,8 +359,6 @@ body.pagina-inicio .portada-contenedor::after {
 
     padding:
         6vh 4vw;
-
-    box-sizing: border-box;
 }
 
 .eyebrow {
@@ -423,7 +433,11 @@ body.pagina-inicio .portada-contenedor::after {
 
 .boton-inicio {
 
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 
     padding:
         17px 38px;
@@ -471,7 +485,6 @@ body.pagina-inicio .portada-contenedor::after {
     padding:
         10vh 5vw;
 
-    box-sizing: border-box;
 }
 
 .numero-seccion {
@@ -502,6 +515,17 @@ body.pagina-inicio .portada-contenedor::after {
 
     text-shadow:
         0 4px 15px rgba(0, 0, 0, .75);
+}
+
+.encabezado-seccion h2 {
+    margin: 0;
+}
+
+.encabezado-seccion > p:not(.numero-seccion) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #f2ddba;
 }
 
 .linea-dorada {
@@ -538,6 +562,10 @@ body.pagina-inicio .portada-contenedor::after {
    LAS 5 PARTES DE LA HISTORIA
    ========================================================= */
 
+.seccion-paginas {
+    width: 100%;
+}
+
 .tarjetas-historia {
 
     display: grid;
@@ -560,8 +588,6 @@ body.pagina-inicio .portada-contenedor::after {
     padding:
         34px 26px;
 
-    box-sizing: border-box;
-
     display: flex;
 
     flex-direction: column;
@@ -571,11 +597,6 @@ body.pagina-inicio .portada-contenedor::after {
     color: #f9e8c5;
 
     text-decoration: none;
-
-    /*
-       MUY TRANSPARENTE.
-       El desierto queda visible detrás.
-    */
 
     background:
         linear-gradient(
@@ -594,9 +615,6 @@ body.pagina-inicio .portada-contenedor::after {
     transition:
         .35s ease;
 }
-
-
-/* Símbolos superiores */
 
 .tarjeta-historia::before {
 
@@ -622,9 +640,6 @@ body.pagina-inicio .portada-contenedor::after {
     letter-spacing: 8px;
 }
 
-
-/* Símbolo inferior */
-
 .tarjeta-historia::after {
 
     content: "𓆣";
@@ -640,9 +655,6 @@ body.pagina-inicio .portada-contenedor::after {
 
     font-size: 21px;
 }
-
-
-/* Hover */
 
 .tarjeta-historia:hover {
 
@@ -664,9 +676,6 @@ body.pagina-inicio .portada-contenedor::after {
         0 18px 40px rgba(0, 0, 0, .35);
 }
 
-
-/* Número */
-
 .numero-tarjeta {
 
     font-family:
@@ -680,10 +689,9 @@ body.pagina-inicio .portada-contenedor::after {
         0 2px 7px rgba(0, 0, 0, .65);
 }
 
-
-/* Título */
-
 .etiqueta-tarjeta {
+
+    display: block;
 
     margin-top: auto;
 
@@ -702,8 +710,12 @@ body.pagina-inicio .portada-contenedor::after {
         0 2px 6px rgba(0, 0, 0, .75);
 }
 
-
-/* Flecha */
+.tarjeta-historia p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #ead5b2;
+}
 
 .flecha-tarjeta {
 
@@ -815,8 +827,8 @@ body.pagina-inicio .portada-contenedor::after {
         0 2px 5px rgba(0, 0, 0, .6);
 }
 
-.integrante small {
-
+.integrante span:last-child {
+    font-size: 14px;
     color: #e0c59d;
 }
 
@@ -899,14 +911,14 @@ body.pagina-inicio .portada-contenedor::after {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
 
     justify-content: center;
 
     padding:
         8vh 10vw;
-
-    box-sizing: border-box;
 
     text-align: center;
 }
@@ -931,7 +943,7 @@ body.pagina-inicio .portada-contenedor::after {
         0 4px 18px rgba(0, 0, 0, .80);
 }
 
-.frase-final cite {
+.frase-final > span {
 
     display: block;
 
@@ -946,8 +958,6 @@ body.pagina-inicio .portada-contenedor::after {
 
     color:
         #dfb663;
-
-    font-style: normal;
 }
 
 
@@ -978,25 +988,43 @@ body.pagina-inicio .portada-contenedor::after {
 
 
 /* =========================================================
-   TABLET
+   TABLET GRANDE
+   1100px
    ========================================================= */
 
 @media (max-width: 1100px) {
+
+    body.pagina-inicio .portada-contenedor {
+        width: 94%;
+    }
 
     .tarjetas-historia,
     .tarjetas-integrantes {
 
         grid-template-columns:
             repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .tarjeta-historia {
+        min-height: 280px;
+    }
+
+    .integrante {
+        min-height: 170px;
     }
 
     .hero-inicio {
 
         min-height: 80vh;
+
+        padding:
+            70px 5vw;
     }
 
-    .portada-contenedor::before,
-    .portada-contenedor::after {
+    body.pagina-inicio .portada-contenedor::before,
+    body.pagina-inicio .portada-contenedor::after {
 
         display: none;
     }
@@ -1005,12 +1033,123 @@ body.pagina-inicio .portada-contenedor::after {
 
 
 /* =========================================================
+   TABLET
+   850px
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    body.pagina-inicio .portada-contenedor {
+        width: 94%;
+    }
+
+    .hero-inicio {
+
+        min-height: 78vh;
+
+        padding:
+            70px 35px 60px;
+    }
+
+    .hero-inicio h1 {
+
+        font-size:
+            clamp(55px, 10vw, 90px);
+    }
+
+    .subtitulo {
+
+        max-width: 650px;
+
+        font-size:
+            clamp(16px, 2vw, 20px);
+
+        line-height: 1.6;
+    }
+
+    .contexto-inicio {
+
+        padding:
+            80px 35px;
+    }
+
+    .texto-contexto {
+
+        max-width: 100%;
+
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+    .tarjetas-historia,
+    .tarjetas-integrantes {
+
+        padding:
+            60px 25px;
+
+        gap: 15px;
+    }
+
+    .tarjeta-historia {
+
+        min-height: 260px;
+
+        padding:
+            30px 24px;
+    }
+
+    .etiqueta-tarjeta {
+
+        font-size: 21px;
+    }
+
+    .tarjeta-historia p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .integrante {
+
+        min-height: 155px;
+
+        padding: 22px;
+    }
+
+    .integrante strong {
+
+        font-size: 22px;
+    }
+
+    .instructores-nombres {
+
+        padding:
+            70px 25px;
+    }
+
+    .frase-final {
+
+        min-height: 55vh;
+
+        padding:
+            70px 40px;
+    }
+
+}
+
+
+/* =========================================================
    CELULAR
+   600px
    ========================================================= */
 
 @media (max-width: 600px) {
 
     body.pagina-inicio {
+
+        width: 100%;
 
         background:
             transparent !important;
@@ -1019,6 +1158,8 @@ body.pagina-inicio .portada-contenedor::after {
     body.pagina-inicio .portada-contenedor {
 
         width: 100%;
+
+        max-width: 100%;
 
         padding: 0 !important;
     }
@@ -1035,13 +1176,18 @@ body.pagina-inicio .portada-contenedor::after {
             );
     }
 
+
+    /* -------------------------
+       FONDO
+       ------------------------- */
+
     .sol-inicio {
 
         width: 90px;
 
         height: 90px;
 
-        top: 10%;
+        top: 8%;
 
         right: 7%;
     }
@@ -1053,12 +1199,43 @@ body.pagina-inicio .portada-contenedor::after {
         opacity: .60;
     }
 
+    .palmera-izquierda {
+
+        left: -12px;
+
+        bottom: 12%;
+    }
+
+    .palmera-derecha {
+
+        right: -12px;
+
+        bottom: 15%;
+    }
+
     .caravana-inicio {
 
         bottom: 23%;
 
         font-size: 20px;
     }
+
+    .duna-lejana {
+        height: 30vh;
+    }
+
+    .duna-media {
+        height: 27vh;
+    }
+
+    .duna-frontal {
+        height: 24vh;
+    }
+
+
+    /* -------------------------
+       HERO
+       ------------------------- */
 
     .hero-inicio {
 
@@ -1068,33 +1245,113 @@ body.pagina-inicio .portada-contenedor::after {
             80px 20px 60px;
     }
 
+    .eyebrow {
+
+        max-width: 100%;
+
+        margin-bottom: 18px;
+
+        font-size: 10px;
+
+        line-height: 1.6;
+
+        letter-spacing: .20em;
+    }
+
     .hero-inicio h1 {
 
         font-size:
             clamp(48px, 15vw, 75px);
+
+        line-height: .98;
+
+        letter-spacing: .015em;
     }
 
     .subtitulo {
 
+        max-width: 330px;
+
+        margin-top: 25px;
+
         font-size: 15px;
 
         line-height: 1.6;
+
+        letter-spacing: .04em;
     }
 
     .ornamento {
 
         margin:
-            25px 0;
+            24px 0;
 
-        font-size: 20px;
+        font-size: 16px;
+
+        letter-spacing: 5px;
+
+        white-space: nowrap;
     }
+
+    .boton-inicio {
+
+        width: min(100%, 300px);
+
+        min-height: 54px;
+
+        padding:
+            14px 20px;
+
+        font-size: 11px;
+
+        letter-spacing: .12em;
+
+        text-align: center;
+    }
+
+
+    /* -------------------------
+       CONTEXTO
+       ------------------------- */
 
     .contexto-inicio {
 
         min-height: auto;
 
         padding:
-            70px 25px;
+            75px 25px;
+    }
+
+    .numero-seccion {
+
+        font-size: 12px;
+
+        letter-spacing: .20em;
+    }
+
+    .encabezado-seccion {
+
+        margin:
+            10px 0 25px;
+
+        font-size:
+            clamp(28px, 9vw, 42px);
+
+        line-height: 1.15;
+    }
+
+    .encabezado-seccion > p:not(.numero-seccion) {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .linea-dorada {
+
+        width: 75px;
+
+        margin-bottom: 25px;
     }
 
     .texto-contexto {
@@ -1104,22 +1361,29 @@ body.pagina-inicio .portada-contenedor::after {
         line-height: 1.75;
     }
 
+
+    /* -------------------------
+       HISTORIA
+       ------------------------- */
+
     .tarjetas-historia {
 
         grid-template-columns: 1fr;
 
         padding:
-            40px 20px;
+            35px 20px 60px;
 
         gap: 15px;
     }
 
     .tarjeta-historia {
 
-        min-height: 190px;
+        width: 100%;
+
+        min-height: 210px;
 
         padding:
-            30px 25px;
+            28px 24px;
 
         background:
             linear-gradient(
@@ -1129,36 +1393,161 @@ body.pagina-inicio .portada-contenedor::after {
             );
     }
 
+    .tarjeta-historia::before {
+
+        font-size: 12px;
+
+        letter-spacing: 5px;
+    }
+
+    .tarjeta-historia::after {
+
+        right: 12px;
+
+        bottom: 8px;
+
+        font-size: 17px;
+    }
+
+    .numero-tarjeta {
+
+        font-size: 27px;
+    }
+
+    .etiqueta-tarjeta {
+
+        font-size: 20px;
+
+        line-height: 1.25;
+    }
+
+    .tarjeta-historia p {
+
+        margin:
+            8px 0 0;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .flecha-tarjeta {
+
+        margin-top: 18px;
+
+        font-size: 22px;
+    }
+
+
+    /* -------------------------
+       INTEGRANTES
+       ------------------------- */
+
     .tarjetas-integrantes {
 
         grid-template-columns: 1fr;
 
         padding:
-            40px 20px;
+            35px 20px 60px;
+
+        gap: 12px;
     }
 
     .integrante {
 
-        min-height: 130px;
+        width: 100%;
+
+        min-height: 125px;
+
+        padding:
+            22px;
     }
+
+    .integrante strong {
+
+        font-size: 21px;
+    }
+
+    .integrante span:last-child {
+
+        font-size: 13px;
+    }
+
+    .numero-persona {
+
+        font-size: 12px;
+    }
+
+
+    /* -------------------------
+       INSTRUCTORES
+       ------------------------- */
 
     .instructores-nombres {
 
+        width: 100%;
+
         padding:
-            60px 20px;
+            45px 20px 65px;
     }
 
     .instructor-link {
 
         width: 100%;
 
+        max-width: 420px;
+
+        min-height: 58px;
+
         margin:
-            8px 0;
+            7px 0;
+
+        padding:
+            15px 18px;
 
         box-sizing: border-box;
 
-        justify-content: center;
+        justify-content: space-between;
+
+        gap: 10px;
+
+        text-align: left;
     }
+
+    .instructor-icono {
+
+        font-size: 17px;
+    }
+
+    .instructor-info {
+
+        flex: 1;
+
+        min-width: 0;
+    }
+
+    .instructor-info strong {
+
+        display: block;
+
+        font-size: 15px;
+
+        line-height: 1.3;
+    }
+
+    .instructor-info small {
+
+        display: block;
+
+        margin-top: 3px;
+
+        font-size: 11px;
+    }
+
+
+    /* -------------------------
+       FRASE FINAL
+       ------------------------- */
 
     .frase-final {
 
@@ -1168,16 +1557,186 @@ body.pagina-inicio .portada-contenedor::after {
             60px 25px;
     }
 
+    .frase-final .ornamento {
+
+        margin:
+            0 0 25px;
+
+        font-size: 22px;
+    }
+
     .frase-final blockquote {
 
-        font-size: 27px;
+        max-width: 350px;
+
+        font-size:
+            clamp(25px, 8vw, 34px);
+
+        line-height: 1.35;
     }
+
+    .frase-final > span {
+
+        margin-top: 25px;
+
+        font-size: 11px;
+
+        letter-spacing: .12em;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
 
     .portada-footer {
 
+        padding:
+            30px 20px;
+
+        font-size: 9px;
+
+        line-height: 1.8;
+
+        letter-spacing: .08em;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR MUY PEQUEÑO
+   380px
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-inicio {
+
+        min-height: 75vh;
+
+        padding:
+            65px 15px 50px;
+    }
+
+    .hero-inicio h1 {
+
+        font-size:
+            clamp(43px, 14vw, 60px);
+    }
+
+    .eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: .16em;
+    }
+
+    .subtitulo {
+
+        font-size: 14px;
+    }
+
+    .ornamento {
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+
+    .boton-inicio {
+
         font-size: 10px;
 
-        line-height: 1.7;
+        padding:
+            13px 15px;
+    }
+
+    .contexto-inicio {
+
+        padding:
+            60px 20px;
+    }
+
+    .tarjetas-historia,
+    .tarjetas-integrantes {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+    .tarjeta-historia {
+
+        min-height: 200px;
+
+        padding:
+            25px 20px;
+    }
+
+    .integrante {
+
+        min-height: 115px;
+
+        padding:
+            20px;
+    }
+
+    .frase-final {
+
+        padding:
+            55px 20px;
+    }
+
+    .frase-final blockquote {
+
+        font-size: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR HORIZONTAL
+   ========================================================= */
+
+@media (max-width: 850px) and (orientation: landscape) {
+
+    .hero-inicio {
+
+        min-height: 100vh;
+
+        padding:
+            45px 30px;
+    }
+
+    .hero-inicio h1 {
+
+        font-size:
+            clamp(45px, 9vw, 75px);
+    }
+
+    .subtitulo {
+
+        margin-top: 15px;
+
+        font-size: 14px;
+    }
+
+    .ornamento {
+
+        margin:
+            15px 0;
+
+        font-size: 15px;
+    }
+
+    .boton-inicio {
+
+        min-height: 45px;
+
+        padding:
+            10px 25px;
     }
 
 }
