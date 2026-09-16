@@ -1,0 +1,1553 @@
+:root {
+
+    --rojo: #b84236;
+    --rojo-claro: #e56a5f;
+    --rojo-brillante: #ff9a8f;
+    --rojo-oscuro: #641d18;
+
+    --negro: #090606;
+    --negro-suave: #160b0a;
+
+    --arena: #4b2b24;
+    --arena-clara: #704238;
+
+    --blanco: #fffaf0;
+    --blanco-suave: #eadfd3;
+
+    --texto: #cbbdb5;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.capitulo-dos {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(184, 66, 54, 0.16),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            #0a0606 0%,
+            #180b0a 48%,
+            #2a1411 100%
+        );
+
+    color: var(--blanco);
+    font-family: "Montserrat", sans-serif;
+
+    transition:
+        background 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+/* =========================================================
+   MODO DARK AL ABRIR UNA PREGUNTA
+   ========================================================= */
+
+body.capitulo-dos:has(.pregunta-jose[open]) {
+    background: #030202;
+    filter: brightness(0.68);
+}
+
+
+/* =========================================================
+   ESCENA DE FONDO
+   ========================================================= */
+
+.escena-traicion {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #100708 0%,
+            #321313 42%,
+            #5a281e 70%,
+            #21100d 100%
+        );
+
+    transition:
+        filter 0.7s ease,
+        opacity 0.7s ease;
+}
+
+
+/* Oscurecer fondo cuando hay pregunta abierta */
+
+body.capitulo-dos:has(.pregunta-jose[open]) .escena-traicion {
+    filter:
+        brightness(0.35)
+        saturate(0.65);
+
+    opacity: 0.72;
+}
+
+
+/* Capa sobre el fondo */
+
+.escena-traicion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(229, 106, 95, 0.14),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.55)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CIELO
+   ========================================================= */
+
+.cielo-traicion {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 105, 80, 0.12),
+            transparent 30%
+        );
+}
+
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas-traicion {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 190, 150, 0.5) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        95px 95px,
+        145px 145px;
+
+    background-position:
+        15px 20px,
+        50px 80px;
+
+    opacity: 0.45;
+
+    animation:
+        estrellas 7s ease-in-out infinite alternate;
+}
+
+@keyframes estrellas {
+
+    from {
+        opacity: 0.25;
+    }
+
+    to {
+        opacity: 0.55;
+    }
+}
+
+
+/* =========================================================
+   LUNA
+   ========================================================= */
+
+.luna-traicion {
+    position: absolute;
+
+    top: 9%;
+    right: 10%;
+
+    width: clamp(70px, 8vw, 130px);
+    height: clamp(70px, 8vw, 130px);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff9e8,
+            #e5c8a8 58%,
+            #9b7462 100%
+        );
+
+    box-shadow:
+        0 0 25px rgba(255, 230, 200, 0.4),
+        0 0 80px rgba(255, 190, 150, 0.12);
+
+    transition:
+        box-shadow 0.7s ease;
+}
+
+body.capitulo-dos:has(.pregunta-jose[open]) .luna-traicion {
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   MONTAÑAS
+   ========================================================= */
+
+.montanas-traicion {
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+    bottom: 29%;
+
+    height: 30%;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0 25%,
+            #2a1513 25% 42%,
+            transparent 42%
+        ),
+        linear-gradient(
+            225deg,
+            transparent 0 27%,
+            #351817 27% 44%,
+            transparent 44%
+        );
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   DESIERTO
+   ========================================================= */
+
+.desierto-traicion {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 48%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(87, 42, 31, 0.65)
+        ),
+        linear-gradient(
+            170deg,
+            #5b3026,
+            #281412
+        );
+
+    clip-path: polygon(
+        0 25%,
+        18% 15%,
+        38% 23%,
+        58% 12%,
+        78% 21%,
+        100% 8%,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+/* =========================================================
+   PIRÁMIDES
+   ========================================================= */
+
+.piramide {
+    position: absolute;
+
+    bottom: 26%;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        clamp(70px, 9vw, 150px)
+        solid transparent;
+
+    border-right:
+        clamp(70px, 9vw, 150px)
+        solid transparent;
+
+    border-bottom:
+        clamp(110px, 15vw, 240px)
+        solid #3b211c;
+
+    opacity: 0.9;
+
+    filter:
+        drop-shadow(
+            0 15px 20px rgba(0, 0, 0, 0.45)
+        );
+}
+
+.piramide-uno {
+    left: 7%;
+}
+
+.piramide-dos {
+    left: 29%;
+
+    transform: scale(0.7);
+    transform-origin: bottom;
+
+    opacity: 0.65;
+}
+
+.piramide-tres {
+    right: 8%;
+
+    transform: scale(0.82);
+    transform-origin: bottom;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   PALMERAS
+   ========================================================= */
+
+.palmera {
+    position: absolute;
+
+    bottom: 22%;
+
+    width: 45px;
+    height: 150px;
+
+    opacity: 0.55;
+
+    filter:
+        sepia(0.4)
+        brightness(0.55);
+}
+
+.palmera::before {
+    content: "🌴";
+
+    position: absolute;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 1;
+}
+
+.palmera-uno {
+    left: 2%;
+}
+
+.palmera-dos {
+    right: 3%;
+}
+
+
+/* =========================================================
+   HERMANOS
+   ========================================================= */
+
+.hermanos-traicion {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 21%;
+
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: clamp(18px, 3vw, 45px);
+
+    opacity: 0.9;
+}
+
+.hermanos-traicion span {
+    position: relative;
+
+    display: block;
+
+    width: clamp(28px, 3vw, 45px);
+    height: clamp(80px, 9vw, 135px);
+
+    border-radius: 50% 50% 15% 15%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #120b0a,
+            #050303
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.hermanos-traicion span::before {
+    content: "";
+
+    position: absolute;
+
+    top: -22px;
+    left: 50%;
+
+    width: 32px;
+    height: 32px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #080504;
+}
+
+
+/* =========================================================
+   CARAVANA
+   ========================================================= */
+
+.caravana-traicion {
+    position: absolute;
+
+    bottom: 15%;
+    left: 50%;
+
+    display: flex;
+
+    gap: 10px;
+
+    transform: translateX(-50%);
+
+    font-size: clamp(2rem, 4vw, 4rem);
+
+    opacity: 0.35;
+
+    filter:
+        grayscale(1)
+        brightness(0.45);
+
+    animation:
+        caravana 18s linear infinite;
+}
+
+@keyframes caravana {
+
+    from {
+        margin-left: -5%;
+    }
+
+    to {
+        margin-left: 5%;
+    }
+}
+
+
+/* =========================================================
+   ARENA
+   ========================================================= */
+
+.arena-traicion {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 18%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(20, 8, 7, 0.65)
+        );
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.pagina-jose {
+    position: relative;
+
+    width: min(1450px, 92%);
+
+    margin: 0 auto;
+
+    padding: 30px 0 70px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN — MISMO DISEÑO QUE LOS DEMÁS CAPÍTULOS
+   ========================================================= */
+
+.nav-capitulo {
+    width: 100%;
+
+    margin-bottom: 60px;
+
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    position: relative;
+    z-index: 50;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35, 9, 7, 0.94),
+            rgba(70, 20, 17, 0.84)
+        );
+
+    border: 1px solid rgba(229, 106, 95, 0.42);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(229, 106, 95, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   BOTÓN INICIO
+   ========================================================= */
+
+.nav-capitulo .inicio {
+    min-height: 60px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--blanco);
+
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(229, 106, 95, 0.5);
+
+    background: rgba(184, 66, 54, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+.nav-capitulo .inicio:hover {
+    color: var(--rojo-brillante);
+
+    transform: translateY(-3px);
+
+    background: rgba(184, 66, 54, 0.17);
+
+    border-color: var(--rojo-claro);
+
+    box-shadow:
+        0 0 22px rgba(229, 106, 95, 0.22);
+}
+
+
+/* =========================================================
+   LISTA DE CAPÍTULOS
+   ========================================================= */
+
+.nav-capitulo .capitulos {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   BOTONES DE CAPÍTULO
+   ========================================================= */
+
+.nav-capitulo .capitulos a {
+    min-height: 60px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255, 250, 240, 0.78);
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    letter-spacing: 0.035em;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    border: 1px solid transparent;
+
+    background: rgba(184, 66, 54, 0.035);
+
+    transition: all 0.25s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.nav-capitulo .capitulos a:hover {
+    color: var(--rojo-claro);
+
+    transform: translateY(-3px);
+
+    background: rgba(184, 66, 54, 0.11);
+
+    border-color: rgba(229, 106, 95, 0.4);
+
+    box-shadow:
+        0 0 18px rgba(229, 106, 95, 0.10);
+}
+
+
+/* =========================================================
+   CAPÍTULO ACTIVO
+   ========================================================= */
+
+.nav-capitulo .capitulos a.activo {
+    color: var(--rojo-brillante);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(184, 66, 54, 0.28),
+            rgba(229, 106, 95, 0.08)
+        );
+
+    border-color: rgba(229, 106, 95, 0.85);
+
+    box-shadow:
+        0 0 20px rgba(229, 106, 95, 0.20),
+        inset 0 0 16px rgba(229, 106, 95, 0.06);
+
+    transform: translateY(-2px);
+}
+
+
+/* Punto indicador del capítulo activo */
+
+.nav-capitulo .capitulos a.activo::before {
+    content: "●";
+
+    margin-right: 7px;
+
+    color: var(--rojo-claro);
+
+    font-size: 0.55rem;
+}
+
+
+/* =========================================================
+   PRESENTACIÓN
+   ========================================================= */
+
+.presentacion {
+    min-height: 78vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.numero-capitulo {
+    margin-bottom: 20px;
+
+    color: var(--rojo-claro);
+
+    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+
+    font-weight: 800;
+
+    letter-spacing: 0.45em;
+}
+
+.presentacion h1 {
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(4rem, 9vw, 9rem);
+
+    line-height: 0.95;
+
+    color: var(--blanco);
+
+    text-shadow:
+        0 0 25px rgba(229, 106, 95, 0.18),
+        0 10px 35px rgba(0, 0, 0, 0.55);
+}
+
+.frase-principal {
+    max-width: 900px;
+
+    margin: 32px auto 0;
+
+    color: var(--blanco-suave);
+
+    font-size: clamp(1.15rem, 2vw, 1.8rem);
+
+    line-height: 1.6;
+}
+
+.frase-intro {
+    max-width: 800px;
+
+    margin: 15px auto 0;
+
+    color: var(--texto);
+
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+
+    line-height: 1.7;
+}
+
+.expositor {
+    margin-top: 40px;
+
+    padding: 12px 24px;
+
+    border: 1px solid rgba(229, 106, 95, 0.35);
+
+    border-radius: 999px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: var(--texto);
+
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+
+    letter-spacing: 0.08em;
+}
+
+.expositor strong {
+    color: var(--rojo-brillante);
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+   ========================================================= */
+
+.introduccion {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 70px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.7fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.etiqueta-seccion {
+    color: var(--rojo-claro);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3em;
+}
+
+.introduccion-texto h2 {
+    margin: 15px 0 30px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(2.2rem, 4vw, 4rem);
+
+    color: var(--blanco);
+}
+
+.introduccion-texto p {
+    margin: 0 0 20px;
+
+    color: var(--blanco-suave);
+
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+
+    line-height: 1.85;
+}
+
+.introduccion-simbolo {
+    text-align: center;
+}
+
+.simbolo-traicion {
+    margin-bottom: 20px;
+
+    color: var(--rojo-claro);
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    text-shadow:
+        0 0 35px rgba(229, 106, 95, 0.35);
+}
+
+.introduccion-simbolo span {
+    color: var(--texto);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.35em;
+}
+
+
+/* =========================================================
+   DECORACIÓN
+   ========================================================= */
+
+.decoracion-traicion {
+    padding: 40px 0 70px;
+
+    text-align: center;
+}
+
+.figuras-traicion {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 25px;
+
+    height: 120px;
+}
+
+.figuras-traicion span {
+    width: 32px;
+    height: 90px;
+
+    border-radius: 50% 50% 15% 15%;
+
+    background: #090505;
+
+    opacity: 0.8;
+}
+
+.caravana-texto {
+    margin-top: 25px;
+
+    color: var(--rojo-claro);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.4em;
+}
+
+
+/* =========================================================
+   PREGUNTAS
+   ========================================================= */
+
+.preguntas-jose {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 60px 0;
+}
+
+.titulo-seccion {
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+.titulo-seccion span {
+    color: var(--rojo-claro);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.35em;
+}
+
+.titulo-seccion h2 {
+    margin: 15px 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(2.3rem, 4vw, 4rem);
+
+    color: var(--blanco);
+}
+
+.titulo-seccion p {
+    margin: 0;
+
+    color: var(--texto);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   TARJETAS DE PREGUNTAS
+   ========================================================= */
+
+.pregunta-jose {
+    margin: 22px 0;
+
+    border: 1px solid rgba(229, 106, 95, 0.3);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(43, 15, 13, 0.86),
+            rgba(19, 8, 8, 0.78)
+        );
+
+    overflow: hidden;
+
+    transition:
+        background 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease,
+        transform 0.5s ease;
+}
+
+.pregunta-jose:hover {
+    border-color: rgba(229, 106, 95, 0.65);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PREGUNTA ABIERTA
+   ========================================================= */
+
+.pregunta-jose[open] {
+    border-color: var(--rojo-claro);
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(255, 253, 245, 0.98),
+            rgba(255, 248, 238, 0.96)
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(229, 106, 95, 0.4),
+        0 0 20px rgba(255, 253, 245, 0.7),
+        0 0 50px rgba(229, 106, 95, 0.28),
+        0 20px 50px rgba(0, 0, 0, 0.4);
+
+    transform: translateY(-5px);
+
+    position: relative;
+    z-index: 20;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.pregunta-jose summary {
+    display: grid;
+
+    grid-template-columns: 85px 1fr 55px;
+
+    align-items: center;
+
+    min-height: 125px;
+
+    padding: 20px 28px;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+.pregunta-jose summary::-webkit-details-marker {
+    display: none;
+}
+
+.pregunta-jose summary::marker {
+    display: none;
+}
+
+
+/* Número */
+
+.numero-pregunta {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(2rem, 4vw, 3.3rem);
+
+    font-weight: 800;
+
+    color: var(--rojo-claro);
+
+    transition:
+        color 0.4s ease,
+        text-shadow 0.4s ease;
+}
+
+
+/* Texto */
+
+.texto-pregunta {
+    color: var(--blanco);
+
+    font-size: clamp(1.1rem, 2vw, 1.55rem);
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    transition:
+        color 0.4s ease;
+}
+
+
+/* Ícono */
+
+.icono-pregunta {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(229, 106, 95, 0.5);
+
+    border-radius: 50%;
+
+    color: var(--rojo-claro);
+
+    font-size: 1.5rem;
+
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease,
+        background 0.4s ease;
+}
+
+
+/* =========================================================
+   ELEMENTOS DE LA PREGUNTA ABIERTA
+   ========================================================= */
+
+.pregunta-jose[open] .numero-pregunta {
+    color: var(--rojo);
+
+    text-shadow:
+        0 0 15px rgba(184, 66, 54, 0.2);
+}
+
+.pregunta-jose[open] .texto-pregunta {
+    color: #35100d;
+}
+
+.pregunta-jose[open] .icono-pregunta {
+    color: white;
+
+    background: var(--rojo);
+
+    border-color: var(--rojo);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   RESPUESTA
+   ========================================================= */
+
+.respuesta-jose {
+    padding: 0 35px 35px 113px;
+
+    color: #4b302b;
+
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+
+    line-height: 1.85;
+
+    animation:
+        aparecer 0.4s ease;
+}
+
+.respuesta-jose p {
+    margin: 0;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   CIERRE
+   ========================================================= */
+
+.cierre {
+    max-width: 1000px;
+
+    margin: 90px auto 60px;
+
+    padding: 65px 30px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(229, 106, 95, 0.3);
+    border-bottom: 1px solid rgba(229, 106, 95, 0.3);
+}
+
+.cierre-linea {
+    color: var(--rojo-claro);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.35em;
+}
+
+.cierre h2 {
+    margin: 20px 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+
+    color: var(--blanco);
+}
+
+.cierre p {
+    margin: 0;
+
+    color: var(--texto);
+
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN FINAL
+   ========================================================= */
+
+.navegacion-final {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+}
+
+.navegacion-final a {
+    flex: 1;
+
+    padding: 18px 22px;
+
+    border: 1px solid rgba(229, 106, 95, 0.35);
+
+    border-radius: 14px;
+
+    color: var(--blanco-suave);
+
+    background: rgba(20, 8, 8, 0.55);
+
+    text-decoration: none;
+
+    text-align: center;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.navegacion-final a:hover {
+    background: rgba(184, 66, 54, 0.18);
+
+    border-color: var(--rojo-claro);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 60px 20px 20px;
+
+    text-align: center;
+
+    color: rgba(234, 223, 211, 0.55);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .pagina-jose {
+        width: min(94%, 1000px);
+    }
+
+    .nav-capitulo {
+        margin-bottom: 45px;
+    }
+
+    .nav-capitulo .capitulos a {
+        padding: 0 10px;
+
+        font-size: 0.76rem;
+    }
+
+    .introduccion {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .introduccion-simbolo {
+        order: -1;
+    }
+
+    .presentacion {
+        min-height: 70vh;
+    }
+
+    .pregunta-jose summary {
+        grid-template-columns: 70px 1fr 50px;
+    }
+
+    .respuesta-jose {
+        padding-left: 90px;
+    }
+}
+
+
+/* =========================================================
+   TABLET PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-capitulo {
+        flex-direction: column;
+
+        padding: 16px;
+    }
+
+    .nav-capitulo .inicio {
+        width: 100%;
+    }
+
+    .nav-capitulo .capitulos {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .nav-capitulo .capitulos a {
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 8px;
+
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-jose {
+        width: 92%;
+
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .nav-capitulo {
+        margin-bottom: 35px;
+
+        padding: 12px;
+
+        border-radius: 15px;
+    }
+
+    .nav-capitulo .inicio {
+        min-height: 52px;
+
+        font-size: 0.82rem;
+    }
+
+    .nav-capitulo .capitulos {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-capitulo .capitulos a {
+        min-height: 48px;
+
+        font-size: 0.78rem;
+    }
+
+    .presentacion {
+        min-height: 80vh;
+
+        padding: 70px 10px;
+    }
+
+    .numero-capitulo {
+        font-size: 0.75rem;
+
+        letter-spacing: 0.3em;
+    }
+
+    .presentacion h1 {
+        font-size: clamp(3.2rem, 16vw, 5.5rem);
+    }
+
+    .frase-principal {
+        font-size: 1rem;
+    }
+
+    .frase-intro {
+        font-size: 0.9rem;
+    }
+
+    .expositor {
+        margin-top: 30px;
+
+        font-size: 0.8rem;
+    }
+
+    .introduccion {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .introduccion-texto h2 {
+        font-size: 2.2rem;
+    }
+
+    .introduccion-texto p {
+        font-size: 1rem;
+    }
+
+    .preguntas-jose {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 2.2rem;
+    }
+
+    .pregunta-jose {
+        border-radius: 15px;
+    }
+
+    .pregunta-jose summary {
+        grid-template-columns: 45px 1fr 40px;
+
+        min-height: 105px;
+
+        padding: 15px;
+    }
+
+    .numero-pregunta {
+        font-size: 1.7rem;
+    }
+
+    .texto-pregunta {
+        font-size: 1rem;
+    }
+
+    .icono-pregunta {
+        width: 34px;
+        height: 34px;
+
+        font-size: 1.1rem;
+    }
+
+    .respuesta-jose {
+        padding: 0 20px 25px 60px;
+
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+    }
+
+    .navegacion-final {
+        flex-direction: column;
+    }
+
+    .navegacion-final a {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav-capitulo .capitulos a {
+        min-height: 45px;
+
+        font-size: 0.72rem;
+    }
+
+    .presentacion h1 {
+        font-size: 3rem;
+    }
+
+    .pregunta-jose summary {
+        grid-template-columns: 38px 1fr 35px;
+
+        padding: 12px;
+    }
+
+    .respuesta-jose {
+        padding-left: 50px;
+    }
+}

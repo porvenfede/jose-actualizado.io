@@ -1,0 +1,1183 @@
+/* =========================================================
+   LA HISTORIA DE JOSÉ — INICIO
+   PC: modo presentación / PowerPoint
+   TABLET Y CELULAR: página web normal
+   ========================================================= */
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+body.pagina-inicio {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background: transparent !important;
+
+    color: #f7ead0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =========================================================
+   ELIMINAR LA "CORTINA" DEL CONTENEDOR GENERAL
+   ========================================================= */
+
+body.pagina-inicio .portada-contenedor {
+    width: min(1550px, 92%);
+    margin: 0 auto;
+
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   FONDO EGIPCIO / DESIERTO
+   ========================================================= */
+
+.inicio-fondo {
+    position: fixed;
+    inset: 0;
+
+    z-index: -10;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #101b32 0%,
+            #26334b 24%,
+            #68432b 48%,
+            #a86834 70%,
+            #d9a45a 100%
+        );
+}
+
+.cielo-inicio {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 28%,
+            rgba(255, 221, 146, .22),
+            transparent 38%
+        );
+}
+
+
+/* =========================================================
+   SOL
+   ========================================================= */
+
+.sol-inicio {
+    position: absolute;
+
+    width: clamp(120px, 12vw, 230px);
+    height: clamp(120px, 12vw, 230px);
+
+    top: 10%;
+    right: 12%;
+
+    border-radius: 50%;
+
+    background: #f3bd51;
+
+    box-shadow:
+        0 0 45px rgba(244, 189, 82, .65),
+        0 0 110px rgba(244, 189, 82, .30);
+}
+
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas-inicio {
+    position: absolute;
+    inset: 0;
+
+    opacity: .65;
+
+    background-image:
+        radial-gradient(circle, #fff2c7 1px, transparent 1px),
+        radial-gradient(circle, #fff2c7 1px, transparent 1px);
+
+    background-size:
+        95px 95px,
+        145px 145px;
+
+    background-position:
+        10px 20px,
+        50px 70px;
+
+    animation: estrellas 18s linear infinite;
+}
+
+@keyframes estrellas {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(30px);
+    }
+
+}
+
+
+/* =========================================================
+   PARTÍCULAS DE ARENA
+   ========================================================= */
+
+.particulas-arena {
+    position: absolute;
+    inset: 0;
+
+    opacity: .35;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 224, 164, .8) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 224, 164, .5) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        120px 120px,
+        180px 180px;
+
+    animation: arena 20s linear infinite;
+}
+
+@keyframes arena {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-80px);
+    }
+
+}
+
+
+/* =========================================================
+   DUNAS
+   ========================================================= */
+
+.duna {
+    position: absolute;
+
+    left: -5%;
+
+    width: 110%;
+
+    border-radius: 50% 50% 0 0;
+}
+
+.duna-lejana {
+    height: 34vh;
+
+    bottom: 22%;
+
+    background: #a96735;
+
+    opacity: .70;
+}
+
+.duna-media {
+    height: 31vh;
+
+    bottom: 7%;
+
+    background: #92572d;
+
+    opacity: .82;
+}
+
+.duna-frontal {
+    height: 27vh;
+
+    bottom: -10%;
+
+    background: #b87435;
+}
+
+
+/* =========================================================
+   PALMERAS
+   ========================================================= */
+
+.palmera {
+    position: absolute;
+
+    font-size: clamp(70px, 9vw, 150px);
+
+    filter:
+        drop-shadow(
+            8px 12px 8px rgba(0, 0, 0, .35)
+        );
+
+    opacity: .82;
+}
+
+.palmera-izquierda {
+    left: 2%;
+    bottom: 12%;
+
+    transform: rotate(-7deg);
+}
+
+.palmera-derecha {
+    right: 3%;
+    bottom: 16%;
+
+    transform:
+        scaleX(-1)
+        rotate(-7deg);
+}
+
+
+/* =========================================================
+   CARAVANA
+   ========================================================= */
+
+.caravana-inicio {
+    position: absolute;
+
+    left: -20%;
+
+    bottom: 27%;
+
+    font-size: clamp(22px, 3vw, 48px);
+
+    filter:
+        grayscale(1)
+        brightness(.32);
+
+    white-space: nowrap;
+
+    animation:
+        caravana 35s linear infinite;
+}
+
+@keyframes caravana {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(145vw);
+    }
+
+}
+
+
+/* =========================================================
+   DETALLES EGIPCIOS LATERALES
+   ========================================================= */
+
+body.pagina-inicio .portada-contenedor::before,
+body.pagina-inicio .portada-contenedor::after {
+
+    content: "𓂀 𓆣 𓂀";
+
+    position: fixed;
+
+    top: 45%;
+
+    writing-mode: vertical-rl;
+
+    font-family: serif;
+
+    font-size: 27px;
+
+    letter-spacing: 12px;
+
+    color: rgba(247, 205, 112, .35);
+
+    pointer-events: none;
+}
+
+body.pagina-inicio .portada-contenedor::before {
+    left: 18px;
+}
+
+body.pagina-inicio .portada-contenedor::after {
+    right: 18px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-inicio {
+
+    min-height: 92vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        6vh 4vw;
+
+    box-sizing: border-box;
+}
+
+.eyebrow {
+
+    margin-bottom: 20px;
+
+    font-size:
+        clamp(12px, 1vw, 17px);
+
+    letter-spacing: .35em;
+
+    text-transform: uppercase;
+
+    color: #edc56f;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .65);
+}
+
+.hero-inicio h1 {
+
+    margin: 0;
+
+    font-family: 'Cinzel', serif;
+
+    font-size:
+        clamp(60px, 9vw, 150px);
+
+    line-height: .95;
+
+    letter-spacing: .03em;
+
+    color: #fff0c9;
+
+    text-shadow:
+        0 5px 20px rgba(0, 0, 0, .75),
+        0 0 35px rgba(236, 181, 77, .18);
+}
+
+.subtitulo {
+
+    max-width: 850px;
+
+    margin-top: 30px;
+
+    font-size:
+        clamp(17px, 1.5vw, 25px);
+
+    letter-spacing: .08em;
+
+    color: #f5ddb3;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .75);
+}
+
+.ornamento {
+
+    margin: 35px 0;
+
+    color: #e4b65e;
+
+    font-size: 28px;
+
+    letter-spacing: 15px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .7);
+}
+
+.boton-inicio {
+
+    display: inline-block;
+
+    padding:
+        17px 38px;
+
+    border:
+        1px solid rgba(242, 193, 96, .85);
+
+    color: #ffe8b3;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: .18em;
+
+    font-size: 13px;
+
+    background:
+        rgba(35, 20, 10, .18);
+
+    transition: .3s ease;
+}
+
+.boton-inicio:hover {
+
+    background:
+        rgba(216, 157, 61, .25);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .35);
+}
+
+
+/* =========================================================
+   CONTEXTO
+   ========================================================= */
+
+.contexto-inicio {
+
+    min-height: 70vh;
+
+    padding:
+        10vh 5vw;
+
+    box-sizing: border-box;
+}
+
+.numero-seccion {
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 15px;
+
+    letter-spacing: .3em;
+
+    color: #edc267;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, .65);
+}
+
+.encabezado-seccion {
+
+    margin:
+        12px 0 30px;
+
+    font-family: 'Cinzel', serif;
+
+    font-size:
+        clamp(35px, 4vw, 65px);
+
+    color: #fff0cc;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, .75);
+}
+
+.linea-dorada {
+
+    width: 100px;
+
+    height: 2px;
+
+    margin-bottom: 30px;
+
+    background: #dcae56;
+
+    box-shadow:
+        0 0 10px rgba(220, 174, 86, .4);
+}
+
+.texto-contexto {
+
+    max-width: 900px;
+
+    font-size:
+        clamp(16px, 1.3vw, 21px);
+
+    line-height: 1.9;
+
+    color: #f7e4c3;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .75);
+}
+
+
+/* =========================================================
+   LAS 5 PARTES DE LA HISTORIA
+   ========================================================= */
+
+.tarjetas-historia {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+
+    padding:
+        8vh 2vw;
+}
+
+.tarjeta-historia {
+
+    position: relative;
+
+    min-height: 300px;
+
+    padding:
+        34px 26px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    color: #f9e8c5;
+
+    text-decoration: none;
+
+    /*
+       MUY TRANSPARENTE.
+       El desierto queda visible detrás.
+    */
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91, 57, 28, .24),
+            rgba(205, 157, 76, .07)
+        );
+
+    border:
+        1px solid rgba(224, 178, 83, .70);
+
+    box-shadow:
+        inset 0 0 25px rgba(44, 23, 8, .18),
+        0 8px 25px rgba(20, 10, 4, .18);
+
+    transition:
+        .35s ease;
+}
+
+
+/* Símbolos superiores */
+
+.tarjeta-historia::before {
+
+    content:
+        "𓂀 𓏏 𓂀";
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(230, 182, 89, .75);
+
+    font-family: serif;
+
+    font-size: 15px;
+
+    letter-spacing: 8px;
+}
+
+
+/* Símbolo inferior */
+
+.tarjeta-historia::after {
+
+    content: "𓆣";
+
+    position: absolute;
+
+    right: 14px;
+
+    bottom: 10px;
+
+    color:
+        rgba(230, 182, 89, .55);
+
+    font-size: 21px;
+}
+
+
+/* Hover */
+
+.tarjeta-historia:hover {
+
+    transform:
+        translateY(-10px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(118, 72, 31, .32),
+            rgba(221, 172, 77, .14)
+        );
+
+    border-color:
+        #edc66e;
+
+    box-shadow:
+        inset 0 0 30px rgba(238, 193, 96, .08),
+        0 18px 40px rgba(0, 0, 0, .35);
+}
+
+
+/* Número */
+
+.numero-tarjeta {
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size: 32px;
+
+    color: #e3b052;
+
+    text-shadow:
+        0 2px 7px rgba(0, 0, 0, .65);
+}
+
+
+/* Título */
+
+.etiqueta-tarjeta {
+
+    margin-top: auto;
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size: 23px;
+
+    line-height: 1.3;
+
+    color: #f3d28b;
+
+    letter-spacing: .04em;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, .75);
+}
+
+
+/* Flecha */
+
+.flecha-tarjeta {
+
+    margin-top: 25px;
+
+    color: #e1b052;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   INTEGRANTES
+   ========================================================= */
+
+.tarjetas-integrantes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+
+    padding:
+        7vh 2vw;
+}
+
+.integrante {
+
+    position: relative;
+
+    min-height: 180px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    color: #f7e5c1;
+
+    text-decoration: none;
+
+    background:
+        rgba(65, 38, 17, .12);
+
+    border-top:
+        1px solid rgba(237, 192, 102, .60);
+
+    border-bottom:
+        1px solid rgba(237, 192, 102, .35);
+
+    transition: .3s ease;
+}
+
+.integrante::after {
+
+    content: "𓂀";
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 12px;
+
+    color:
+        rgba(230, 182, 89, .45);
+
+    font-size: 18px;
+}
+
+.integrante:hover {
+
+    background:
+        rgba(93, 55, 21, .22);
+
+    border-color:
+        #dfb45d;
+
+    transform:
+        translateY(-5px);
+}
+
+.numero-persona {
+
+    font-family:
+        'Cinzel', serif;
+
+    color: #d9a84f;
+
+    font-size: 14px;
+
+    letter-spacing: .15em;
+}
+
+.integrante strong {
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size: 24px;
+
+    color: #f1d08b;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, .6);
+}
+
+.integrante small {
+
+    color: #e0c59d;
+}
+
+
+/* =========================================================
+   INSTRUCTORES
+   ========================================================= */
+
+.instructores-nombres {
+
+    padding:
+        9vh 4vw;
+
+    text-align: center;
+}
+
+.instructor-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 15px;
+
+    padding:
+        18px 28px;
+
+    color: #f7e3bb;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(230, 182, 91, .45);
+
+    background:
+        rgba(50, 28, 12, .15);
+
+    transition: .3s ease;
+}
+
+.instructor-link:hover {
+
+    background:
+        rgba(75, 43, 16, .25);
+
+    border-color:
+        #dfaf58;
+}
+
+.instructor-icono {
+
+    color:
+        #dfaf58;
+
+    font-size: 20px;
+}
+
+.instructor-info {
+
+    font-family:
+        'Cinzel', serif;
+}
+
+.instructor-flecha {
+
+    color:
+        #dfaf58;
+}
+
+
+/* =========================================================
+   FRASE FINAL
+   ========================================================= */
+
+.frase-final {
+
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        8vh 10vw;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.frase-final blockquote {
+
+    max-width: 1000px;
+
+    margin: 0;
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size:
+        clamp(28px, 4vw, 60px);
+
+    line-height: 1.35;
+
+    color: #fff0ca;
+
+    text-shadow:
+        0 4px 18px rgba(0, 0, 0, .80);
+}
+
+.frase-final cite {
+
+    display: block;
+
+    margin-top: 30px;
+
+    font-family:
+        'Montserrat', sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: .15em;
+
+    color:
+        #dfb663;
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.portada-footer {
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    color:
+        #e0c49a;
+
+    font-size: 12px;
+
+    letter-spacing: .1em;
+
+    background:
+        rgba(18, 10, 5, .12);
+
+    border-top:
+        1px solid rgba(226, 178, 86, .20);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .tarjetas-historia,
+    .tarjetas-integrantes {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero-inicio {
+
+        min-height: 80vh;
+    }
+
+    .portada-contenedor::before,
+    .portada-contenedor::after {
+
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body.pagina-inicio {
+
+        background:
+            transparent !important;
+    }
+
+    body.pagina-inicio .portada-contenedor {
+
+        width: 100%;
+
+        padding: 0 !important;
+    }
+
+    .inicio-fondo {
+
+        background:
+            linear-gradient(
+                to bottom,
+                #18233a 0%,
+                #5d402a 42%,
+                #a96c35 68%,
+                #d7a45b 100%
+            );
+    }
+
+    .sol-inicio {
+
+        width: 90px;
+
+        height: 90px;
+
+        top: 10%;
+
+        right: 7%;
+    }
+
+    .palmera {
+
+        font-size: 65px;
+
+        opacity: .60;
+    }
+
+    .caravana-inicio {
+
+        bottom: 23%;
+
+        font-size: 20px;
+    }
+
+    .hero-inicio {
+
+        min-height: 78vh;
+
+        padding:
+            80px 20px 60px;
+    }
+
+    .hero-inicio h1 {
+
+        font-size:
+            clamp(48px, 15vw, 75px);
+    }
+
+    .subtitulo {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .ornamento {
+
+        margin:
+            25px 0;
+
+        font-size: 20px;
+    }
+
+    .contexto-inicio {
+
+        min-height: auto;
+
+        padding:
+            70px 25px;
+    }
+
+    .texto-contexto {
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .tarjetas-historia {
+
+        grid-template-columns: 1fr;
+
+        padding:
+            40px 20px;
+
+        gap: 15px;
+    }
+
+    .tarjeta-historia {
+
+        min-height: 190px;
+
+        padding:
+            30px 25px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(91, 57, 28, .22),
+                rgba(205, 157, 76, .06)
+            );
+    }
+
+    .tarjetas-integrantes {
+
+        grid-template-columns: 1fr;
+
+        padding:
+            40px 20px;
+    }
+
+    .integrante {
+
+        min-height: 130px;
+    }
+
+    .instructores-nombres {
+
+        padding:
+            60px 20px;
+    }
+
+    .instructor-link {
+
+        width: 100%;
+
+        margin:
+            8px 0;
+
+        box-sizing: border-box;
+
+        justify-content: center;
+    }
+
+    .frase-final {
+
+        min-height: 55vh;
+
+        padding:
+            60px 25px;
+    }
+
+    .frase-final blockquote {
+
+        font-size: 27px;
+    }
+
+    .portada-footer {
+
+        font-size: 10px;
+
+        line-height: 1.7;
+    }
+
+}

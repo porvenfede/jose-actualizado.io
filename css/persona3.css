@@ -1,0 +1,1293 @@
+/* =========================================================
+   CAPÍTULO III — EL ASCENSO
+   LA HISTORIA DE JOSÉ
+   ========================================================= */
+
+:root {
+    --oro: #d6a936;
+    --oro-claro: #f3d477;
+    --oro-brillante: #fff1b5;
+    --oro-oscuro: #80601a;
+
+    --negro: #090806;
+    --negro-suave: #17120b;
+    --arena: #806037;
+    --arena-oscura: #3b2916;
+
+    --blanco: #f8f1df;
+    --texto: #d9ccb0;
+}
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.capitulo-tres {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    color: var(--blanco);
+    background: var(--negro);
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   FONDO EGIPCIO
+   ========================================================= */
+
+.escena-ascenso {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            180deg,
+            #0b0906 0%,
+            #21160c 42%,
+            #654a26 75%,
+            #2a1b0e 100%
+        );
+}
+
+.cielo-ascenso {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 22%,
+            rgba(243, 212, 119, 0.20),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #0d0a07 0%,
+            #2a1c0e 45%,
+            #644a29 78%,
+            #302012 100%
+        );
+}
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas-ascenso {
+    position: absolute;
+    inset: 0;
+    opacity: 0.65;
+    background-image:
+        radial-gradient(circle, rgba(255, 241, 181, 0.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 241, 181, 0.5) 1px, transparent 1px);
+    background-size: 95px 95px, 145px 145px;
+    background-position: 20px 30px, 70px 80px;
+}
+
+/* =========================================================
+   SOL
+   ========================================================= */
+
+.sol-ascenso {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 10%;
+    right: 12%;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            #fff7d5 0%,
+            var(--oro-claro) 35%,
+            rgba(243, 212, 119, 0.20) 68%,
+            transparent 72%
+        );
+    box-shadow:
+        0 0 55px rgba(243, 212, 119, 0.40),
+        0 0 120px rgba(243, 212, 119, 0.18);
+}
+
+/* =========================================================
+   PIRÁMIDES
+   ========================================================= */
+
+.piramide-ascenso {
+    position: absolute;
+    bottom: 25%;
+    width: 240px;
+    height: 175px;
+    background:
+        linear-gradient(
+            145deg,
+            #3b2815,
+            #806037 48%,
+            #24170c
+        );
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+    opacity: 0.9;
+    filter:
+        drop-shadow(0 15px 15px rgba(0, 0, 0, 0.40));
+}
+
+.piramide-ascenso::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243, 212, 119, 0.24),
+            transparent 45%
+        );
+}
+
+.piramide-1 {
+    left: 7%;
+}
+
+.piramide-2 {
+    right: 8%;
+    transform: scale(0.78);
+}
+
+/* =========================================================
+   PALMERAS
+   ========================================================= */
+
+.palmera-ascenso {
+    position: absolute;
+    bottom: 18%;
+    font-size: 4.5rem;
+    opacity: 0.65;
+    filter:
+        drop-shadow(0 5px 5px rgba(0, 0, 0, 0.40));
+}
+
+.palmera-1 {
+    left: 10%;
+}
+
+.palmera-2 {
+    right: 10%;
+    transform: scaleX(-1);
+}
+
+/* =========================================================
+   COLUMNAS EGIPCIAS
+   ========================================================= */
+
+.columnas-egipcias {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 42%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4%;
+    opacity: 0.18;
+}
+
+.columnas-egipcias span {
+    position: relative;
+    width: 65px;
+    height: 100%;
+    background:
+        linear-gradient(
+            90deg,
+            #2b1c0e,
+            #987039,
+            #38230e
+        );
+    border-radius: 7px 7px 0 0;
+}
+
+.columnas-egipcias span::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -15px;
+    width: 95px;
+    height: 30px;
+    border-radius: 5px;
+    background: #87612e;
+}
+
+.columnas-egipcias span::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 85px;
+    height: 18px;
+    background: #24160b;
+}
+
+/* =========================================================
+   TRONO
+   ========================================================= */
+
+.trono-faraon {
+    position: absolute;
+    right: 50%;
+    bottom: 20%;
+    transform: translateX(50%);
+    font-size: 5rem;
+    opacity: 0.22;
+    filter:
+        drop-shadow(0 10px 12px rgba(0, 0, 0, 0.45));
+}
+
+/* =========================================================
+   ARENA
+   ========================================================= */
+
+.arena-ascenso {
+    position: absolute;
+    left: -5%;
+    right: -5%;
+    bottom: -5%;
+    height: 32%;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(165, 123, 57, 0.48),
+            transparent 65%
+        );
+    transform: rotate(-2deg);
+}
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.pagina-jose {
+    width: min(1400px, 92%);
+    margin: 0 auto;
+    padding: 35px 0 80px;
+}
+
+/* =========================================================
+   MENÚ
+   MISMO ESTILO QUE CAPÍTULOS I Y II
+   ========================================================= */
+
+.nav-capitulo {
+    width: 100%;
+    margin-bottom: 60px;
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    position: relative;
+    z-index: 50;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(27, 19, 8, 0.94),
+            rgba(57, 39, 13, 0.84)
+        );
+
+    border: 1px solid rgba(214, 169, 54, 0.42);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(214, 169, 54, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+/* Inicio */
+
+.nav-capitulo > a:first-child {
+    min-height: 60px;
+    padding: 0 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: var(--blanco);
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    border-radius: 13px;
+    border: 1px solid rgba(214, 169, 54, 0.5);
+
+    background: rgba(214, 169, 54, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+.nav-capitulo > a:first-child:hover {
+    color: var(--oro-brillante);
+    transform: translateY(-3px);
+
+    background: rgba(214, 169, 54, 0.17);
+
+    border-color: var(--oro-claro);
+
+    box-shadow:
+        0 0 22px rgba(214, 169, 54, 0.22);
+}
+
+/* Capítulos */
+
+.nav-capitulo .capitulos {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.nav-capitulo .capitulos a {
+    min-height: 60px;
+    padding: 0 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(248, 241, 223, 0.78);
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    text-align: center;
+
+    border-radius: 12px;
+    border: 1px solid transparent;
+
+    background: rgba(214, 169, 54, 0.035);
+
+    transition: all 0.25s ease;
+}
+
+.nav-capitulo .capitulos a:hover {
+    color: var(--oro-claro);
+
+    transform: translateY(-3px);
+
+    background: rgba(214, 169, 54, 0.11);
+
+    border-color: rgba(214, 169, 54, 0.4);
+
+    box-shadow:
+        0 0 18px rgba(214, 169, 54, 0.10);
+}
+
+/* Capítulo activo */
+
+.nav-capitulo .capitulos a.activo {
+    color: var(--oro-brillante);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(214, 169, 54, 0.20),
+            rgba(243, 212, 119, 0.07)
+        );
+
+    border-color: rgba(214, 169, 54, 0.85);
+
+    box-shadow:
+        0 0 20px rgba(214, 169, 54, 0.20),
+        inset 0 0 16px rgba(214, 169, 54, 0.06);
+
+    transform: translateY(-2px);
+}
+
+.nav-capitulo .capitulos a.activo::before {
+    content: "●";
+    margin-right: 7px;
+
+    color: var(--oro-claro);
+    font-size: 0.55rem;
+}
+
+/* =========================================================
+   PRESENTACIÓN
+   ========================================================= */
+
+.presentacion {
+    max-width: 1100px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+.presentacion .capitulo {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--oro-claro);
+
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.25em;
+}
+
+.presentacion h1 {
+    margin: 0;
+
+    color: var(--oro-brillante);
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 700;
+    line-height: 1;
+
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(214, 169, 54, 0.20);
+}
+
+.presentacion .linea {
+    width: 120px;
+    height: 2px;
+
+    margin: 28px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--oro-claro),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(243, 212, 119, 0.30);
+}
+
+.presentacion .frase-intro {
+    margin: 0 auto 18px;
+
+    color: var(--blanco);
+
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.presentacion > p:not(.frase-intro) {
+    margin: 0;
+
+    color: var(--texto);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.presentacion .expositor {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 12px 22px;
+
+    color: var(--blanco);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+
+    border: 1px solid rgba(214, 169, 54, 0.35);
+    border-radius: 999px;
+
+    background: rgba(214, 169, 54, 0.07);
+
+    box-shadow:
+        0 0 20px rgba(214, 169, 54, 0.06);
+}
+
+/* =========================================================
+   INTRODUCCIÓN
+   ========================================================= */
+
+.introduccion-jose {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: center;
+
+    margin-bottom: 100px;
+    padding: 45px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 21, 10, 0.84),
+            rgba(17, 13, 8, 0.72)
+        );
+
+    border: 1px solid rgba(214, 169, 54, 0.28);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.30);
+}
+
+.etiqueta {
+    color: var(--oro-claro);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+}
+
+.introduccion-texto h2 {
+    margin: 12px 0 20px;
+
+    color: var(--oro-brillante);
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.introduccion-texto p {
+    max-width: 800px;
+
+    color: var(--texto);
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.introduccion-decoracion {
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-left: 1px solid rgba(214, 169, 54, 0.25);
+}
+
+.simbolo-sabiduria {
+    color: var(--oro-brillante);
+
+    font-size: 5rem;
+
+    text-shadow:
+        0 0 30px rgba(214, 169, 54, 0.30);
+}
+
+.simbolo-egipcio {
+    margin-top: -10px;
+
+    color: var(--oro-claro);
+
+    font-family: "Cinzel", serif;
+    font-size: 4rem;
+}
+
+.texto-poder {
+    margin-top: 10px;
+
+    color: var(--oro-claro);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.20em;
+    text-align: center;
+}
+
+/* =========================================================
+   PREGUNTAS
+   ========================================================= */
+
+.preguntas-jose {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.titulo-preguntas {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-preguntas > span {
+    color: var(--oro-claro);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+.titulo-preguntas h2 {
+    margin: 12px 0;
+
+    color: var(--oro-brillante);
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.titulo-preguntas p {
+    margin: 0;
+
+    color: var(--texto);
+
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.pregunta-jose {
+    margin-bottom: 18px;
+    overflow: hidden;
+
+    border: 1px solid rgba(214, 169, 54, 0.45);
+    border-radius: 18px;
+
+    background: rgba(24, 17, 9, 0.80);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.pregunta-jose:hover {
+    border-color: rgba(243, 212, 119, 0.70);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   PREGUNTA ABIERTA
+   ========================================================= */
+
+.pregunta-jose[open] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 253, 245, 0.14),
+            rgba(255, 253, 245, 0.07),
+            rgba(38, 24, 17, 0.70)
+        );
+
+    border-color: var(--oro-claro);
+
+    box-shadow:
+        0 0 10px rgba(255, 253, 245, 0.55),
+        0 0 30px rgba(255, 213, 111, 0.20),
+        0 15px 45px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.pregunta-jose summary {
+    min-height: 125px;
+    padding: 22px 30px;
+
+    display: grid;
+    grid-template-columns: 100px 1fr 60px;
+
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.pregunta-jose summary::-webkit-details-marker {
+    display: none;
+}
+
+.numero-pregunta {
+    color: var(--oro-oscuro);
+
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    font-weight: 700;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.texto-pregunta {
+    color: var(--blanco);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.45;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.icono-pregunta {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(214, 169, 54, 0.50);
+    border-radius: 50%;
+
+    color: var(--oro-claro);
+
+    font-size: 1.7rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   ABIERTA
+   ========================================================= */
+
+.pregunta-jose[open] .numero-pregunta {
+    color: var(--oro-claro);
+
+    text-shadow:
+        0 0 15px rgba(243, 212, 119, 0.25);
+}
+
+.pregunta-jose[open] .texto-pregunta {
+    color: #fffdf5;
+
+    text-shadow:
+        0 0 14px rgba(255, 255, 255, 0.20);
+}
+
+.pregunta-jose[open] .icono-pregunta {
+    color: var(--oro-brillante);
+
+    border-color: var(--oro-claro);
+
+    background: rgba(255, 253, 245, 0.08);
+
+    transform: rotate(45deg);
+
+    box-shadow:
+        0 0 16px rgba(255, 253, 245, 0.25),
+        0 0 25px rgba(214, 169, 54, 0.18);
+}
+
+/* =========================================================
+   RESPUESTA
+   ========================================================= */
+
+.respuesta-jose {
+    padding: 0 35px 30px 125px;
+
+    color: var(--texto);
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    animation:
+        aparecer-respuesta 0.35s ease;
+}
+
+.respuesta-etiqueta {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--oro-claro);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.20em;
+}
+
+.numero-respuesta {
+    margin-bottom: 8px;
+
+    color: rgba(243, 212, 119, 0.35);
+
+    font-family: "Cinzel", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.respuesta-jose p {
+    margin: 8px 0;
+}
+
+.detalle-respuesta {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: var(--oro-claro);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+@keyframes aparecer-respuesta {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   CIERRE
+   ========================================================= */
+
+.cierre {
+    max-width: 1000px;
+
+    margin: 110px auto 0;
+    padding: 60px 30px;
+
+    text-align: center;
+}
+
+.cierre-linea {
+    width: 120px;
+    height: 1px;
+
+    margin: 0 auto 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--oro-claro),
+            transparent
+        );
+}
+
+.cierre p {
+    color: var(--oro-claro);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+.cierre h2 {
+    margin: 18px 0 30px;
+
+    color: var(--oro-brillante);
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.35;
+}
+
+/* =========================================================
+   NAVEGACIÓN FINAL
+   ========================================================= */
+
+.navegacion-final {
+    max-width: 1150px;
+
+    margin: 70px auto 40px;
+
+    display: flex;
+    gap: 25px;
+}
+
+.navegacion-final a {
+    flex: 1;
+
+    min-height: 90px;
+    padding: 18px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--blanco);
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+
+    border-radius: 18px;
+    border: 1px solid rgba(214, 169, 54, 0.40);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35, 25, 10, 0.90),
+            rgba(18, 14, 8, 0.78)
+        );
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.navegacion-final a:hover {
+    color: var(--oro-brillante);
+
+    transform: translateY(-5px);
+
+    border-color: var(--oro-claro);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(214, 169, 54, 0.16),
+            rgba(35, 25, 10, 0.86)
+        );
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.32),
+        0 0 22px rgba(214, 169, 54, 0.16);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    margin-top: 60px;
+    padding-top: 25px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(214, 169, 54, 0.18);
+}
+
+footer p {
+    color: rgba(216, 204, 176, 0.65);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .pagina-jose {
+        width: min(94%, 1000px);
+    }
+
+    .nav-capitulo {
+        margin-bottom: 45px;
+    }
+
+    .nav-capitulo .capitulos a {
+        padding: 0 10px;
+        font-size: 0.76rem;
+    }
+
+    .introduccion-jose {
+        grid-template-columns: 1fr;
+        padding: 35px;
+    }
+
+    .introduccion-decoracion {
+        min-height: 150px;
+
+        border-left: none;
+        border-top: 1px solid rgba(214, 169, 54, 0.25);
+    }
+
+    .pregunta-jose summary {
+        grid-template-columns: 80px 1fr 55px;
+    }
+
+    .respuesta-jose {
+        padding-left: 100px;
+    }
+}
+
+/* =========================================================
+   TABLET PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-capitulo {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .nav-capitulo > a:first-child {
+        width: 100%;
+    }
+
+    .nav-capitulo .capitulos {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .nav-capitulo .capitulos a {
+        width: 100%;
+        min-height: 52px;
+
+        padding: 8px;
+
+        font-size: 0.75rem;
+    }
+
+    .presentacion {
+        margin-bottom: 65px;
+    }
+
+    .introduccion-jose {
+        margin-bottom: 70px;
+    }
+
+    .pregunta-jose summary {
+        min-height: 110px;
+    }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-jose {
+        width: 92%;
+
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    /* Menú */
+
+    .nav-capitulo {
+        margin-bottom: 35px;
+        padding: 12px;
+
+        border-radius: 15px;
+    }
+
+    .nav-capitulo > a:first-child {
+        min-height: 52px;
+        font-size: 0.82rem;
+    }
+
+    .nav-capitulo .capitulos {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-capitulo .capitulos a {
+        min-height: 48px;
+        font-size: 0.78rem;
+    }
+
+    /* Presentación */
+
+    .presentacion {
+        margin-bottom: 55px;
+    }
+
+    .presentacion .capitulo {
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+    }
+
+    .presentacion h1 {
+        font-size: clamp(2.8rem, 13vw, 4.2rem);
+    }
+
+    .presentacion .frase-intro {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .presentacion > p:not(.frase-intro) {
+        font-size: 0.9rem;
+    }
+
+    .presentacion .expositor {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    /* Introducción */
+
+    .introduccion-jose {
+        padding: 28px 22px;
+        border-radius: 18px;
+    }
+
+    .introduccion-texto h2 {
+        font-size: 2rem;
+    }
+
+    .introduccion-texto p {
+        font-size: 0.95rem;
+    }
+
+    /* Preguntas */
+
+    .pregunta-jose {
+        border-radius: 15px;
+    }
+
+    .pregunta-jose summary {
+        min-height: 95px;
+
+        padding: 18px;
+
+        grid-template-columns: 48px 1fr 45px;
+
+        gap: 12px;
+    }
+
+    .numero-pregunta {
+        font-size: 1.25rem;
+    }
+
+    .texto-pregunta {
+        font-size: 0.95rem;
+    }
+
+    .icono-pregunta {
+        width: 40px;
+        height: 40px;
+
+        font-size: 1.35rem;
+    }
+
+    .respuesta-jose {
+        padding: 0 20px 25px 78px;
+
+        font-size: 0.9rem;
+    }
+
+    /* Cierre */
+
+    .cierre {
+        margin-top: 70px;
+        padding: 45px 15px;
+    }
+
+    .cierre h2 {
+        font-size: 2rem;
+    }
+
+    /* Navegación inferior */
+
+    .navegacion-final {
+        flex-direction: column;
+
+        margin-top: 50px;
+        gap: 12px;
+    }
+
+    .navegacion-final a {
+        min-height: 65px;
+
+        padding: 15px;
+
+        font-size: 0.88rem;
+    }
+
+    /* Fondo */
+
+    .piramide-ascenso {
+        transform: scale(0.65);
+    }
+
+    .piramide-2 {
+        transform: scale(0.50);
+    }
+
+    .columnas-egipcias {
+        opacity: 0.12;
+    }
+
+    .trono-faraon {
+        font-size: 3.5rem;
+    }
+
+    .palmera-ascenso {
+        font-size: 2.8rem;
+    }
+
+    .sol-ascenso {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav-capitulo .capitulos a {
+        min-height: 45px;
+        font-size: 0.72rem;
+    }
+
+    .pregunta-jose summary {
+        grid-template-columns: 40px 1fr 40px;
+        padding: 14px;
+    }
+
+    .texto-pregunta {
+        font-size: 0.88rem;
+    }
+
+    .respuesta-jose {
+        padding-left: 55px;
+    }
+}

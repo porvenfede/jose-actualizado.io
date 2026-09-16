@@ -1,0 +1,507 @@
+/* =========================================================
+   NAVEGACIÓN GENERAL — LA HISTORIA DE JOSÉ
+   Se utiliza en los 5 capítulos
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN PRINCIPAL
+   ========================================================= */
+
+.nav-capitulo {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 18px 22px;
+
+    position: relative;
+    z-index: 100;
+
+    border-radius: 18px;
+
+    background: rgba(8, 8, 8, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   BOTÓN INICIO
+   ========================================================= */
+
+.nav-capitulo .inicio {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 58px;
+    padding: 0 25px;
+
+    border-radius: 13px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.nav-capitulo .inicio:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border-color: rgba(255, 255, 255, 0.65);
+
+    box-shadow:
+        0 0 18px rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================================
+   CONTENEDOR DE CAPÍTULOS
+   ========================================================= */
+
+.nav-capitulo .capitulos {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   BOTONES DE CAPÍTULOS
+   ========================================================= */
+
+.nav-capitulo .capitulos a {
+    min-height: 58px;
+    padding: 0 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+    text-align: center;
+
+    border: 1px solid transparent;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover general */
+
+.nav-capitulo .capitulos a:hover {
+    transform: translateY(-3px);
+
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================================================
+   CAPÍTULO ACTIVO
+   ========================================================= */
+
+.nav-capitulo .capitulos a.activo {
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    border-color: currentColor;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.10),
+        inset 0 0 15px rgba(255, 255, 255, 0.04);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   INDICADOR VISUAL DEL CAPÍTULO
+   ========================================================= */
+
+.nav-capitulo .capitulos a.activo::before {
+    content: "●";
+
+    margin-right: 7px;
+
+    font-size: 0.55rem;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN INFERIOR
+   Anterior / siguiente
+   ========================================================= */
+
+.navegacion-final {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 70px auto 35px;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    position: relative;
+    z-index: 20;
+}
+
+
+/* Botones */
+
+.navegacion-final a {
+    flex: 1;
+
+    min-height: 90px;
+
+    padding: 18px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    text-align: center;
+    letter-spacing: 0.04em;
+
+    background: rgba(8, 8, 8, 0.65);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.navegacion-final a:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.11);
+
+    border-color: rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.30),
+        0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   TEXTO DEL EXPOSITOR
+   ========================================================= */
+
+.presentacion .expositor {
+    margin-top: 25px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: none;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+
+/* "Expositor:" ligeramente destacado */
+
+.presentacion .expositor strong {
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-capitulo {
+        margin-bottom: 45px;
+        padding: 15px;
+
+        gap: 15px;
+    }
+
+    .nav-capitulo .inicio {
+        min-height: 54px;
+        padding: 0 18px;
+
+        font-size: 0.9rem;
+    }
+
+    .nav-capitulo .capitulos {
+        gap: 6px;
+    }
+
+    .nav-capitulo .capitulos a {
+        min-height: 54px;
+        padding: 0 10px;
+
+        font-size: 0.76rem;
+    }
+
+    .navegacion-final {
+        margin-top: 55px;
+    }
+
+    .navegacion-final a {
+        min-height: 82px;
+        padding: 16px 20px;
+
+        font-size: 0.95rem;
+    }
+
+    .presentacion .expositor {
+        font-size: 1.05rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET PEQUEÑA / CELULAR GRANDE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-capitulo {
+        flex-direction: column;
+
+        padding: 16px;
+
+        margin-bottom: 40px;
+    }
+
+    .nav-capitulo .inicio {
+        width: 100%;
+    }
+
+    .nav-capitulo .capitulos {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .nav-capitulo .capitulos a {
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 10px 8px;
+
+        font-size: 0.75rem;
+    }
+
+    .navegacion-final {
+        gap: 15px;
+    }
+
+    .navegacion-final a {
+        min-height: 75px;
+
+        padding: 15px;
+
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .nav-capitulo {
+        width: 100%;
+
+        margin-bottom: 30px;
+
+        padding: 12px;
+
+        border-radius: 15px;
+    }
+
+    .nav-capitulo .inicio {
+        min-height: 52px;
+
+        font-size: 0.82rem;
+
+        letter-spacing: 0.05em;
+    }
+
+    .nav-capitulo .capitulos {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-capitulo .capitulos a {
+        min-height: 48px;
+
+        font-size: 0.78rem;
+    }
+
+    .nav-capitulo .capitulos a.activo::before {
+        margin-right: 6px;
+    }
+
+
+    /* Navegación inferior */
+
+    .navegacion-final {
+        flex-direction: column;
+
+        margin-top: 45px;
+
+        gap: 12px;
+    }
+
+    .navegacion-final a {
+        width: 100%;
+
+        min-height: 65px;
+
+        font-size: 0.88rem;
+    }
+
+
+    /* Expositor */
+
+    .presentacion .expositor {
+        margin-top: 20px;
+
+        font-size: 0.9rem;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav-capitulo {
+        padding: 10px;
+    }
+
+    .nav-capitulo .inicio {
+        min-height: 48px;
+
+        font-size: 0.76rem;
+    }
+
+    .nav-capitulo .capitulos a {
+        min-height: 45px;
+
+        font-size: 0.72rem;
+    }
+
+    .navegacion-final a {
+        min-height: 60px;
+
+        font-size: 0.82rem;
+    }
+
+    .presentacion .expositor {
+        font-size: 0.82rem;
+    }
+}
