@@ -1,565 +1,434 @@
 /* =========================================================
-   FEDERICO PORVEN — PERFIL CELESTIAL
+   FEDERICO PORVEN · PERFIL 05
    LA HISTORIA DE JOSÉ · CATEQUESIS 2026
    ========================================================= */
 
-
-/* =========================================================
-   BASE
-   ========================================================= */
+/* ---------- BASE ---------- */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
-    width: 100%;
-    min-height: 100%;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
-body {
-    margin: 0;
-    width: 100%;
+body.pagina-federico {
     min-height: 100vh;
     overflow-x: hidden;
-
-    color: #f7f3e8;
-
-    font-family: 'Montserrat', sans-serif;
-
-    background: #172c50;
+    color: #f4ead8;
+    font-family: "Montserrat", sans-serif;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(78, 109, 145, 0.22), transparent 32%),
+        radial-gradient(circle at 50% 100%, rgba(191, 145, 63, 0.12), transparent 38%),
+        linear-gradient(
+            180deg,
+            #050b13 0%,
+            #091522 28%,
+            #101d2b 58%,
+            #17150f 100%
+        );
 }
 
-
 /* =========================================================
-   CIELO
+   FONDO
    ========================================================= */
 
 .cielo {
     position: fixed;
     inset: 0;
-
     z-index: -10;
-
     overflow: hidden;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #071a3b 0%,
-            #173a69 28%,
-            #4f7fac 55%,
-            #a9cce1 78%,
-            #edf5f7 100%
-        );
-}
-
-
-/* =========================================================
-   LUZ CELESTIAL
-   ========================================================= */
-
-.luz-celestial {
-    position: absolute;
-
-    width: 70vw;
-    height: 70vw;
-
-    max-width: 900px;
-    max-height: 900px;
-
-    top: -30%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 246, 204, .55) 0%,
-            rgba(255, 239, 190, .20) 35%,
-            transparent 70%
-        );
-
-    animation: respirar-luz 7s ease-in-out infinite;
-}
-
-@keyframes respirar-luz {
-
-    0%,
-    100% {
-        transform: translateX(-50%) scale(1);
-        opacity: .75;
-    }
-
-    50% {
-        transform: translateX(-50%) scale(1.08);
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   LUNA / ORBE CELESTIAL
-   ========================================================= */
-
-.luna {
-    position: absolute;
-
-    width: clamp(100px, 13vw, 190px);
-    height: clamp(100px, 13vw, 190px);
-
-    top: 10%;
-    right: 12%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #fffdf0 0%,
-            #fff2bd 45%,
-            #e7c66f 75%,
-            #c49b43 100%
-        );
-
-    box-shadow:
-        0 0 35px rgba(255, 238, 170, .70),
-        0 0 90px rgba(255, 228, 140, .40),
-        0 0 150px rgba(255, 218, 115, .20);
-
-    animation:
-        flotar-luna 6s ease-in-out infinite;
-}
-
-@keyframes flotar-luna {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-
-/* =========================================================
-   ESTRELLAS
-   ========================================================= */
-
-.estrellas {
-    position: absolute;
-    inset: 0;
-
-    opacity: .65;
-
-    background-image:
-        radial-gradient(circle, #fff9dc 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
-        radial-gradient(circle, #fff0b8 1px, transparent 1px);
-
-    background-size:
-        90px 90px,
-        150px 150px,
-        220px 220px;
-
-    background-position:
-        15px 25px,
-        60px 80px,
-        120px 40px;
-
-    animation:
-        mover-estrellas 25s linear infinite;
-}
-
-@keyframes mover-estrellas {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(35px);
-    }
-}
-
-
-/* =========================================================
-   NUBES
-   ========================================================= */
-
-.nube {
-    position: absolute;
-
-    width: 400px;
-    height: 100px;
-
-    border-radius: 100px;
-
-    background:
-        rgba(255, 255, 255, .30);
-
-    filter: blur(18px);
-
-    opacity: .75;
-
     pointer-events: none;
 }
 
+/* Brillo detrás del perfil */
 
-/* NUBE 1 */
-
-.nube-1 {
-    top: 20%;
-    left: -150px;
-
-    animation:
-        nube-izquierda 32s linear infinite;
-}
-
-@keyframes nube-izquierda {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(calc(100vw + 600px));
-    }
-}
-
-
-/* NUBE 2 */
-
-.nube-2 {
-    top: 43%;
-    right: -250px;
-
-    width: 500px;
-
-    opacity: .50;
-
-    animation:
-        nube-derecha 42s linear infinite;
-}
-
-@keyframes nube-derecha {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(calc(-100vw - 700px));
-    }
-}
-
-
-/* NUBE 3 */
-
-.nube-3 {
-    top: 66%;
-    left: -300px;
-
-    width: 600px;
-
-    opacity: .60;
-
-    animation:
-        nube-izquierda-2 48s linear infinite;
-}
-
-@keyframes nube-izquierda-2 {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(calc(100vw + 800px));
-    }
-}
-
-
-/* NUBE 4 */
-
-.nube-4 {
-    top: 82%;
-    right: -300px;
-
-    width: 550px;
-
-    opacity: .80;
-
-    animation:
-        nube-derecha-2 55s linear infinite;
-}
-
-@keyframes nube-derecha-2 {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(calc(-100vw - 800px));
-    }
-}
-
-
-/* =========================================================
-   RAYOS DE LUZ
-   ========================================================= */
-
-.rayos-luz {
+.luz-celestial {
     position: absolute;
-
-    top: -20%;
+    width: 850px;
+    height: 850px;
     left: 50%;
-
-    width: 2px;
-    height: 150%;
-
-    transform: rotate(25deg);
-
+    top: -470px;
+    transform: translateX(-50%);
+    border-radius: 50%;
     background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(255, 245, 203, .20),
-            transparent
+        radial-gradient(
+            circle,
+            rgba(225, 195, 128, 0.24) 0%,
+            rgba(117, 153, 190, 0.12) 30%,
+            rgba(40, 68, 95, 0.05) 55%,
+            transparent 72%
         );
-
-    box-shadow:
-        120px 0 70px rgba(255, 245, 203, .08),
-        -120px 0 70px rgba(255, 245, 203, .08);
-
-    animation:
-        mover-rayos 9s ease-in-out infinite;
+    animation: respiracion-celestial 7s ease-in-out infinite;
 }
 
-@keyframes mover-rayos {
-
+@keyframes respiracion-celestial {
     0%,
     100% {
-        opacity: .25;
-        transform: rotate(25deg) translateX(0);
+        opacity: 0.65;
+        transform: translateX(-50%) scale(1);
     }
 
     50% {
-        opacity: .65;
-        transform: rotate(25deg) translateX(30px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1.08);
     }
 }
 
+/* Luna */
 
-/* =========================================================
-   PARTÍCULAS
-   ========================================================= */
+.luna {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 8%;
+    right: 9%;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff8dc 0%,
+            #e9d9b0 42%,
+            #bcae8d 100%
+        );
+    box-shadow:
+        0 0 25px rgba(255, 245, 207, 0.35),
+        0 0 70px rgba(188, 170, 123, 0.16);
+    opacity: 0.82;
+    animation: luna-flota 8s ease-in-out infinite;
+}
+
+@keyframes luna-flota {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Estrellas */
+
+.estrellas,
+.estrellas::before,
+.estrellas::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(232,205,145,0.8) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.55) 0 1px, transparent 1.4px);
+    background-size:
+        180px 180px,
+        260px 260px,
+        320px 320px;
+    background-position:
+        15px 35px,
+        80px 120px,
+        180px 60px;
+}
+
+.estrellas {
+    opacity: 0.55;
+    animation: estrellas-movimiento 20s linear infinite;
+}
+
+.estrellas::before {
+    opacity: 0.35;
+    transform: translateY(80px);
+}
+
+.estrellas::after {
+    opacity: 0.25;
+    transform: translateY(160px);
+}
+
+@keyframes estrellas-movimiento {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-70px);
+    }
+}
+
+/* Nubes */
+
+.nube {
+    position: absolute;
+    height: 35px;
+    width: 190px;
+    border-radius: 100px;
+    background: rgba(152, 172, 188, 0.035);
+    filter: blur(3px);
+}
+
+.nube::before,
+.nube::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: inherit;
+}
+
+.nube::before {
+    width: 85px;
+    height: 70px;
+    left: 30px;
+    bottom: 0;
+}
+
+.nube::after {
+    width: 65px;
+    height: 55px;
+    right: 30px;
+    bottom: 0;
+}
+
+.nube-1 {
+    top: 18%;
+    left: -40px;
+    animation: nube-1 28s linear infinite;
+}
+
+.nube-2 {
+    top: 34%;
+    right: -80px;
+    transform: scale(0.75);
+    animation: nube-2 35s linear infinite;
+}
+
+.nube-3 {
+    top: 55%;
+    left: -100px;
+    transform: scale(0.55);
+    animation: nube-1 42s linear infinite;
+}
+
+.nube-4 {
+    top: 70%;
+    right: -100px;
+    transform: scale(0.45);
+    animation: nube-2 48s linear infinite;
+}
+
+@keyframes nube-1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 300px));
+    }
+}
+
+@keyframes nube-2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100vw - 300px));
+    }
+}
+
+/* Partículas */
 
 .particulas {
     position: absolute;
     inset: 0;
-
-    pointer-events: none;
 }
 
 .particulas span {
     position: absolute;
-
-    width: 4px;
-    height: 4px;
-
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
-
-    background: #fff4c7;
-
-    box-shadow:
-        0 0 10px rgba(255, 242, 194, .9);
-
-    animation:
-        flotar-particula 7s ease-in-out infinite;
+    background: rgba(225, 194, 123, 0.55);
+    box-shadow: 0 0 8px rgba(225, 194, 123, 0.35);
+    animation: particula-subir 9s ease-in-out infinite;
 }
-
-
-/* POSICIONES */
 
 .particulas span:nth-child(1) {
     left: 8%;
-    top: 20%;
+    top: 78%;
     animation-delay: 0s;
 }
 
 .particulas span:nth-child(2) {
     left: 17%;
-    top: 65%;
+    top: 62%;
     animation-delay: 1s;
 }
 
 .particulas span:nth-child(3) {
-    left: 28%;
-    top: 35%;
-    animation-delay: 2s;
+    left: 27%;
+    top: 85%;
+    animation-delay: 2.4s;
 }
 
 .particulas span:nth-child(4) {
-    left: 39%;
-    top: 75%;
-    animation-delay: 3s;
+    left: 38%;
+    top: 70%;
+    animation-delay: 3.2s;
 }
 
 .particulas span:nth-child(5) {
     left: 48%;
-    top: 18%;
-    animation-delay: 4s;
+    top: 88%;
+    animation-delay: 1.7s;
 }
 
 .particulas span:nth-child(6) {
-    left: 57%;
-    top: 55%;
-    animation-delay: 1.5s;
+    left: 58%;
+    top: 73%;
+    animation-delay: 4s;
 }
 
 .particulas span:nth-child(7) {
-    left: 66%;
-    top: 30%;
-    animation-delay: 2.5s;
+    left: 67%;
+    top: 83%;
+    animation-delay: 2.8s;
 }
 
 .particulas span:nth-child(8) {
-    left: 74%;
-    top: 72%;
-    animation-delay: 3.5s;
+    left: 76%;
+    top: 64%;
+    animation-delay: 5s;
 }
 
 .particulas span:nth-child(9) {
-    left: 83%;
-    top: 45%;
-    animation-delay: 4.5s;
+    left: 84%;
+    top: 79%;
+    animation-delay: 1.2s;
 }
 
 .particulas span:nth-child(10) {
     left: 91%;
-    top: 18%;
-    animation-delay: 2s;
+    top: 58%;
+    animation-delay: 3.7s;
 }
 
 .particulas span:nth-child(11) {
-    left: 13%;
-    top: 85%;
-    animation-delay: 5s;
+    left: 45%;
+    top: 55%;
+    animation-delay: 5.5s;
 }
 
 .particulas span:nth-child(12) {
-    left: 87%;
-    top: 80%;
+    left: 12%;
+    top: 45%;
     animation-delay: 6s;
 }
 
-
-@keyframes flotar-particula {
-
+@keyframes particula-subir {
     0%,
     100% {
-        transform: translateY(0) scale(1);
-        opacity: .25;
+        opacity: 0;
+        transform: translateY(0);
     }
 
-    50% {
-        transform: translateY(-35px) scale(1.5);
-        opacity: 1;
+    30% {
+        opacity: 0.8;
+    }
+
+    70% {
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: translateY(-110px);
     }
 }
 
+/* Rayos de luz */
+
+.rayos-luz {
+    position: absolute;
+    left: 50%;
+    top: -15%;
+    width: 1px;
+    height: 130%;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(221, 190, 124, 0.12),
+        transparent
+    );
+    transform: translateX(-50%) rotate(8deg);
+    filter: blur(4px);
+}
 
 /* =========================================================
-   CONTENEDOR
+   CONTENEDOR PRINCIPAL
    ========================================================= */
 
 .perfil-contenedor {
-    position: relative;
-
-    width: min(1250px, 92%);
-
+    width: min(1180px, calc(100% - 40px));
     margin: 0 auto;
-
-    padding: 70px 0 50px;
+    padding: 70px 0 45px;
 }
 
-
 /* =========================================================
-   ENCABEZADO
+   HEADER
    ========================================================= */
 
 .perfil-header {
     text-align: center;
-
-    padding: 20px 20px 65px;
+    margin-bottom: 60px;
+    animation: aparecer 1s ease forwards;
 }
 
 .perfil-numero {
-    display: block;
-
-    font-family: 'Cinzel', serif;
-
-    font-size: 13px;
-
-    letter-spacing: .30em;
-
-    color: #fff0b8;
-
-    text-shadow:
-        0 2px 10px rgba(0, 35, 80, .75);
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #cdb47c;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.34em;
 }
 
 .ornamento-perfil {
-    margin: 18px 0;
-
-    color: #f5d77f;
-
-    font-size: 18px;
-
-    letter-spacing: .15em;
-
-    text-shadow:
-        0 2px 12px rgba(255, 230, 160, .60);
+    color: rgba(211, 179, 111, 0.72);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 20px;
 }
 
 .perfil-header h1 {
-    margin: 0;
-
-    font-family: 'Cinzel', serif;
-
-    font-size:
-        clamp(45px, 7vw, 90px);
-
-    line-height: 1;
-
-    color: #fffdf2;
-
+    color: #f5ead5;
+    font-family: "Cinzel", serif;
+    font-size: clamp(2.5rem, 6vw, 5.2rem);
+    font-weight: 500;
+    letter-spacing: 0.045em;
+    line-height: 1.05;
     text-shadow:
-        0 5px 25px rgba(0, 31, 70, .70),
-        0 0 25px rgba(255, 244, 201, .25);
+        0 0 30px rgba(218, 188, 125, 0.12),
+        0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
 .edad {
-    margin: 20px 0 0;
-
-    font-size: 14px;
-
-    letter-spacing: .30em;
-
-    color: #f8dda0;
-
+    margin-top: 17px;
+    color: #b9a77d;
+    font-size: 0.78rem;
     font-weight: 500;
+    letter-spacing: 0.35em;
 }
 
+.creador {
+    margin-top: 18px;
+    color: #d4b66e;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+}
 
 /* =========================================================
    PERFIL PRINCIPAL
@@ -567,342 +436,353 @@ body {
 
 .perfil-principal {
     display: grid;
-
-    grid-template-columns:
-        minmax(320px, 460px)
-        1fr;
-
+    grid-template-columns: minmax(340px, 0.9fr) minmax(420px, 1.1fr);
     gap: 80px;
-
     align-items: center;
-
-    padding: 20px 30px 80px;
+    margin-bottom: 70px;
 }
 
-
-/* =========================================================
-   FOTO
-   ========================================================= */
+/* ---------- FOTO ---------- */
 
 .foto-contenedor {
     position: relative;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+    width: min(100%, 430px);
+    margin: auto;
+    isolation: isolate;
 }
 
 .halo-foto {
     position: absolute;
-
-    width: 90%;
-    aspect-ratio: 1;
-
+    inset: 10%;
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 247, 208, .35),
-            transparent 65%
-        );
-
-    filter: blur(12px);
-
-    animation:
-        halo-respirar 5s ease-in-out infinite;
+    background: radial-gradient(
+        circle,
+        rgba(213, 181, 112, 0.16),
+        transparent 68%
+    );
+    filter: blur(20px);
+    animation: halo-pulso 5s ease-in-out infinite;
 }
 
-@keyframes halo-respirar {
-
+@keyframes halo-pulso {
     0%,
     100% {
-        transform: scale(.95);
-        opacity: .55;
+        transform: scale(0.96);
+        opacity: 0.6;
     }
 
     50% {
         transform: scale(1.08);
-        opacity: .95;
+        opacity: 1;
     }
 }
 
 .marco-foto {
     position: relative;
-
-    width: 100%;
-    max-width: 420px;
-
-    padding: 9px;
-
-    border-radius: 8px;
-
+    padding: 11px;
+    border: 1px solid rgba(212, 182, 110, 0.58);
     background:
         linear-gradient(
             145deg,
-            #fff1b2,
-            #d4a94d,
-            #fff0b0,
-            #b98530
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.015)
         );
-
     box-shadow:
-        0 25px 60px rgba(5, 35, 70, .35),
-        0 0 45px rgba(255, 225, 135, .30);
+        0 30px 70px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(210, 177, 105, 0.08);
+    overflow: hidden;
+}
+
+.marco-foto::before,
+.marco-foto::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    border-color: #d2b46d;
+    border-style: solid;
+    pointer-events: none;
 }
 
 .marco-foto::before {
-    content: "✦";
-
-    position: absolute;
-
-    top: 12px;
-    left: 14px;
-
-    z-index: 3;
-
-    font-size: 24px;
-
-    color: #fff8d7;
-
-    text-shadow:
-        0 0 10px rgba(255, 236, 150, .90);
+    top: 5px;
+    left: 5px;
+    border-width: 1px 0 0 1px;
 }
 
 .marco-foto::after {
-    content: "✦";
-
-    position: absolute;
-
-    right: 14px;
-    bottom: 12px;
-
-    z-index: 3;
-
-    font-size: 24px;
-
-    color: #fff8d7;
-
-    text-shadow:
-        0 0 10px rgba(255, 236, 150, .90);
+    right: 5px;
+    bottom: 5px;
+    border-width: 0 1px 1px 0;
 }
 
 .marco-foto img {
     display: block;
-
     width: 100%;
-    height: auto;
-
-    max-height: 560px;
-
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center;
-
-    border-radius: 4px;
-
-    border:
-        2px solid rgba(255, 249, 224, .70);
+    filter: saturate(0.88) contrast(1.04);
 }
 
 .brillo-foto {
     position: absolute;
-    inset: 9px;
+    z-index: 3;
+    top: -20%;
+    left: -60%;
+    width: 35%;
+    height: 150%;
+    transform: rotate(18deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.17),
+        transparent
+    );
+    animation: brillo-foto 7s ease-in-out infinite;
+}
 
-    z-index: 2;
+@keyframes brillo-foto {
+    0%,
+    55% {
+        left: -60%;
+    }
 
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            125deg,
-            rgba(255,255,255,.25),
-            transparent 35%
-        );
-
-    border-radius: 4px;
+    75%,
+    100% {
+        left: 130%;
+    }
 }
 
 .decoracion-foto {
     position: absolute;
-
-    right: 0;
+    right: -18px;
     bottom: -18px;
-
-    font-size: 38px;
-
-    color: #f2d47d;
-
-    text-shadow:
-        0 0 15px rgba(255, 231, 150, .85);
-
-    animation:
-        estrella-foto 3s ease-in-out infinite;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(212, 182, 110, 0.55);
+    border-radius: 50%;
+    background: #0d1722;
+    color: #d7bb76;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
-
-@keyframes estrella-foto {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.25);
-    }
-}
-
 
 /* =========================================================
    INFORMACIÓN
    ========================================================= */
 
 .informacion {
-    padding: 10px 0;
+    position: relative;
 }
 
 .etiqueta {
     display: block;
-
-    margin-bottom: 12px;
-
-    font-size: 12px;
-
-    letter-spacing: .28em;
-
-    color: #ffe39a;
-
+    color: #c9aa68;
+    font-size: 0.68rem;
     font-weight: 600;
-
-    text-shadow:
-        0 2px 8px rgba(0, 30, 70, .55);
+    letter-spacing: 0.28em;
 }
 
 .informacion h2 {
-    margin: 0;
-
-    font-family: 'Cinzel', serif;
-
-    font-size:
-        clamp(38px, 5vw, 68px);
-
-    color: #fffdf0;
-
-    text-shadow:
-        0 4px 18px rgba(0, 30, 70, .70);
+    margin-top: 12px;
+    color: #f3e6ce;
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .linea-dorada {
     width: 90px;
-    height: 2px;
-
-    margin: 20px 0 25px;
-
-    background: #f1ce70;
-
-    box-shadow:
-        0 0 12px rgba(255, 224, 132, .65);
+    height: 1px;
+    margin: 18px 0 22px;
+    background: linear-gradient(
+        90deg,
+        #d5b76f,
+        rgba(213, 183, 111, 0)
+    );
 }
 
 .descripcion {
-    max-width: 650px;
-
-    margin: 0 0 35px;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    color: #f5f5ed;
-
-    text-shadow:
-        0 2px 8px rgba(0, 31, 70, .70);
+    max-width: 620px;
+    color: #c8c0b2;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    font-weight: 300;
 }
 
-
-/* =========================================================
-   INTERESES
-   ========================================================= */
+/* Intereses */
 
 .intereses {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 14px;
+    display: grid;
+    gap: 13px;
+    margin-top: 30px;
 }
 
 .interes {
     display: flex;
-
     align-items: center;
-
-    gap: 18px;
-
-    padding: 16px 18px;
-
-    border:
-        1px solid rgba(255, 226, 145, .40);
-
-    border-radius: 6px;
-
-    background:
-        rgba(255, 255, 255, .08);
-
-    backdrop-filter: blur(5px);
-
-    transition: .35s ease;
+    gap: 17px;
+    padding: 17px 18px;
+    border: 1px solid rgba(210, 181, 113, 0.13);
+    background: rgba(255, 255, 255, 0.025);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
 .interes:hover {
-    transform: translateX(7px);
-
-    border-color:
-        rgba(255, 231, 157, .90);
-
-    background:
-        rgba(255, 255, 255, .16);
-
-    box-shadow:
-        0 8px 30px rgba(0, 30, 70, .20);
+    transform: translateX(6px);
+    border-color: rgba(210, 181, 113, 0.34);
+    background: rgba(255, 255, 255, 0.045);
 }
 
 .icono {
-    flex-shrink: 0;
-
-    width: 42px;
-
-    text-align: center;
-
-    font-size: 25px;
-
-    filter:
-        drop-shadow(0 0 7px rgba(255, 233, 158, .35));
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(210, 181, 113, 0.28);
+    border-radius: 50%;
+    background: rgba(9, 18, 28, 0.7);
+    font-size: 1rem;
 }
 
 .interes strong {
     display: block;
-
-    margin-bottom: 4px;
-
-    font-family: 'Cinzel', serif;
-
-    font-size: 17px;
-
-    color: #ffe7a2;
+    color: #eadbbf;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
 }
 
 .interes p {
-    margin: 0;
-
-    font-size: 13px;
-
+    margin-top: 4px;
+    color: #918f89;
+    font-size: 0.76rem;
     line-height: 1.5;
-
-    color: #f0f0ea;
 }
 
+/* =========================================================
+   DETALLE ESPECIAL · CREADOR
+   ========================================================= */
+
+.detalle-creador {
+    position: relative;
+    margin: 30px auto 65px;
+    padding: 48px 55px;
+    max-width: 920px;
+    text-align: center;
+    border-top: 1px solid rgba(216, 185, 112, 0.45);
+    border-bottom: 1px solid rgba(216, 185, 112, 0.45);
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(209, 176, 100, 0.08),
+            transparent 65%
+        );
+    overflow: hidden;
+}
+
+.detalle-creador::before,
+.detalle-creador::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(211, 180, 108, 0.4)
+    );
+}
+
+.detalle-creador::before {
+    left: 0;
+}
+
+.detalle-creador::after {
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.detalle-icono {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(218, 188, 119, 0.45);
+    border-radius: 50%;
+    color: #ddbd73;
+    font-size: 1.25rem;
+    box-shadow:
+        0 0 25px rgba(211, 176, 99, 0.08),
+        inset 0 0 20px rgba(211, 176, 99, 0.04);
+    animation: creador-brillo 4s ease-in-out infinite;
+}
+
+@keyframes creador-brillo {
+    0%,
+    100% {
+        box-shadow:
+            0 0 18px rgba(211, 176, 99, 0.06),
+            inset 0 0 15px rgba(211, 176, 99, 0.03);
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px rgba(211, 176, 99, 0.16),
+            inset 0 0 22px rgba(211, 176, 99, 0.07);
+    }
+}
+
+.detalle-creador .etiqueta {
+    margin-bottom: 13px;
+}
+
+.detalle-creador h2 {
+    color: #f2e4c9;
+    font-family: "Cinzel", serif;
+    font-size: clamp(1.7rem, 4vw, 2.55rem);
+    font-weight: 500;
+    letter-spacing: 0.035em;
+}
+
+.detalle-linea {
+    width: 130px;
+    height: 1px;
+    margin: 21px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d5b66e,
+        transparent
+    );
+}
+
+.detalle-creador p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #aaa49a;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.detalle-firma {
+    margin-top: 25px;
+    color: #c5a55f !important;
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.25em;
+}
 
 /* =========================================================
    DATO CURIOSO
@@ -910,188 +790,84 @@ body {
 
 .dato-curioso {
     position: relative;
-
-    margin: 0 30px 70px;
-
-    padding: 55px 30px;
-
+    max-width: 650px;
+    margin: 0 auto 60px;
+    padding: 38px 35px;
     text-align: center;
-
-    border-top:
-        1px solid rgba(255, 225, 139, .45);
-
-    border-bottom:
-        1px solid rgba(255, 225, 139, .45);
-
-    background:
-        rgba(255, 255, 255, .06);
-
-    backdrop-filter: blur(5px);
+    border: 1px solid rgba(210, 180, 108, 0.18);
+    background: rgba(255, 255, 255, 0.025);
 }
 
 .destello-dato {
-    margin-bottom: 12px;
-
-    color: #f7d87c;
-
-    font-size: 25px;
-
-    text-shadow:
-        0 0 15px rgba(255, 224, 126, .75);
-
-    animation:
-        destello 2.5s ease-in-out infinite;
-}
-
-@keyframes destello {
-
-    0%,
-    100% {
-        opacity: .45;
-        transform: scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.15);
-    }
+    margin-bottom: 16px;
+    color: #d8b96f;
+    font-size: 1rem;
 }
 
 .dato-curioso h2 {
-    margin: 0;
-
-    font-family: 'Cinzel', serif;
-
-    font-size:
-        clamp(30px, 4vw, 52px);
-
-    color: #fffdf0;
-
-    text-shadow:
-        0 4px 18px rgba(0, 30, 70, .65);
+    margin-top: 12px;
+    color: #eadbbf;
+    font-family: "Cinzel", serif;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
 .dato-curioso p {
-    margin: 18px 0 0;
-
-    color: #f2ead2;
-
-    font-size: 14px;
+    margin-top: 12px;
+    color: #96928a;
+    font-size: 0.8rem;
 }
 
-
 /* =========================================================
-   INSTAGRAM
+   REDES
    ========================================================= */
 
 .redes {
+    width: min(450px, 100%);
+    margin: 0 auto 65px;
     text-align: center;
+}
 
-    padding: 10px 20px 80px;
+.redes .etiqueta {
+    margin-bottom: 18px;
 }
 
 .instagram {
-    position: relative;
-
-    display: inline-flex;
-
+    display: flex;
     align-items: center;
-
     justify-content: center;
-
-    gap: 18px;
-
-    min-width: min(600px, 90%);
-
-    padding: 23px 35px;
-
-    color: #fff8df;
-
+    gap: 13px;
+    padding: 16px 22px;
+    color: #eadfca;
     text-decoration: none;
-
-    border:
-        1px solid rgba(255, 228, 143, .80);
-
-    border-radius: 8px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.14),
-            rgba(255, 225, 137, .10)
-        );
-
-    backdrop-filter: blur(8px);
-
-    box-shadow:
-        0 10px 40px rgba(0, 30, 70, .20),
-        inset 0 0 30px rgba(255, 238, 181, .06);
-
+    border: 1px solid rgba(210, 180, 108, 0.24);
+    background: rgba(255, 255, 255, 0.025);
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        background .35s ease,
-        border-color .35s ease;
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .instagram:hover {
-    transform:
-        translateY(-6px)
-        scale(1.02);
-
-    border-color:
-        #fff0ae;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.22),
-            rgba(255, 225, 137, .18)
-        );
-
-    box-shadow:
-        0 18px 55px rgba(0, 30, 70, .30),
-        0 0 35px rgba(255, 225, 130, .25);
+    transform: translateY(-3px);
+    border-color: rgba(210, 180, 108, 0.52);
+    background: rgba(210, 180, 108, 0.06);
 }
 
 .instagram-icon {
-    font-size: 34px;
-
-    color: #f7d979;
-
-    text-shadow:
-        0 0 15px rgba(255, 224, 126, .70);
+    font-size: 1.3rem;
+    color: #d4b56c;
 }
 
 .instagram-text {
-    font-family: 'Cinzel', serif;
-
-    font-size: clamp(22px, 4vw, 34px);
-
-    font-weight: 600;
-
-    letter-spacing: .04em;
-
-    color: #fffbe9;
-
-    text-shadow:
-        0 3px 12px rgba(0, 30, 70, .65);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
 }
 
 .instagram-flecha {
-    font-size: 27px;
-
-    color: #f4d47c;
-
-    transition:
-        transform .3s ease;
+    color: #c9a963;
+    font-size: 1rem;
 }
-
-.instagram:hover .instagram-flecha {
-    transform:
-        translate(4px, -4px);
-}
-
 
 /* =========================================================
    NAVEGACIÓN
@@ -1099,74 +875,47 @@ body {
 
 .navegacion-perfil {
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
-    gap: 20px;
-
     flex-wrap: wrap;
-
-    padding: 10px 30px 60px;
+    gap: 14px;
+    margin: 0 auto 55px;
 }
 
 .boton-perfil {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
-    gap: 14px;
-
-    min-height: 54px;
-
-    padding: 15px 28px;
-
-    color: #fff0bd;
-
+    gap: 12px;
+    min-width: 205px;
+    min-height: 48px;
+    padding: 13px 20px;
+    color: #d8cbb4;
     text-decoration: none;
-
-    text-transform: uppercase;
-
-    letter-spacing: .14em;
-
-    font-size: 11px;
-
-    border:
-        1px solid rgba(255, 224, 139, .70);
-
-    border-radius: 5px;
-
-    background:
-        rgba(255, 255, 255, .07);
-
-    backdrop-filter: blur(5px);
-
-    transition: .3s ease;
+    border: 1px solid rgba(205, 177, 108, 0.22);
+    background: rgba(5, 12, 19, 0.5);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
 .boton-perfil:hover {
-    transform:
-        translateY(-4px);
-
-    background:
-        rgba(255, 255, 255, .14);
-
-    border-color:
-        #ffecaa;
-
-    box-shadow:
-        0 10px 30px rgba(0, 30, 70, .25);
+    transform: translateY(-3px);
+    color: #f0dfb9;
+    border-color: rgba(210, 181, 111, 0.6);
+    background: rgba(210, 181, 111, 0.07);
 }
 
 .boton-perfil span {
-    font-size: 18px;
-
-    color: #f1d171;
+    color: #cdaa61;
+    font-size: 1rem;
 }
-
 
 /* =========================================================
    CIERRE
@@ -1174,26 +923,56 @@ body {
 
 .cierre-perfil {
     text-align: center;
-
-    padding: 10px 20px 20px;
-
-    opacity: .75;
+    padding-top: 20px;
 }
 
 .cierre-perfil .ornamento-perfil {
-    margin-bottom: 10px;
+    margin-bottom: 17px;
+    opacity: 0.55;
 }
 
 .cierre-perfil p {
-    margin: 0;
-
-    font-size: 9px;
-
-    letter-spacing: .16em;
-
-    color: #eee5c8;
+    color: #77746e;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
 }
 
+/* =========================================================
+   ANIMACIONES GENERALES
+   ========================================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.perfil-principal {
+    animation: aparecer 1s 0.15s ease both;
+}
+
+.detalle-creador {
+    animation: aparecer 1s 0.3s ease both;
+}
+
+.dato-curioso {
+    animation: aparecer 1s 0.4s ease both;
+}
+
+.redes {
+    animation: aparecer 1s 0.5s ease both;
+}
+
+.navegacion-perfil {
+    animation: aparecer 1s 0.6s ease both;
+}
 
 /* =========================================================
    TABLET
@@ -1201,60 +980,25 @@ body {
 
 @media (max-width: 900px) {
 
-    .perfil-contenedor {
-        width: 94%;
-
-        padding-top: 45px;
-    }
-
     .perfil-principal {
         grid-template-columns: 1fr;
-
         gap: 55px;
-
-        padding:
-            20px 30px 65px;
     }
 
     .foto-contenedor {
-        order: 1;
+        max-width: 390px;
     }
 
     .informacion {
-        order: 2;
-    }
-
-    .marco-foto {
-        max-width: 430px;
-    }
-
-    .informacion h2 {
-        text-align: center;
-    }
-
-    .informacion .etiqueta {
-        text-align: center;
-    }
-
-    .informacion .linea-dorada {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .descripcion {
         max-width: 700px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        text-align: center;
+        margin: auto;
+        width: 100%;
     }
 
-    .luna {
-        right: 7%;
+    .detalle-creador {
+        max-width: 760px;
     }
 }
-
 
 /* =========================================================
    CELULAR
@@ -1262,243 +1006,149 @@ body {
 
 @media (max-width: 600px) {
 
-    .cielo {
-        background:
-            linear-gradient(
-                to bottom,
-                #081b3b 0%,
-                #214b7c 32%,
-                #79a9c7 65%,
-                #e6f1f3 100%
-            );
-    }
-
-    .luz-celestial {
-        width: 130vw;
-        height: 130vw;
-
-        top: -20%;
-    }
-
-    .luna {
-        width: 95px;
-        height: 95px;
-
-        top: 8%;
-        right: 8%;
-    }
-
-    .nube {
-        filter: blur(15px);
-    }
-
-    .nube-1 {
-        top: 25%;
-    }
-
-    .nube-2 {
-        top: 48%;
-    }
-
-    .nube-3 {
-        top: 70%;
-    }
-
-    .nube-4 {
-        top: 84%;
-    }
-
-
-    /* CONTENEDOR */
-
     .perfil-contenedor {
-        width: 100%;
-
-        padding:
-            35px 30px 30px;
+        width: min(100% - 26px, 1180px);
+        padding-top: 45px;
     }
-
-
-    /* ENCABEZADO */
 
     .perfil-header {
-        padding:
-            15px 0 45px;
+        margin-bottom: 42px;
     }
 
     .perfil-numero {
-        font-size: 10px;
-
-        letter-spacing: .22em;
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
     }
 
     .ornamento-perfil {
-        font-size: 13px;
-
-        letter-spacing: .08em;
+        font-size: 0.63rem;
     }
 
     .perfil-header h1 {
-        font-size:
-            clamp(38px, 12vw, 58px);
-
-        line-height: 1.05;
+        font-size: clamp(2.15rem, 12vw, 3.5rem);
     }
 
     .edad {
-        font-size: 11px;
-
-        letter-spacing: .22em;
+        font-size: 0.64rem;
+        letter-spacing: 0.27em;
     }
 
+    .creador {
+        font-size: 0.54rem;
+        line-height: 1.7;
+        letter-spacing: 0.2em;
+    }
 
-    /* FOTO + INFORMACIÓN */
+    .luna {
+        width: 65px;
+        height: 65px;
+        top: 5%;
+        right: 6%;
+    }
 
     .perfil-principal {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 45px;
-
-        padding:
-            10px 0 55px;
+        gap: 42px;
+        margin-bottom: 50px;
     }
 
     .foto-contenedor {
-        width: 100%;
-    }
-
-    .marco-foto {
-        width: 100%;
-
-        max-width: 360px;
-
-        padding: 7px;
-    }
-
-    .marco-foto img {
-        max-height: none;
-    }
-
-    .informacion {
-        width: 100%;
+        width: 88%;
     }
 
     .informacion h2 {
-        font-size:
-            clamp(34px, 10vw, 48px);
+        font-size: 1.65rem;
     }
 
     .descripcion {
-        font-size: 14px;
-
-        line-height: 1.7;
-
-        text-align: center;
-    }
-
-
-    /* INTERESES */
-
-    .intereses {
-        gap: 10px;
+        font-size: 0.87rem;
+        line-height: 1.8;
     }
 
     .interes {
         padding: 14px;
-
         gap: 12px;
     }
 
     .icono {
-        width: 34px;
-
-        font-size: 22px;
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        font-size: 0.9rem;
     }
 
     .interes strong {
-        font-size: 15px;
+        font-size: 0.77rem;
     }
 
     .interes p {
-        font-size: 12px;
+        font-size: 0.69rem;
     }
 
+    /* Creador */
 
-    /* DATO */
+    .detalle-creador {
+        margin: 15px auto 48px;
+        padding: 38px 20px;
+    }
+
+    .detalle-creador::before,
+    .detalle-creador::after {
+        width: 35px;
+    }
+
+    .detalle-icono {
+        width: 47px;
+        height: 47px;
+        font-size: 1rem;
+    }
+
+    .detalle-creador h2 {
+        font-size: 1.65rem;
+    }
+
+    .detalle-creador p {
+        font-size: 0.79rem;
+        line-height: 1.8;
+    }
+
+    .detalle-firma {
+        font-size: 0.53rem !important;
+        letter-spacing: 0.16em;
+    }
 
     .dato-curioso {
-        margin:
-            0 0 50px;
-
-        padding:
-            45px 15px;
+        padding: 30px 20px;
+        margin-bottom: 48px;
     }
 
     .dato-curioso h2 {
-        font-size:
-            clamp(27px, 8vw, 38px);
+        font-size: 1.35rem;
     }
-
-
-    /* INSTAGRAM */
 
     .redes {
-        padding:
-            0 0 55px;
+        margin-bottom: 48px;
     }
-
-    .instagram {
-        width: 100%;
-        min-width: 0;
-
-        padding:
-            20px 15px;
-
-        gap: 10px;
-    }
-
-    .instagram-icon {
-        font-size: 26px;
-    }
-
-    .instagram-text {
-        font-size:
-            clamp(19px, 6vw, 28px);
-    }
-
-    .instagram-flecha {
-        font-size: 22px;
-    }
-
-
-    /* NAVEGACIÓN */
 
     .navegacion-perfil {
-        padding:
-            0 0 45px;
-
         flex-direction: column;
-
-        gap: 12px;
+        width: 100%;
     }
 
     .boton-perfil {
         width: 100%;
-
-        min-height: 54px;
+        max-width: 360px;
+        min-width: 0;
     }
-
-
-    /* CIERRE */
 
     .cierre-perfil {
-        padding:
-            0 0 15px;
+        padding-bottom: 20px;
+    }
+
+    .cierre-perfil p {
+        font-size: 0.5rem;
+        letter-spacing: 0.16em;
     }
 }
-
 
 /* =========================================================
    CELULAR PEQUEÑO
@@ -1507,27 +1157,19 @@ body {
 @media (max-width: 380px) {
 
     .perfil-contenedor {
-        padding-left: 25px;
-        padding-right: 25px;
+        width: calc(100% - 20px);
     }
 
     .perfil-header h1 {
-        font-size: 37px;
+        font-size: 2rem;
     }
 
-    .marco-foto {
-        max-width: 100%;
+    .foto-contenedor {
+        width: 94%;
     }
 
-    .interes {
-        padding: 12px;
-    }
-
-    .dato-curioso h2 {
-        font-size: 27px;
-    }
-
-    .instagram-text {
-        font-size: 19px;
+    .detalle-creador {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }

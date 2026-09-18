@@ -1,6 +1,6 @@
 /* =========================================================
    LA HISTORIA DE JOSÉ — INICIO
-   PC: modo presentación / PowerPoint
+   PC: modo presentación
    TABLET Y CELULAR: página web adaptada
    ========================================================= */
 
@@ -40,28 +40,23 @@ body.pagina-inicio {
 body.pagina-inicio .portada-contenedor {
     width: min(1550px, 92%);
     margin: 0 auto;
+    padding: 0 !important;
 
     background: transparent !important;
-
     border: none !important;
     border-radius: 0 !important;
-
     box-shadow: none !important;
-
-    padding: 0 !important;
 }
 
 
 /* =========================================================
-   FONDO EGIPCIO / DESIERTO
+   FONDO
    ========================================================= */
 
 .inicio-fondo {
     position: fixed;
     inset: 0;
-
     z-index: -10;
-
     overflow: hidden;
 
     background:
@@ -137,7 +132,6 @@ body.pagina-inicio .portada-contenedor {
 }
 
 @keyframes estrellas {
-
     from {
         transform: translateY(0);
     }
@@ -145,12 +139,11 @@ body.pagina-inicio .portada-contenedor {
     to {
         transform: translateY(30px);
     }
-
 }
 
 
 /* =========================================================
-   PARTÍCULAS DE ARENA
+   PARTÍCULAS
    ========================================================= */
 
 .particulas-arena {
@@ -179,7 +172,6 @@ body.pagina-inicio .portada-contenedor {
 }
 
 @keyframes arena {
-
     from {
         transform: translateX(0);
     }
@@ -187,7 +179,6 @@ body.pagina-inicio .portada-contenedor {
     to {
         transform: translateX(-80px);
     }
-
 }
 
 
@@ -199,7 +190,6 @@ body.pagina-inicio .portada-contenedor {
     position: absolute;
 
     left: -5%;
-
     width: 110%;
 
     border-radius: 50% 50% 0 0;
@@ -207,27 +197,22 @@ body.pagina-inicio .portada-contenedor {
 
 .duna-lejana {
     height: 34vh;
-
     bottom: 22%;
 
     background: #a96735;
-
     opacity: .70;
 }
 
 .duna-media {
     height: 31vh;
-
     bottom: 7%;
 
     background: #92572d;
-
     opacity: .82;
 }
 
 .duna-frontal {
     height: 27vh;
-
     bottom: -10%;
 
     background: #b87435;
@@ -276,7 +261,6 @@ body.pagina-inicio .portada-contenedor {
     position: absolute;
 
     left: -20%;
-
     bottom: 27%;
 
     font-size: clamp(22px, 3vw, 48px);
@@ -292,37 +276,31 @@ body.pagina-inicio .portada-contenedor {
 }
 
 @keyframes caravana {
-
     from {
-        transform: translateX(0);
+        transform: translateX(0) scaleX(-1);
     }
 
     to {
-        transform: translateX(145vw);
+        transform: translateX(145vw) scaleX(-1);
     }
-
 }
 
 
 /* =========================================================
-   DETALLES EGIPCIOS LATERALES
+   DETALLES LATERALES
    ========================================================= */
 
 body.pagina-inicio .portada-contenedor::before,
 body.pagina-inicio .portada-contenedor::after {
-
     content: "𓂀 𓆣 𓂀";
 
     position: fixed;
-
     top: 45%;
 
     writing-mode: vertical-rl;
 
     font-family: serif;
-
     font-size: 27px;
-
     letter-spacing: 12px;
 
     color: rgba(247, 205, 112, .35);
@@ -344,36 +322,26 @@ body.pagina-inicio .portada-contenedor::after {
    ========================================================= */
 
 .hero-inicio {
-
     min-height: 92vh;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
 
-    padding:
-        6vh 4vw;
+    padding: 6vh 4vw;
 }
 
 .eyebrow {
-
     margin-bottom: 20px;
 
-    font-size:
-        clamp(12px, 1vw, 17px);
-
+    font-size: clamp(12px, 1vw, 17px);
     letter-spacing: .35em;
-
     text-transform: uppercase;
 
     color: #edc56f;
-
     font-weight: 600;
 
     text-shadow:
@@ -381,16 +349,12 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .hero-inicio h1 {
-
     margin: 0;
 
     font-family: 'Cinzel', serif;
 
-    font-size:
-        clamp(60px, 9vw, 150px);
-
+    font-size: clamp(60px, 9vw, 150px);
     line-height: .95;
-
     letter-spacing: .03em;
 
     color: #fff0c9;
@@ -401,14 +365,11 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .subtitulo {
-
     max-width: 850px;
 
     margin-top: 30px;
 
-    font-size:
-        clamp(17px, 1.5vw, 25px);
-
+    font-size: clamp(17px, 1.5vw, 25px);
     letter-spacing: .08em;
 
     color: #f5ddb3;
@@ -418,59 +379,70 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .ornamento {
-
     margin: 35px 0;
 
     color: #e4b65e;
 
     font-size: 28px;
-
     letter-spacing: 15px;
 
     text-shadow:
         0 2px 8px rgba(0, 0, 0, .7);
 }
 
-.boton-inicio {
 
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.boton-inicio {
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
     gap: 15px;
 
-    padding:
-        17px 38px;
+    padding: 17px 38px;
 
-    border:
-        1px solid rgba(242, 193, 96, .85);
+    border: 1px solid rgba(242, 193, 96, .85);
 
     color: #ffe8b3;
 
     text-decoration: none;
-
     text-transform: uppercase;
 
     letter-spacing: .18em;
-
     font-size: 13px;
 
-    background:
-        rgba(35, 20, 10, .18);
+    background: rgba(35, 20, 10, .18);
 
     transition: .3s ease;
 }
 
 .boton-inicio:hover {
+    background: rgba(216, 157, 61, .25);
 
-    background:
-        rgba(216, 157, 61, .25);
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 8px 25px rgba(0, 0, 0, .35);
+}
+
+.botones-inicio {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+.botones-inicio .boton-inicio {
+    margin-top: 0;
 }
 
 
@@ -479,20 +451,15 @@ body.pagina-inicio .portada-contenedor::after {
    ========================================================= */
 
 .contexto-inicio {
-
     min-height: 70vh;
 
-    padding:
-        10vh 5vw;
-
+    padding: 10vh 5vw;
 }
 
 .numero-seccion {
-
     font-family: 'Cinzel', serif;
 
     font-size: 15px;
-
     letter-spacing: .3em;
 
     color: #edc267;
@@ -502,14 +469,11 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .encabezado-seccion {
-
-    margin:
-        12px 0 30px;
+    margin: 12px 0 30px;
 
     font-family: 'Cinzel', serif;
 
-    font-size:
-        clamp(35px, 4vw, 65px);
+    font-size: clamp(35px, 4vw, 65px);
 
     color: #fff0cc;
 
@@ -523,15 +487,15 @@ body.pagina-inicio .portada-contenedor::after {
 
 .encabezado-seccion > p:not(.numero-seccion) {
     font-family: 'Montserrat', sans-serif;
+
     font-size: 16px;
     line-height: 1.7;
+
     color: #f2ddba;
 }
 
 .linea-dorada {
-
     width: 100px;
-
     height: 2px;
 
     margin-bottom: 30px;
@@ -543,12 +507,9 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .texto-contexto {
-
     max-width: 900px;
 
-    font-size:
-        clamp(16px, 1.3vw, 21px);
-
+    font-size: clamp(16px, 1.3vw, 21px);
     line-height: 1.9;
 
     color: #f7e4c3;
@@ -559,7 +520,7 @@ body.pagina-inicio .portada-contenedor::after {
 
 
 /* =========================================================
-   LAS 5 PARTES DE LA HISTORIA
+   HISTORIA
    ========================================================= */
 
 .seccion-paginas {
@@ -567,35 +528,27 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .tarjetas-historia {
-
     display: grid;
 
-    grid-template-columns:
-        repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 18px;
 
-    padding:
-        8vh 2vw;
+    padding: 8vh 2vw;
 }
 
 .tarjeta-historia {
-
     position: relative;
 
     min-height: 300px;
 
-    padding:
-        34px 26px;
+    padding: 34px 26px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 
     color: #f9e8c5;
-
     text-decoration: none;
 
     background:
@@ -605,61 +558,47 @@ body.pagina-inicio .portada-contenedor::after {
             rgba(205, 157, 76, .07)
         );
 
-    border:
-        1px solid rgba(224, 178, 83, .70);
+    border: 1px solid rgba(224, 178, 83, .70);
 
     box-shadow:
         inset 0 0 25px rgba(44, 23, 8, .18),
         0 8px 25px rgba(20, 10, 4, .18);
 
-    transition:
-        .35s ease;
+    transition: .35s ease;
 }
 
 .tarjeta-historia::before {
-
-    content:
-        "𓂀 𓏏 𓂀";
+    content: "𓂀 𓏏 𓂀";
 
     position: absolute;
 
     top: 10px;
-
     left: 50%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    color:
-        rgba(230, 182, 89, .75);
+    color: rgba(230, 182, 89, .75);
 
     font-family: serif;
-
     font-size: 15px;
-
     letter-spacing: 8px;
 }
 
 .tarjeta-historia::after {
-
     content: "𓆣";
 
     position: absolute;
 
     right: 14px;
-
     bottom: 10px;
 
-    color:
-        rgba(230, 182, 89, .55);
+    color: rgba(230, 182, 89, .55);
 
     font-size: 21px;
 }
 
 .tarjeta-historia:hover {
-
-    transform:
-        translateY(-10px);
+    transform: translateY(-10px);
 
     background:
         linear-gradient(
@@ -668,18 +607,89 @@ body.pagina-inicio .portada-contenedor::after {
             rgba(221, 172, 77, .14)
         );
 
-    border-color:
-        #edc66e;
+    border-color: #edc66e;
 
     box-shadow:
         inset 0 0 30px rgba(238, 193, 96, .08),
         0 18px 40px rgba(0, 0, 0, .35);
 }
 
-.numero-tarjeta {
 
-    font-family:
-        'Cinzel', serif;
+/* =========================================================
+   TARJETA VI — PUEBLO
+   ========================================================= */
+
+.tarjeta-pueblo {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(43, 62, 55, .72),
+            rgba(93, 116, 101, .45),
+            rgba(184, 164, 112, .18)
+        );
+
+    border-color: rgba(191, 181, 133, .75);
+
+    box-shadow:
+        inset 0 0 30px rgba(177, 195, 177, .07),
+        0 8px 25px rgba(15, 25, 20, .28);
+}
+
+.tarjeta-pueblo .numero-tarjeta {
+    color: #d4c27a;
+}
+
+.tarjeta-pueblo .etiqueta-tarjeta {
+    color: #b9d0c3;
+}
+
+.tarjeta-pueblo h3 {
+    color: #f1ead7;
+}
+
+.tarjeta-pueblo p {
+    color: #d7dfd5;
+}
+
+.tarjeta-pueblo .detalle-tarjeta {
+    color: #c1b78a;
+}
+
+.tarjeta-pueblo .flecha-tarjeta {
+    color: #d4c27a;
+}
+
+.tarjeta-pueblo::before {
+    color: rgba(201, 211, 194, .72);
+}
+
+.tarjeta-pueblo::after {
+    color: rgba(205, 195, 145, .60);
+}
+
+.tarjeta-pueblo:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 72, 62, .85),
+            rgba(105, 128, 111, .55),
+            rgba(202, 184, 125, .22)
+        );
+
+    border-color: #d8c879;
+
+    box-shadow:
+        inset 0 0 35px rgba(204, 218, 204, .10),
+        0 18px 45px rgba(10, 20, 15, .42);
+}
+
+
+/* =========================================================
+   TEXTO DE TARJETAS
+   ========================================================= */
+
+.numero-tarjeta {
+    font-family: 'Cinzel', serif;
 
     font-size: 32px;
 
@@ -690,16 +700,13 @@ body.pagina-inicio .portada-contenedor::after {
 }
 
 .etiqueta-tarjeta {
-
     display: block;
 
     margin-top: auto;
 
-    font-family:
-        'Cinzel', serif;
+    font-family: 'Cinzel', serif;
 
     font-size: 23px;
-
     line-height: 1.3;
 
     color: #f3d28b;
@@ -712,13 +719,14 @@ body.pagina-inicio .portada-contenedor::after {
 
 .tarjeta-historia p {
     font-family: 'Montserrat', sans-serif;
+
     font-size: 14px;
     line-height: 1.65;
+
     color: #ead5b2;
 }
 
 .flecha-tarjeta {
-
     margin-top: 25px;
 
     color: #e1b052;
@@ -747,102 +755,124 @@ body.pagina-inicio .portada-contenedor::after {
 
 .integrantes-inicio .encabezado-seccion > p:not(.numero-seccion) {
     max-width: 650px;
+
     font-size: 18px;
     line-height: 1.7;
 }
 
 .tarjetas-integrantes {
     display: grid;
+
     grid-template-columns: repeat(5, 1fr);
+
     gap: 20px;
+
     padding: 8vh 2vw 12vh;
 }
 
 .integrante {
     position: relative;
+
     min-height: 240px;
+
     padding: 30px 28px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     color: #f7e5c1;
     text-decoration: none;
-    background: linear-gradient(145deg, rgba(65, 38, 17, .20), rgba(211, 164, 79, .07));
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(65, 38, 17, .20),
+            rgba(211, 164, 79, .07)
+        );
+
     border: 1px solid rgba(237, 192, 102, .45);
-    box-shadow: inset 0 0 25px rgba(238, 190, 87, .035), 0 10px 30px rgba(20, 10, 4, .18);
+
+    box-shadow:
+        inset 0 0 25px rgba(238, 190, 87, .035),
+        0 10px 30px rgba(20, 10, 4, .18);
+
     transition: .35s ease;
+
     overflow: hidden;
 }
 
 .integrante::before {
     content: "✦";
+
     position: absolute;
+
     left: 50%;
     top: 15px;
+
     transform: translateX(-50%);
+
     color: rgba(232, 184, 86, .55);
+
     font-size: 15px;
 }
 
 .integrante::after {
     content: "𓂀";
+
     position: absolute;
+
     right: 18px;
     top: 15px;
+
     color: rgba(230, 182, 89, .45);
+
     font-size: 20px;
 }
 
 .integrante:hover {
-    background: linear-gradient(145deg, rgba(93, 55, 21, .30), rgba(218, 171, 79, .12));
+    background:
+        linear-gradient(
+            145deg,
+            rgba(93, 55, 21, .30),
+            rgba(218, 171, 79, .12)
+        );
+
     border-color: #dfb45d;
+
     transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, .30), inset 0 0 25px rgba(238, 190, 87, .06);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, .30),
+        inset 0 0 25px rgba(238, 190, 87, .06);
 }
 
 .numero-persona {
     font-family: 'Cinzel', serif;
+
     color: #d9a84f;
+
     font-size: 15px;
     letter-spacing: .18em;
 }
 
 .integrante strong {
     font-family: 'Cinzel', serif;
+
     font-size: clamp(24px, 2vw, 31px);
+
     color: #f1d08b;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, .65);
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .65);
 }
 
 .integrante span:last-child {
     font-size: 15px;
+
     color: #e0c59d;
+
     letter-spacing: .04em;
-}
-
-@media (max-width: 600px) {
-    .integrantes-inicio {
-        padding-top: 75px;
-        padding-bottom: 55px;
-    }
-
-    .integrantes-inicio .encabezado-seccion h2 {
-        font-size: clamp(34px, 10vw, 48px);
-    }
-
-    .integrantes-inicio .encabezado-seccion > p:not(.numero-seccion) {
-        font-size: 15px;
-    }
-
-    .tarjetas-integrantes {
-        padding: 45px 30px 70px;
-        gap: 15px;
-    }
-
-    .integrante {
-        min-height: 170px;
-        padding: 27px 24px;
-    }
 }
 
 
@@ -851,15 +881,12 @@ body.pagina-inicio .portada-contenedor::after {
    ========================================================= */
 
 .instructores-nombres {
-
-    padding:
-        9vh 4vw;
+    padding: 9vh 4vw;
 
     text-align: center;
 }
 
 .instructor-link {
-
     display: inline-flex;
 
     align-items: center;
@@ -868,109 +895,315 @@ body.pagina-inicio .portada-contenedor::after {
 
     margin: 15px;
 
-    padding:
-        18px 28px;
+    padding: 18px 28px;
 
     color: #f7e3bb;
 
     text-decoration: none;
 
-    border:
-        1px solid rgba(230, 182, 91, .45);
+    border: 1px solid rgba(230, 182, 91, .45);
 
-    background:
-        rgba(50, 28, 12, .15);
+    background: rgba(50, 28, 12, .15);
 
     transition: .3s ease;
 }
 
 .instructor-link:hover {
+    background: rgba(75, 43, 16, .25);
 
-    background:
-        rgba(75, 43, 16, .25);
-
-    border-color:
-        #dfaf58;
+    border-color: #dfaf58;
 }
 
 .instructor-icono {
-
-    color:
-        #dfaf58;
-
+    color: #dfaf58;
     font-size: 20px;
 }
 
 .instructor-info {
-
-    font-family:
-        'Cinzel', serif;
+    font-family: 'Cinzel', serif;
 }
 
 .instructor-flecha {
-
-    color:
-        #dfaf58;
+    color: #dfaf58;
 }
 
 
 /* =========================================================
-   FRASE FINAL
+   CITA FINAL
    ========================================================= */
 
 .frase-final {
+    position: relative;
 
     min-height: 65vh;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
-    padding:
-        8vh 10vw;
+    padding: 120px 20px;
 
     text-align: center;
 }
 
-.frase-final blockquote {
+.frase-marco {
+    position: relative;
 
-    max-width: 1000px;
+    width: min(1000px, 100%);
+
+    margin: 0 auto;
+
+    padding: 55px 50px;
+
+    background: rgba(20, 18, 17, .32);
+
+    border-top: 1px solid rgba(212, 175, 55, .45);
+    border-bottom: 1px solid rgba(212, 175, 55, .45);
+
+    box-shadow:
+        0 -20px 60px rgba(0, 0, 0, .12),
+        0 20px 60px rgba(0, 0, 0, .12);
+
+    transition:
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.frase-marco::before,
+.frase-marco::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    border: 1px solid rgba(212, 175, 55, .35);
+}
+
+.frase-marco::before {
+    left: -28px;
+}
+
+.frase-marco::after {
+    right: -28px;
+}
+
+.frase-marco:hover {
+    border-color: rgba(212, 175, 55, .7);
+
+    box-shadow:
+        0 -25px 70px rgba(212, 175, 55, .04),
+        0 25px 70px rgba(0, 0, 0, .18);
+}
+
+
+/* =========================================================
+   ORNAMENTO CITA
+   ========================================================= */
+
+.frase-ornamento-superior {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    color: #d4af37;
+
+    font-size: 18px;
+}
+
+.frase-ornamento-superior::before,
+.frase-ornamento-superior::after {
+    content: "";
+
+    width: 120px;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(212, 175, 55, .65)
+    );
+}
+
+.frase-ornamento-superior::after {
+    background: linear-gradient(
+        90deg,
+        rgba(212, 175, 55, .65),
+        transparent
+    );
+}
+
+.frase-etiqueta {
+    margin: 0 0 22px;
+
+    font-family: 'Cinzel', serif;
+
+    font-size: .68rem;
+    letter-spacing: .38em;
+
+    text-transform: uppercase;
+
+    color: rgba(212, 175, 55, .8);
+}
+
+.frase-marco blockquote {
+    position: relative;
+
+    max-width: 820px;
+
+    margin: 0 auto;
+
+    font-family: 'Cinzel', serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+
+    line-height: 1.55;
+    font-weight: 400;
+
+    color: #f2e6c9;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, .55),
+        0 0 25px rgba(212, 175, 55, .08);
+}
+
+.frase-marco blockquote::before {
+    content: "“";
+
+    position: absolute;
+
+    left: -35px;
+    top: -35px;
+
+    font-family: Georgia, serif;
+    font-size: 5rem;
+
+    color: rgba(212, 175, 55, .16);
+}
+
+.frase-marco blockquote::after {
+    content: "”";
+
+    position: absolute;
+
+    right: -30px;
+    bottom: -55px;
+
+    font-family: Georgia, serif;
+    font-size: 5rem;
+
+    color: rgba(212, 175, 55, .16);
+}
+
+.frase-linea-dorada {
+    position: relative;
+
+    width: 220px;
+    height: 1px;
+
+    margin: 32px auto 22px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+
+.frase-linea-dorada::after {
+    content: "◆";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 0 12px;
+
+    background: #292019;
+
+    color: #d4af37;
+
+    font-size: 8px;
+}
+
+.frase-referencia {
+    display: block;
 
     margin: 0;
 
-    font-family:
-        'Cinzel', serif;
+    font-family: 'Cinzel', serif;
 
-    font-size:
-        clamp(28px, 4vw, 60px);
+    font-size: .82rem;
+    letter-spacing: .3em;
 
-    line-height: 1.35;
+    text-transform: uppercase;
 
-    color: #fff0ca;
-
-    text-shadow:
-        0 4px 18px rgba(0, 0, 0, .80);
+    color: #d4af37;
 }
 
-.frase-final > span {
+.frase-ornamento-inferior {
+    position: relative;
 
-    display: block;
+    width: 260px;
+    height: 20px;
 
-    margin-top: 30px;
+    margin: 25px auto 0;
+}
 
-    font-family:
-        'Montserrat', sans-serif;
+.frase-ornamento-inferior::before {
+    content: "𓂀";
 
-    font-size: 14px;
+    position: absolute;
 
-    letter-spacing: .15em;
+    left: 50%;
+    top: 50%;
 
-    color:
-        #dfb663;
+    transform: translate(-50%, -50%);
+
+    padding: 0 15px;
+
+    background: rgba(20, 18, 17, .35);
+
+    color: rgba(212, 175, 55, .65);
+
+    font-size: 18px;
+}
+
+.frase-ornamento-inferior::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 50%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(212, 175, 55, .35),
+        transparent
+    );
+
+    z-index: -1;
 }
 
 
@@ -979,21 +1212,18 @@ body.pagina-inicio .portada-contenedor::after {
    ========================================================= */
 
 .portada-footer {
-
-    padding:
-        35px 20px;
+    padding: 35px 20px;
 
     text-align: center;
 
-    color:
-        #e0c49a;
+    color: #e0c49a;
 
     font-size: 12px;
+    line-height: 1.8;
 
     letter-spacing: .1em;
 
-    background:
-        rgba(18, 10, 5, .12);
+    background: rgba(18, 10, 5, .12);
 
     border-top:
         1px solid rgba(226, 178, 86, .20);
@@ -1002,7 +1232,6 @@ body.pagina-inicio .portada-contenedor::after {
 
 /* =========================================================
    TABLET GRANDE
-   1100px
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1013,10 +1242,7 @@ body.pagina-inicio .portada-contenedor::after {
 
     .tarjetas-historia,
     .tarjetas-integrantes {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
         gap: 18px;
     }
 
@@ -1025,29 +1251,23 @@ body.pagina-inicio .portada-contenedor::after {
     }
 
     .integrante {
-        min-height: 170px;
+        min-height: 220px;
     }
 
     .hero-inicio {
-
         min-height: 80vh;
-
-        padding:
-            70px 5vw;
+        padding: 70px 5vw;
     }
 
     body.pagina-inicio .portada-contenedor::before,
     body.pagina-inicio .portada-contenedor::after {
-
         display: none;
     }
-
 }
 
 
 /* =========================================================
    TABLET
-   850px
    ========================================================= */
 
 @media (max-width: 850px) {
@@ -1057,128 +1277,133 @@ body.pagina-inicio .portada-contenedor::after {
     }
 
     .hero-inicio {
-
         min-height: 78vh;
-
-        padding:
-            70px 35px 60px;
+        padding: 70px 35px 60px;
     }
 
     .hero-inicio h1 {
-
-        font-size:
-            clamp(55px, 10vw, 90px);
+        font-size: clamp(55px, 10vw, 90px);
     }
 
     .subtitulo {
-
         max-width: 650px;
 
-        font-size:
-            clamp(16px, 2vw, 20px);
+        font-size: clamp(16px, 2vw, 20px);
 
         line-height: 1.6;
     }
 
     .contexto-inicio {
-
-        padding:
-            80px 35px;
+        padding: 80px 35px;
     }
 
     .texto-contexto {
-
         max-width: 100%;
 
         font-size: 17px;
-
         line-height: 1.8;
     }
 
     .tarjetas-historia,
     .tarjetas-integrantes {
-
-        padding:
-            60px 30px;
-
+        padding: 60px 30px;
         gap: 15px;
     }
 
     .tarjeta-historia {
-
         min-height: 260px;
-
-        padding:
-            30px 24px;
+        padding: 30px 24px;
     }
 
     .etiqueta-tarjeta {
-
         font-size: 21px;
     }
 
     .tarjeta-historia p {
-
         font-size: 14px;
-
         line-height: 1.6;
     }
 
     .integrante {
-
-        min-height: 155px;
-
-        padding: 22px;
+        min-height: 200px;
+        padding: 28px 25px;
     }
 
     .integrante strong {
-
         font-size: 22px;
     }
 
     .instructores-nombres {
-
-        padding:
-            70px 25px;
+        padding: 70px 25px;
     }
 
     .frase-final {
-
         min-height: 55vh;
-
-        padding:
-            70px 40px;
+        padding: 80px 30px;
     }
 
+    .frase-marco {
+        padding: 65px 55px;
+    }
+
+    .frase-marco blockquote {
+        font-size: clamp(27px, 5vw, 45px);
+    }
+
+    .frase-marco blockquote::before {
+        left: -35px;
+        font-size: 70px;
+    }
+
+    .frase-marco blockquote::after {
+        right: -30px;
+        font-size: 70px;
+    }
 }
 
 
 /* =========================================================
    CELULAR
-   600px
    ========================================================= */
 
 @media (max-width: 600px) {
 
     body.pagina-inicio {
-
         width: 100%;
-
-        background:
-            transparent !important;
+        background: transparent !important;
     }
 
     body.pagina-inicio .portada-contenedor {
-
         width: 100%;
-
         max-width: 100%;
+
+        margin: 0 auto;
 
         padding: 0 !important;
     }
 
-    .inicio-fondo {
 
+    /* =====================================================
+       MARGEN UNIFICADO
+       ===================================================== */
+
+    .hero-inicio,
+    .contexto-inicio,
+    .seccion-paginas,
+    .integrantes-inicio,
+    .instructores-inicio,
+    .frase-final,
+    .portada-footer {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+
+    /* =====================================================
+       FONDO
+       ===================================================== */
+
+    .inicio-fondo {
         background:
             linear-gradient(
                 to bottom,
@@ -1189,47 +1414,31 @@ body.pagina-inicio .portada-contenedor::after {
             );
     }
 
-
-    /* -------------------------
-       FONDO
-       ------------------------- */
-
     .sol-inicio {
-
         width: 90px;
-
         height: 90px;
 
         top: 8%;
-
         right: 7%;
     }
 
     .palmera {
-
         font-size: 65px;
-
         opacity: .60;
     }
 
     .palmera-izquierda {
-
         left: -12px;
-
         bottom: 12%;
     }
 
     .palmera-derecha {
-
         right: -12px;
-
         bottom: 15%;
     }
 
     .caravana-inicio {
-
         bottom: 23%;
-
         font-size: 20px;
     }
 
@@ -1246,279 +1455,268 @@ body.pagina-inicio .portada-contenedor::after {
     }
 
 
-    /* -------------------------
+    /* =====================================================
        HERO
-       ------------------------- */
+       ===================================================== */
 
     .hero-inicio {
-
         min-height: 78vh;
 
-        padding:
-            80px 20px 60px;
+        padding-top: 80px;
+        padding-bottom: 60px;
     }
 
     .eyebrow {
-
         max-width: 100%;
 
         margin-bottom: 18px;
 
         font-size: 10px;
-
         line-height: 1.6;
-
         letter-spacing: .20em;
     }
 
     .hero-inicio h1 {
-
-        font-size:
-            clamp(48px, 15vw, 75px);
+        font-size: clamp(48px, 15vw, 75px);
 
         line-height: .98;
-
         letter-spacing: .015em;
     }
 
     .subtitulo {
-
-        max-width: 330px;
+        max-width: 100%;
 
         margin-top: 25px;
 
         font-size: 15px;
-
         line-height: 1.6;
-
         letter-spacing: .04em;
     }
 
     .ornamento {
-
-        margin:
-            24px 0;
+        margin: 24px 0;
 
         font-size: 16px;
-
         letter-spacing: 5px;
 
         white-space: nowrap;
     }
 
     .boton-inicio {
-
         width: min(100%, 300px);
 
         min-height: 54px;
 
-        padding:
-            14px 20px;
+        padding: 14px 20px;
 
         font-size: 11px;
-
         letter-spacing: .12em;
 
         text-align: center;
     }
 
+    .botones-inicio {
+        width: 100%;
 
-    /* -------------------------
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-top: 25px;
+    }
+
+    .botones-inicio .boton-inicio {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    /* =====================================================
        CONTEXTO
-       ------------------------- */
+       ===================================================== */
 
     .contexto-inicio {
-
         min-height: auto;
 
-        padding:
-            75px 30px;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 
     .numero-seccion {
-
         font-size: 12px;
-
         letter-spacing: .20em;
     }
 
     .encabezado-seccion {
+        margin: 10px 0 25px;
 
-        margin:
-            10px 0 25px;
-
-        font-size:
-            clamp(28px, 9vw, 42px);
-
+        font-size: clamp(28px, 9vw, 42px);
         line-height: 1.15;
     }
 
     .encabezado-seccion > p:not(.numero-seccion) {
-
         font-size: 14px;
-
         line-height: 1.6;
     }
 
     .linea-dorada {
-
         width: 75px;
 
         margin-bottom: 25px;
     }
 
     .texto-contexto {
-
         font-size: 15px;
-
         line-height: 1.75;
     }
 
 
-    /* -------------------------
+    /* =====================================================
        HISTORIA
-       ------------------------- */
+       ===================================================== */
 
     .tarjetas-historia {
-
         grid-template-columns: 1fr;
 
+        width: 100%;
+
         padding:
-            35px 30px 60px;
+            35px 0 60px;
 
         gap: 15px;
     }
 
     .tarjeta-historia {
-
         width: 100%;
 
         min-height: 210px;
 
-        padding:
-            28px 24px;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(91, 57, 28, .22),
-                rgba(205, 157, 76, .06)
-            );
+        padding: 28px 24px;
     }
 
     .tarjeta-historia::before {
-
         font-size: 12px;
-
         letter-spacing: 5px;
     }
 
     .tarjeta-historia::after {
-
         right: 12px;
-
         bottom: 8px;
 
         font-size: 17px;
     }
 
     .numero-tarjeta {
-
         font-size: 27px;
     }
 
     .etiqueta-tarjeta {
-
         font-size: 20px;
-
         line-height: 1.25;
     }
 
     .tarjeta-historia p {
-
-        margin:
-            8px 0 0;
+        margin: 8px 0 0;
 
         font-size: 13px;
-
         line-height: 1.6;
     }
 
     .flecha-tarjeta {
-
         margin-top: 18px;
 
         font-size: 22px;
     }
 
-
-    /* -------------------------
-       INTEGRANTES
-       ------------------------- */
-
-    .tarjetas-integrantes {
-
-        grid-template-columns: 1fr;
-
-        padding:
-            35px 30px 60px;
-
-        gap: 12px;
+    .tarjeta-pueblo {
+        background:
+            linear-gradient(
+                135deg,
+                rgba(43, 62, 55, .78),
+                rgba(93, 116, 101, .48),
+                rgba(184, 164, 112, .20)
+            );
     }
 
-    .integrante {
+
+    /* =====================================================
+       INTEGRANTES
+       ===================================================== */
+
+    .integrantes-inicio {
+        padding-top: 75px;
+        padding-bottom: 55px;
+    }
+
+    .integrantes-inicio .encabezado-seccion h2 {
+        font-size: clamp(34px, 10vw, 48px);
+    }
+
+    .integrantes-inicio .encabezado-seccion > p:not(.numero-seccion) {
+        font-size: 15px;
+    }
+
+    .tarjetas-integrantes {
+        grid-template-columns: 1fr;
 
         width: 100%;
 
-        min-height: 125px;
-
         padding:
-            22px;
+            45px 0 70px;
+
+        gap: 15px;
+    }
+
+    .integrante {
+        width: 100%;
+
+        min-height: 170px;
+
+        padding: 27px 24px;
     }
 
     .integrante strong {
-
         font-size: 21px;
     }
 
     .integrante span:last-child {
-
         font-size: 13px;
     }
 
     .numero-persona {
-
         font-size: 12px;
     }
 
 
-    /* -------------------------
+    /* =====================================================
        INSTRUCTORES
-       ------------------------- */
+       ===================================================== */
+
+    .instructores-inicio {
+        width: 100%;
+
+        padding-top: 75px;
+        padding-bottom: 60px;
+    }
 
     .instructores-nombres {
-
         width: 100%;
 
         padding:
-            45px 30px 65px;
+            45px 0 65px;
+
+        text-align: center;
     }
 
     .instructor-link {
-
         width: 100%;
-
-        max-width: 420px;
+        max-width: 100%;
 
         min-height: 58px;
 
-        margin:
-            7px 0;
+        margin: 7px 0;
 
-        padding:
-            15px 18px;
-
-        box-sizing: border-box;
+        padding: 15px 18px;
 
         justify-content: space-between;
 
@@ -1528,28 +1726,25 @@ body.pagina-inicio .portada-contenedor::after {
     }
 
     .instructor-icono {
+        flex-shrink: 0;
 
         font-size: 17px;
     }
 
     .instructor-info {
-
         flex: 1;
 
         min-width: 0;
     }
 
     .instructor-info strong {
-
         display: block;
 
         font-size: 15px;
-
         line-height: 1.3;
     }
 
     .instructor-info small {
-
         display: block;
 
         margin-top: 3px;
@@ -1557,155 +1752,206 @@ body.pagina-inicio .portada-contenedor::after {
         font-size: 11px;
     }
 
+    .instructor-flecha {
+        flex-shrink: 0;
+    }
 
-    /* -------------------------
-       FRASE FINAL
-       ------------------------- */
+
+    /* =====================================================
+       CITA FINAL
+       ===================================================== */
 
     .frase-final {
+        min-height: 65vh;
 
-        min-height: 55vh;
-
-        padding:
-            60px 30px;
+        padding-top: 65px;
+        padding-bottom: 65px;
     }
 
-    .frase-final .ornamento {
+    .frase-marco {
+        width: 100%;
 
-        margin:
-            0 0 25px;
-
-        font-size: 22px;
+        padding: 45px 28px;
     }
 
-    .frase-final blockquote {
-
-        max-width: 350px;
-
-        font-size:
-            clamp(25px, 8vw, 34px);
-
-        line-height: 1.35;
+    .frase-marco::before,
+    .frase-marco::after {
+        width: 35px;
+        height: 35px;
     }
 
-    .frase-final > span {
-
-        margin-top: 25px;
-
-        font-size: 11px;
-
-        letter-spacing: .12em;
+    .frase-marco::before {
+        left: -18px;
     }
 
+    .frase-marco::after {
+        right: -18px;
+    }
 
-    /* -------------------------
-       FOOTER
-       ------------------------- */
+    .frase-ornamento-superior {
+        margin-bottom: 20px;
 
-    .portada-footer {
+        font-size: 14px;
 
-        padding:
-            30px 20px;
+        letter-spacing: 4px;
+    }
+
+    .frase-ornamento-superior::before,
+    .frase-ornamento-superior::after {
+        width: 40px;
+    }
+
+    .frase-etiqueta {
+        margin-bottom: 24px;
 
         font-size: 9px;
 
+        letter-spacing: .25em;
+    }
+
+    .frase-marco blockquote {
+        font-size: clamp(24px, 8vw, 34px);
+
+        line-height: 1.45;
+    }
+
+    .frase-marco blockquote::before {
+        left: -15px;
+        top: -30px;
+
+        font-size: 4rem;
+    }
+
+    .frase-marco blockquote::after {
+        right: -12px;
+        bottom: -45px;
+
+        font-size: 4rem;
+    }
+
+    .frase-linea-dorada {
+        width: 80px;
+
+        margin-top: 30px;
+    }
+
+    .frase-referencia {
+        font-size: .7rem;
+
+        letter-spacing: .15em;
+    }
+
+    .frase-ornamento-inferior {
+        margin-top: 25px;
+
+        font-size: 15px;
+
+        letter-spacing: 5px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .portada-footer {
+        width: 100%;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        font-size: 9px;
         line-height: 1.8;
 
         letter-spacing: .08em;
     }
-
 }
 
 
 /* =========================================================
    CELULAR MUY PEQUEÑO
-   380px
    ========================================================= */
 
 @media (max-width: 380px) {
 
-    .hero-inicio {
+    .hero-inicio,
+    .contexto-inicio,
+    .seccion-paginas,
+    .integrantes-inicio,
+    .instructores-inicio,
+    .frase-final,
+    .portada-footer {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
 
+    .hero-inicio {
         min-height: 75vh;
 
-        padding:
-            65px 15px 50px;
+        padding-top: 65px;
+        padding-bottom: 50px;
     }
 
     .hero-inicio h1 {
-
-        font-size:
-            clamp(43px, 14vw, 60px);
+        font-size: clamp(43px, 14vw, 60px);
     }
 
     .eyebrow {
-
         font-size: 9px;
-
         letter-spacing: .16em;
     }
 
     .subtitulo {
-
         font-size: 14px;
     }
 
     .ornamento {
-
         font-size: 14px;
-
         letter-spacing: 3px;
     }
 
     .boton-inicio {
-
         font-size: 10px;
-
-        padding:
-            13px 15px;
+        padding: 13px 15px;
     }
 
     .contexto-inicio {
-
-        padding:
-            60px 30px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     .tarjetas-historia,
-    .tarjetas-integrantes {
-
-        padding-left: 30px;
-
-        padding-right: 30px;
+    .tarjetas-integrantes,
+    .instructores-nombres {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .tarjeta-historia {
-
         min-height: 200px;
 
-        padding:
-            25px 20px;
+        padding: 25px 20px;
     }
 
     .integrante {
+        min-height: 160px;
 
-        min-height: 115px;
-
-        padding:
-            20px;
+        padding: 24px 20px;
     }
 
     .frase-final {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
 
-        padding:
-            55px 30px;
+    .frase-marco {
+        padding-left: 22px;
+        padding-right: 22px;
     }
 
     .frase-final blockquote {
-
         font-size: 24px;
     }
-
 }
 
 
@@ -1716,273 +1962,30 @@ body.pagina-inicio .portada-contenedor::after {
 @media (max-width: 850px) and (orientation: landscape) {
 
     .hero-inicio {
-
         min-height: 100vh;
 
-        padding:
-            45px 30px;
+        padding: 45px 30px;
     }
 
     .hero-inicio h1 {
-
-        font-size:
-            clamp(45px, 9vw, 75px);
+        font-size: clamp(45px, 9vw, 75px);
     }
 
     .subtitulo {
-
         margin-top: 15px;
 
         font-size: 14px;
     }
 
     .ornamento {
-
-        margin:
-            15px 0;
+        margin: 15px 0;
 
         font-size: 15px;
     }
 
     .boton-inicio {
-
         min-height: 45px;
 
-        padding:
-            10px 25px;
+        padding: 10px 25px;
     }
-
-}
-
-/* =========================================================
-   AJUSTES FINALES — INTEGRANTES GRANDES + CARAVANA AL REVÉS
-   ========================================================= */
-
-@keyframes caravana {
-    from {
-        transform: translateX(0) scaleX(-1);
-    }
-    to {
-        transform: translateX(145vw) scaleX(-1);
-    }
-}
-
-.integrantes-inicio {
-    padding-top: 10vh;
-    padding-bottom: 8vh;
-}
-
-.integrantes-inicio .encabezado-seccion h2 {
-    font-size: clamp(42px, 5vw, 78px);
-    line-height: 1.05;
-}
-
-.tarjetas-integrantes {
-    gap: 20px;
-    padding: 8vh 2vw 12vh;
-}
-
-.integrante {
-    min-height: 240px;
-    padding: 30px 28px;
-    background: linear-gradient(145deg, rgba(65, 38, 17, .20), rgba(211, 164, 79, .07));
-    border: 1px solid rgba(237, 192, 102, .45);
-    box-shadow: inset 0 0 25px rgba(238, 190, 87, .035), 0 10px 30px rgba(20, 10, 4, .18);
-}
-
-.integrante::before {
-    content: "✦";
-    position: absolute;
-    left: 50%;
-    top: 15px;
-    transform: translateX(-50%);
-    color: rgba(232, 184, 86, .55);
-    font-size: 15px;
-}
-
-.integrante strong {
-    font-size: clamp(24px, 2vw, 31px);
-}
-
-@media (max-width: 1100px) {
-    .integrante {
-        min-height: 220px;
-    }
-}
-
-@media (max-width: 850px) {
-    .integrante {
-        min-height: 200px;
-        padding: 28px 25px;
-    }
-}
-
-@media (max-width: 600px) {
-    .integrantes-inicio {
-        padding-top: 75px;
-        padding-bottom: 55px;
-    }
-
-    .integrantes-inicio .encabezado-seccion h2 {
-        font-size: clamp(34px, 10vw, 48px);
-    }
-
-    .tarjetas-integrantes {
-        padding: 45px 30px 70px;
-        gap: 15px;
-    }
-
-    .integrante {
-        min-height: 170px;
-        padding: 27px 24px;
-    }
-}
-
-@media (max-width: 380px) {
-    .integrante {
-        min-height: 160px;
-        padding: 24px 20px;
-    }
-}
-
-.frase-final .boton-inicio {
-    margin-top: 45px;
-}
-
-
-/* =========================================================
-   AJUSTE DEFINITIVO — MARGEN LATERAL UNIFICADO
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    /* ==========================================
-       MARGEN GENERAL DE TODAS LAS SECCIONES
-       ========================================== */
-
-    .hero-inicio,
-    .contexto-inicio,
-    .seccion-paginas,
-    .integrantes-inicio,
-    .instructores-inicio,
-    .frase-final,
-    .portada-footer {
-
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-    }
-
-
-    /* ==========================================
-       CONTENEDORES INTERNOS
-       No agregan otro margen lateral
-       ========================================== */
-
-    .tarjetas-historia,
-    .tarjetas-integrantes,
-    .instructores-nombres {
-
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-
-    /* ==========================================
-       BOTONES
-       ========================================== */
-
-    .boton-inicio {
-
-        max-width: 300px;
-
-        width: 100%;
-    }
-
-
-    /* ==========================================
-       TARJETAS
-       ========================================== */
-
-    .tarjeta-historia,
-    .integrante {
-
-        width: 100%;
-    }
-
-
-    /* ==========================================
-       INSTRUCTORES
-       ========================================== */
-
-    .instructor-link {
-
-        width: 100%;
-        max-width: none;
-    }
-
-
-    /* ==========================================
-       TEXTO DEL HERO
-       ========================================== */
-
-    .subtitulo {
-
-        max-width: 100%;
-    }
-
-
-    /* ==========================================
-       FRASE FINAL
-       ========================================== */
-
-    .frase-final blockquote {
-
-        max-width: 100%;
-    }
-}
-
-
-/* =========================================================
-   CELULAR MUY PEQUEÑO
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .hero-inicio,
-    .contexto-inicio,
-    .seccion-paginas,
-    .integrantes-inicio,
-    .instructores-inicio,
-    .frase-final,
-    .portada-footer {
-
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-    }
-
-
-    .tarjetas-historia,
-    .tarjetas-integrantes,
-    .instructores-nombres {
-
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-
-    .tarjeta-historia,
-    .integrante,
-    .instructor-link {
-
-        width: 100%;
-    }
-}
-
-
-/* =========================================================
-   SEPARACIÓN DEL ÚLTIMO BOTÓN
-   ========================================================= */
-
-.frase-final .boton-inicio {
-    margin-top: 45px;
 }

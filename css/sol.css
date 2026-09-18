@@ -1,0 +1,1262 @@
+/* =========================================================
+   SOL MEDINA LUCÍA · CATEQUESIS 2026
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: #f8eee0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #160f0b 0%,
+            #2b1b12 38%,
+            #56351d 72%,
+            #8b5a2b 100%
+        );
+}
+
+
+/* =========================================================
+   FONDO
+   ========================================================= */
+
+.cielo {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 218, 150, 0.18),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #120c09 0%,
+            #24150e 35%,
+            #4a2b18 70%,
+            #7b4b25 100%
+        );
+}
+
+.brillo-celestial {
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 30%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 225, 169, 0.25) 0%,
+            rgba(255, 193, 106, 0.12) 30%,
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    animation: respirar-brillo 7s ease-in-out infinite;
+}
+
+@keyframes respirar-brillo {
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   LUNA
+   ========================================================= */
+
+.luna {
+    position: absolute;
+
+    top: 10%;
+    right: 13%;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff9df,
+            #f5d99b 48%,
+            #c99652 100%
+        );
+
+    box-shadow:
+        0 0 25px rgba(255, 218, 150, 0.45),
+        0 0 80px rgba(255, 190, 90, 0.2);
+
+    animation: flotar-luna 8s ease-in-out infinite;
+}
+
+@keyframes flotar-luna {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 224, 165, 0.65) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.45) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        95px 95px,
+        145px 145px,
+        210px 210px;
+
+    background-position:
+        15px 20px,
+        60px 80px,
+        120px 30px;
+
+    opacity: 0.55;
+
+    animation: mover-estrellas 35s linear infinite;
+}
+
+@keyframes mover-estrellas {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(70px);
+    }
+}
+
+
+/* =========================================================
+   NUBES
+   ========================================================= */
+
+.nube {
+    position: absolute;
+
+    width: 280px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 232, 196, 0.055);
+
+    filter: blur(18px);
+
+    opacity: 0.8;
+}
+
+.nube::before,
+.nube::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.nube::before {
+    width: 120px;
+    height: 100px;
+
+    left: 45px;
+    bottom: 15px;
+}
+
+.nube::after {
+    width: 150px;
+    height: 110px;
+
+    right: 35px;
+    bottom: 5px;
+}
+
+.nube-1 {
+    top: 18%;
+    left: -100px;
+
+    animation: nube-mover-1 45s linear infinite;
+}
+
+.nube-2 {
+    top: 40%;
+    right: -150px;
+
+    transform: scale(0.8);
+
+    animation: nube-mover-2 55s linear infinite;
+}
+
+.nube-3 {
+    top: 65%;
+    left: -200px;
+
+    transform: scale(1.15);
+
+    animation: nube-mover-1 65s linear infinite;
+}
+
+@keyframes nube-mover-1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 400px));
+    }
+}
+
+@keyframes nube-mover-2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100vw - 400px));
+    }
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+   ========================================================= */
+
+.particulas {
+    position: absolute;
+    inset: 0;
+}
+
+.particulas span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffe5ae;
+
+    box-shadow:
+        0 0 10px rgba(255, 215, 145, 0.8);
+
+    opacity: 0.45;
+
+    animation: particula-flotar 8s ease-in-out infinite;
+}
+
+.particulas span:nth-child(1) {
+    left: 8%;
+    top: 25%;
+}
+
+.particulas span:nth-child(2) {
+    left: 18%;
+    top: 65%;
+    animation-delay: 1s;
+}
+
+.particulas span:nth-child(3) {
+    left: 29%;
+    top: 35%;
+    animation-delay: 2s;
+}
+
+.particulas span:nth-child(4) {
+    left: 41%;
+    top: 75%;
+    animation-delay: 3s;
+}
+
+.particulas span:nth-child(5) {
+    left: 53%;
+    top: 20%;
+    animation-delay: 4s;
+}
+
+.particulas span:nth-child(6) {
+    left: 64%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.particulas span:nth-child(7) {
+    left: 75%;
+    top: 32%;
+    animation-delay: 1s;
+}
+
+.particulas span:nth-child(8) {
+    left: 87%;
+    top: 70%;
+    animation-delay: 3s;
+}
+
+.particulas span:nth-child(9) {
+    left: 12%;
+    top: 82%;
+    animation-delay: 4s;
+}
+
+.particulas span:nth-child(10) {
+    left: 35%;
+    top: 15%;
+    animation-delay: 2s;
+}
+
+.particulas span:nth-child(11) {
+    left: 70%;
+    top: 80%;
+    animation-delay: 5s;
+}
+
+.particulas span:nth-child(12) {
+    left: 92%;
+    top: 45%;
+    animation-delay: 1s;
+}
+
+@keyframes particula-flotar {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-25px);
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================================
+   DESTELLOS
+   ========================================================= */
+
+.destellos span {
+    position: absolute;
+
+    color: rgba(255, 221, 163, 0.45);
+
+    font-size: 20px;
+
+    animation: destello 4s ease-in-out infinite;
+}
+
+.destellos span:nth-child(1) {
+    top: 20%;
+    left: 25%;
+}
+
+.destellos span:nth-child(2) {
+    top: 34%;
+    right: 27%;
+    animation-delay: 1s;
+}
+
+.destellos span:nth-child(3) {
+    top: 55%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.destellos span:nth-child(4) {
+    top: 70%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+.destellos span:nth-child(5) {
+    top: 82%;
+    left: 45%;
+    animation-delay: 1.5s;
+}
+
+@keyframes destello {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.perfil-contenedor {
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    padding: 70px 0 35px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.perfil-header {
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+.perfil-numero {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    color: #e2b96d;
+
+    margin-bottom: 20px;
+}
+
+.ornamento-perfil {
+    color: #d8aa5c;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.8;
+}
+
+.perfil-header h1 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    line-height: 1.1;
+
+    color: #f8ead3;
+
+    text-shadow:
+        0 3px 25px rgba(0, 0, 0, 0.5);
+}
+
+.edad {
+    margin-top: 18px;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 6px;
+
+    color: #dcb36c;
+}
+
+
+/* =========================================================
+   PERFIL PRINCIPAL
+   ========================================================= */
+
+.perfil-principal {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 90px;
+
+    margin-bottom: 70px;
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.foto-contenedor {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.halo-foto {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(237, 191, 103, 0.24),
+            transparent 68%
+        );
+
+    filter: blur(15px);
+
+    animation: halo-respirar 6s ease-in-out infinite;
+}
+
+@keyframes halo-respirar {
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+.marco-foto {
+    position: relative;
+
+    width: min(390px, 80vw);
+
+    aspect-ratio: 3 / 4;
+
+    padding: 8px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b6a2f,
+            #f3d38d,
+            #a87332,
+            #e6bf72
+        );
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(218, 166, 79, 0.18);
+
+    overflow: hidden;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.brillo-foto {
+    position: absolute;
+
+    top: -100%;
+    left: -80%;
+
+    width: 70%;
+    height: 250%;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+
+    transform: rotate(25deg);
+
+    animation: brillo-foto 6s ease-in-out infinite;
+}
+
+@keyframes brillo-foto {
+    0% {
+        left: -100%;
+    }
+
+    35%,
+    100% {
+        left: 150%;
+    }
+}
+
+.decoracion-foto {
+    position: absolute;
+
+    color: #f0ca79;
+
+    font-size: 30px;
+
+    text-shadow:
+        0 0 15px rgba(255, 205, 110, 0.5);
+
+    z-index: 3;
+}
+
+.decoracion-1 {
+    top: 8%;
+    left: 4%;
+
+    animation: flotar-decoracion 4s ease-in-out infinite;
+}
+
+.decoracion-2 {
+    bottom: 8%;
+    right: 4%;
+
+    animation: flotar-decoracion 4s ease-in-out infinite reverse;
+}
+
+@keyframes flotar-decoracion {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.informacion {
+    padding: 10px 0;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: #dcb66f;
+
+    margin-bottom: 16px;
+}
+
+.informacion h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    font-weight: 500;
+
+    color: #f7e8cf;
+
+    margin-bottom: 15px;
+}
+
+.linea-dorada {
+    width: 90px;
+    height: 2px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d8a84f,
+            transparent
+        );
+}
+
+.descripcion {
+    max-width: 650px;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    color: rgba(248, 235, 216, 0.78);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   INTERESES
+   ========================================================= */
+
+.intereses {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.interes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    border: 1px solid rgba(218, 177, 103, 0.22);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.interes:hover {
+    transform: translateX(8px);
+
+    border-color: rgba(232, 192, 116, 0.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 221, 160, 0.1),
+            rgba(255, 255, 255, 0.035)
+        );
+}
+
+.icono {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(217, 168, 86, 0.1);
+
+    border: 1px solid rgba(224, 183, 104, 0.3);
+
+    font-size: 23px;
+}
+
+.interes strong {
+    display: block;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    color: #f3d9a5;
+
+    margin-bottom: 5px;
+}
+
+.interes p {
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+
+    color: rgba(248, 235, 216, 0.65);
+}
+
+
+/* =========================================================
+   DATO CURIOSO
+   ========================================================= */
+
+.dato-curioso {
+    position: relative;
+
+    text-align: center;
+
+    padding: 55px 30px;
+
+    margin-bottom: 60px;
+
+    border-top: 1px solid rgba(221, 180, 101, 0.22);
+    border-bottom: 1px solid rgba(221, 180, 101, 0.22);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(218, 171, 89, 0.08),
+            transparent 70%
+        );
+}
+
+.destello-dato {
+    margin-bottom: 15px;
+
+    color: #e0b76a;
+
+    font-size: 25px;
+
+    animation: destello-dato 3s ease-in-out infinite;
+}
+
+@keyframes destello-dato {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+.dato-curioso h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(1.8rem, 4vw, 3rem);
+
+    font-weight: 500;
+
+    color: #f4dfb8;
+
+    margin-bottom: 15px;
+}
+
+.dato-curioso p {
+    color: rgba(248, 235, 216, 0.7);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   REDES
+   ========================================================= */
+
+.redes {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 65px;
+}
+
+.instagram {
+    width: min(500px, 100%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 22px;
+
+    text-decoration: none;
+
+    color: #f5e6cc;
+
+    border: 1px solid rgba(222, 177, 96, 0.28);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.instagram:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(239, 199, 122, 0.65);
+
+    background: rgba(255, 222, 163, 0.08);
+}
+
+.instagram-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(238, 198, 119, 0.4);
+
+    color: #e8bf70;
+
+    font-size: 25px;
+}
+
+.instagram-text {
+    flex: 1;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1px;
+}
+
+.instagram-flecha {
+    color: #ddb367;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.navegacion-perfil {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 50px;
+}
+
+.boton-perfil {
+    min-width: 210px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 22px;
+
+    border: 1px solid rgba(221, 177, 98, 0.35);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    color: #f4e4c9;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 0.78rem;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton-perfil:hover {
+    transform: translateY(-4px);
+
+    background: rgba(226, 181, 98, 0.12);
+
+    border-color: rgba(239, 201, 127, 0.7);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.boton-perfil span {
+    color: #e0b665;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   CIERRE
+   ========================================================= */
+
+.cierre-perfil {
+    text-align: center;
+
+    padding-top: 10px;
+}
+
+.cierre-perfil .ornamento-perfil {
+    margin-bottom: 15px;
+}
+
+.cierre-perfil p {
+    font-size: 0.65rem;
+
+    letter-spacing: 4px;
+
+    color: rgba(235, 208, 165, 0.45);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .perfil-principal {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .foto-contenedor {
+        order: 1;
+    }
+
+    .informacion {
+        order: 2;
+
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+    .perfil-header {
+        margin-bottom: 50px;
+    }
+
+    .perfil-contenedor {
+        padding-top: 50px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .perfil-contenedor {
+        width: 90%;
+
+        padding-top: 40px;
+    }
+
+    .perfil-header h1 {
+        font-size: 2.5rem;
+
+        letter-spacing: 1px;
+    }
+
+    .perfil-numero {
+        letter-spacing: 3px;
+    }
+
+    .edad {
+        letter-spacing: 4px;
+    }
+
+    .halo-foto {
+        width: 330px;
+        height: 330px;
+    }
+
+    .marco-foto {
+        width: min(330px, 82vw);
+    }
+
+    .descripcion {
+        font-size: 0.9rem;
+
+        line-height: 1.8;
+    }
+
+    .interes {
+        padding: 15px;
+    }
+
+    .dato-curioso {
+        padding: 45px 20px;
+    }
+
+    .instagram {
+        padding: 15px;
+    }
+
+    .navegacion-perfil {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .boton-perfil {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .luna {
+        width: 65px;
+        height: 65px;
+
+        right: 8%;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .perfil-header h1 {
+        font-size: 2.1rem;
+    }
+
+    .marco-foto {
+        width: 280px;
+    }
+
+    .halo-foto {
+        width: 290px;
+        height: 290px;
+    }
+
+    .interes {
+        gap: 12px;
+    }
+
+    .icono {
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+    .interes strong {
+        font-size: 0.9rem;
+    }
+
+    .interes p {
+        font-size: 0.78rem;
+    }
+}
