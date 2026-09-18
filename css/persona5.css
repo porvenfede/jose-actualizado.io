@@ -3,7 +3,6 @@
    La Historia de José · Catequesis 2026
    ========================================================= */
 
-
 /* =========================================================
    VARIABLES
    ========================================================= */
@@ -12,23 +11,17 @@
     --verde-nilo: #3f8f72;
     --verde-profundo: #173d35;
     --verde-suave: #6fb59b;
-
     --celeste-nilo: #79c9d8;
     --celeste-claro: #b9edf2;
-
     --amarillo: #e4bd4f;
     --amarillo-claro: #f5dc82;
     --amarillo-brillante: #fff1ad;
-
     --blanco-hueso: #faf7ea;
     --blanco-celestial: #fffdf5;
-
     --texto-perdon: #dedfce;
-
     --azul-nilo: #123c48;
     --azul-noche: #071b22;
 }
-
 
 /* =========================================================
    GENERAL
@@ -41,20 +34,14 @@ html {
 body.capitulo-cinco {
     margin: 0;
     min-height: 100vh;
-
     overflow-x: hidden;
-
     color: var(--blanco-hueso);
-
     font-family: "Montserrat", sans-serif;
-
     background: #071b22;
-
     transition:
         background 1s ease,
         filter 1s ease;
 }
-
 
 /* =========================================================
    ESCENA DEL NILO
@@ -63,13 +50,9 @@ body.capitulo-cinco {
 .escena-perdon {
     position: fixed;
     inset: 0;
-
     z-index: 0;
-
     overflow: hidden;
-
     pointer-events: none;
-
     background:
         linear-gradient(
             180deg,
@@ -78,12 +61,10 @@ body.capitulo-cinco {
             #2c6759 72%,
             #b39a57 100%
         );
-
     transition:
         filter 1.2s ease,
         opacity 1.2s ease;
 }
-
 
 /* =========================================================
    CIELO
@@ -92,7 +73,6 @@ body.capitulo-cinco {
 .cielo-perdon {
     position: absolute;
     inset: 0;
-
     background:
         radial-gradient(
             circle at 50% 25%,
@@ -106,22 +86,17 @@ body.capitulo-cinco {
         );
 }
 
-
 /* =========================================================
    SOL
    ========================================================= */
 
 .sol-perdon {
     position: absolute;
-
     top: 9%;
     right: 13%;
-
     width: 130px;
     height: 130px;
-
     border-radius: 50%;
-
     background:
         radial-gradient(
             circle,
@@ -130,14 +105,11 @@ body.capitulo-cinco {
             var(--amarillo) 72%,
             rgba(228, 189, 79, 0.25) 100%
         );
-
     box-shadow:
         0 0 35px rgba(255, 241, 173, 0.5),
         0 0 100px rgba(228, 189, 79, 0.25);
-
     opacity: 0.9;
 }
-
 
 /* =========================================================
    MONTAÑAS
@@ -145,13 +117,10 @@ body.capitulo-cinco {
 
 .montanas-perdon {
     position: absolute;
-
     left: 0;
     right: 0;
     bottom: 32%;
-
     height: 30%;
-
     background:
         linear-gradient(
             135deg,
@@ -167,22 +136,17 @@ body.capitulo-cinco {
         );
 }
 
-
 /* =========================================================
    NILO
    ========================================================= */
 
 .nilo-perdon {
     position: absolute;
-
     left: 28%;
     right: 28%;
     bottom: 0;
-
     height: 62%;
-
     border-radius: 50% 50% 0 0;
-
     background:
         linear-gradient(
             180deg,
@@ -190,13 +154,10 @@ body.capitulo-cinco {
             #287a88 45%,
             #14505c 100%
         );
-
     transform: perspective(700px) rotateX(8deg);
-
     box-shadow:
         0 -15px 50px rgba(121, 201, 216, 0.18);
 }
-
 
 /* =========================================================
    REFLEJO DEL NILO
@@ -204,25 +165,19 @@ body.capitulo-cinco {
 
 .reflejo-nilo {
     position: absolute;
-
     top: 8%;
     left: 15%;
     right: 15%;
-
     height: 70%;
-
     background:
         repeating-linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.18) 0 2px,
             transparent 2px 18px
         );
-
     opacity: 0.35;
-
     filter: blur(1px);
 }
-
 
 /* =========================================================
    ORILLAS
@@ -231,12 +186,9 @@ body.capitulo-cinco {
 .orilla-izquierda,
 .orilla-derecha {
     position: absolute;
-
     bottom: 0;
-
     width: 38%;
     height: 35%;
-
     background:
         linear-gradient(
             180deg,
@@ -248,20 +200,15 @@ body.capitulo-cinco {
 
 .orilla-izquierda {
     left: -7%;
-
     border-radius: 0 80% 0 0;
-
     transform: rotate(-4deg);
 }
 
 .orilla-derecha {
     right: -7%;
-
     border-radius: 80% 0 0 0;
-
     transform: rotate(4deg);
 }
-
 
 /* =========================================================
    VEGETACIÓN
@@ -269,15 +216,10 @@ body.capitulo-cinco {
 
 .vegetacion-nilo {
     position: absolute;
-
     z-index: 5;
-
     color: var(--verde-suave);
-
     font-size: 5rem;
-
     opacity: 0.75;
-
     filter:
         drop-shadow(0 8px 10px rgba(0, 0, 0, 0.35));
 }
@@ -290,17 +232,14 @@ body.capitulo-cinco {
 .vegetacion-2 {
     left: 17%;
     bottom: 12%;
-
     transform: scale(0.7);
 }
 
 .vegetacion-3 {
     right: 13%;
     bottom: 15%;
-
     transform: scale(0.8);
 }
-
 
 /* =========================================================
    PALMERAS
@@ -308,16 +247,11 @@ body.capitulo-cinco {
 
 .palmera-perdon {
     position: absolute;
-
     z-index: 6;
-
     bottom: 17%;
-
     font-size: 7rem;
     line-height: 1;
-
     opacity: 0.78;
-
     filter:
         drop-shadow(0 10px 12px rgba(0, 0, 0, 0.4))
         saturate(0.75);
@@ -325,24 +259,19 @@ body.capitulo-cinco {
 
 .palmera-1 {
     left: 2%;
-
     transform: scale(0.78);
 }
 
 .palmera-2 {
     right: 3%;
-
     transform: scale(0.7);
 }
 
 .palmera-3 {
     right: 19%;
-
     bottom: 14%;
-
     transform: scale(0.48);
 }
-
 
 /* =========================================================
    BARCA
@@ -350,27 +279,19 @@ body.capitulo-cinco {
 
 .barca-nilo {
     position: absolute;
-
     z-index: 8;
-
     left: 47%;
     bottom: 30%;
-
     color: var(--blanco-hueso);
-
     font-size: 3rem;
-
     opacity: 0.72;
-
     filter:
         drop-shadow(0 7px 8px rgba(0, 0, 0, 0.4));
-
     animation:
         movimientoBarca 7s ease-in-out infinite;
 }
 
 @keyframes movimientoBarca {
-
     0%,
     100% {
         transform: translateX(-10px);
@@ -381,66 +302,48 @@ body.capitulo-cinco {
     }
 }
 
-
 /* =========================================================
    FAMILIA
    ========================================================= */
 
 .familia-perdon {
     position: absolute;
-
     z-index: 9;
-
     bottom: 16%;
     left: 50%;
-
     display: flex;
     align-items: flex-end;
-
     gap: 13px;
-
     transform: translateX(-50%);
 }
 
 .familia-perdon span {
     position: relative;
-
     display: block;
-
     width: 13px;
     height: 62px;
-
     border-radius: 50% 50% 20% 20%;
-
     background:
         linear-gradient(
             180deg,
             #f0d99a,
             #72572e
         );
-
     box-shadow:
         0 5px 12px rgba(0, 0, 0, 0.35);
 }
 
 .familia-perdon span::before {
     content: "";
-
     position: absolute;
-
     top: -17px;
     left: 50%;
-
     width: 21px;
     height: 21px;
-
     transform: translateX(-50%);
-
     border-radius: 50%;
-
     background: #e7d39a;
 }
-
 
 /* =========================================================
    BRILLO NATURAL
@@ -448,19 +351,13 @@ body.capitulo-cinco {
 
 .brillo-perdon {
     position: absolute;
-
     z-index: 7;
-
     left: 50%;
     bottom: 20%;
-
     width: 500px;
     height: 260px;
-
     transform: translateX(-50%);
-
     border-radius: 50%;
-
     background:
         radial-gradient(
             ellipse,
@@ -468,10 +365,8 @@ body.capitulo-cinco {
             rgba(185, 237, 242, 0.09) 40%,
             transparent 72%
         );
-
     filter: blur(10px);
 }
-
 
 /* =========================================================
    CONTENIDO
@@ -479,17 +374,12 @@ body.capitulo-cinco {
 
 .pagina-jose {
     position: relative;
-
     z-index: 20;
-
     width: min(92%, 1180px);
-
     margin: 0 auto;
-
     padding-top: 35px;
     padding-bottom: 70px;
 }
-
 
 /* =========================================================
    MENÚ
@@ -497,161 +387,112 @@ body.capitulo-cinco {
 
 .nav-capitulo {
     width: 100%;
-
     margin-bottom: 60px;
     padding: 18px 22px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 25px;
-
     position: relative;
     z-index: 50;
-
     border-radius: 18px;
-
     background:
         linear-gradient(
             135deg,
             rgba(8, 30, 29, 0.95),
             rgba(25, 67, 58, 0.88)
         );
-
     border: 1px solid rgba(228, 189, 79, 0.42);
-
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.45),
         0 0 25px rgba(228, 189, 79, 0.08);
-
     backdrop-filter: blur(10px);
 }
 
 .nav-capitulo > a:first-child {
     min-height: 60px;
-
     padding: 0 25px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     color: var(--blanco-hueso);
-
     text-decoration: none;
-
     font-size: 1rem;
     font-weight: 700;
-
     letter-spacing: 0.08em;
     text-transform: uppercase;
-
     border-radius: 13px;
-
     border: 1px solid rgba(228, 189, 79, 0.5);
-
     background: rgba(228, 189, 79, 0.08);
-
     transition: all 0.25s ease;
 }
 
 .nav-capitulo > a:first-child:hover {
     color: var(--amarillo-brillante);
-
     transform: translateY(-3px);
-
     background: rgba(228, 189, 79, 0.17);
-
     border-color: var(--amarillo-claro);
-
     box-shadow:
         0 0 22px rgba(228, 189, 79, 0.22);
 }
 
 .nav-capitulo .capitulos {
     flex: 1;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
 }
 
 .nav-capitulo .capitulos a {
     min-height: 60px;
-
     padding: 0 15px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     color: rgba(250, 247, 234, 0.78);
-
     text-decoration: none;
-
     font-size: 0.88rem;
     font-weight: 700;
-
     letter-spacing: 0.035em;
-
     text-align: center;
-
     border-radius: 12px;
-
     border: 1px solid transparent;
-
     background: rgba(228, 189, 79, 0.035);
-
     transition: all 0.25s ease;
 }
 
 .nav-capitulo .capitulos a:hover {
     color: var(--amarillo-claro);
-
     transform: translateY(-3px);
-
     background: rgba(228, 189, 79, 0.11);
-
     border-color: rgba(228, 189, 79, 0.4);
-
     box-shadow:
         0 0 18px rgba(228, 189, 79, 0.10);
 }
 
 .nav-capitulo .capitulos a.activo {
     color: var(--amarillo-brillante);
-
     background:
         linear-gradient(
             135deg,
             rgba(228, 189, 79, 0.20),
             rgba(245, 220, 130, 0.07)
         );
-
     border-color: rgba(245, 220, 130, 0.9);
-
     box-shadow:
         0 0 20px rgba(228, 189, 79, 0.20),
         inset 0 0 16px rgba(228, 189, 79, 0.06);
-
     transform: translateY(-2px);
 }
 
 .nav-capitulo .capitulos a.activo::before {
     content: "●";
-
     margin-right: 7px;
-
     color: var(--amarillo-claro);
-
     font-size: 0.55rem;
 }
-
 
 /* =========================================================
    PRESENTACIÓN
@@ -659,52 +500,37 @@ body.capitulo-cinco {
 
 .presentacion {
     min-height: 75vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     padding: 80px 20px;
-
     text-align: center;
-
     border-radius: 28px;
-
     background:
         linear-gradient(
             180deg,
             rgba(7, 27, 34, 0.25),
             rgba(7, 27, 34, 0.68)
         );
-
     border: 1px solid rgba(245, 220, 130, 0.12);
 }
 
 .presentacion .capitulo {
     margin-bottom: 18px;
-
     color: var(--amarillo-claro);
-
     font-size: 0.82rem;
     font-weight: 700;
-
     letter-spacing: 0.3em;
 }
 
 .presentacion h1 {
     margin: 0;
-
     color: var(--blanco-celestial);
-
     font-family: "Cinzel", serif;
-
     font-size: clamp(3rem, 8vw, 6.5rem);
-
     font-weight: 600;
-
     line-height: 1.05;
-
     text-shadow:
         0 0 35px rgba(255, 241, 173, 0.18);
 }
@@ -712,9 +538,7 @@ body.capitulo-cinco {
 .presentacion .linea {
     width: 130px;
     height: 1px;
-
     margin: 30px 0;
-
     background:
         linear-gradient(
             90deg,
@@ -722,41 +546,31 @@ body.capitulo-cinco {
             var(--amarillo-claro),
             transparent
         );
-
     box-shadow:
         0 0 15px rgba(245, 220, 130, 0.35);
 }
 
 .presentacion p {
     margin: 8px 0;
-
     color: var(--texto-perdon);
-
     font-size: 1.08rem;
-
     line-height: 1.8;
 }
 
 .presentacion .frase-intro {
     color: var(--celeste-claro);
-
     font-family: "Cinzel", serif;
-
     font-size: 1.35rem;
     font-weight: 500;
 }
 
 .presentacion .expositor {
     margin-top: 30px;
-
     color: rgba(250, 247, 234, 0.6);
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 0.2em;
 }
-
 
 /* =========================================================
    INTRODUCCIÓN
@@ -764,27 +578,19 @@ body.capitulo-cinco {
 
 .introduccion-jose {
     margin-top: 90px;
-
     padding: 70px 65px;
-
     display: grid;
     grid-template-columns: 1.35fr 0.65fr;
-
     gap: 60px;
-
     align-items: center;
-
     border-radius: 28px;
-
     background:
         linear-gradient(
             135deg,
             rgba(13, 48, 48, 0.92),
             rgba(34, 81, 68, 0.78)
         );
-
     border: 1px solid rgba(245, 220, 130, 0.16);
-
     box-shadow:
         0 20px 70px rgba(0, 0, 0, 0.30),
         0 0 40px rgba(228, 189, 79, 0.06);
@@ -792,84 +598,60 @@ body.capitulo-cinco {
 
 .introduccion-texto .etiqueta {
     display: inline-block;
-
     margin-bottom: 15px;
-
     color: var(--amarillo-claro);
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 0.2em;
 }
 
 .introduccion-texto h2 {
     margin: 0 0 25px;
-
     color: var(--blanco-celestial);
-
     font-family: "Cinzel", serif;
-
     font-size: clamp(2.2rem, 5vw, 4rem);
-
     font-weight: 500;
 }
 
 .introduccion-texto p {
     max-width: 720px;
-
     margin: 0 0 20px;
-
     color: var(--texto-perdon);
-
     font-size: 1.02rem;
-
     line-height: 1.9;
 }
 
 .introduccion-decoracion {
     min-height: 280px;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     border-left: 1px solid rgba(245, 220, 130, 0.18);
 }
 
 .simbolo-perdon {
     color: var(--amarillo-brillante);
-
     font-size: 5rem;
-
     text-shadow:
         0 0 30px rgba(255, 241, 173, 0.45);
 }
 
 .simbolo-familia {
     margin: 5px 0 18px;
-
     color: var(--celeste-claro);
-
     font-size: 3rem;
-
     text-shadow:
         0 0 25px rgba(185, 237, 242, 0.28);
 }
 
 .texto-perdon {
     color: rgba(245, 220, 130, 0.68);
-
     font-size: 0.68rem;
     font-weight: 700;
-
     letter-spacing: 0.15em;
 }
-
 
 /* =========================================================
    PREGUNTAS
@@ -881,39 +663,29 @@ body.capitulo-cinco {
 
 .titulo-preguntas {
     margin-bottom: 45px;
-
     text-align: center;
 }
 
 .titulo-preguntas > span {
     color: var(--amarillo-claro);
-
     font-size: 0.72rem;
     font-weight: 700;
-
     letter-spacing: 0.25em;
 }
 
 .titulo-preguntas h2 {
     margin: 15px 0 12px;
-
     color: var(--blanco-celestial);
-
     font-family: "Cinzel", serif;
-
     font-size: clamp(2rem, 4vw, 3.3rem);
-
     font-weight: 500;
 }
 
 .titulo-preguntas p {
     margin: 0;
-
     color: rgba(222, 223, 206, 0.65);
-
     font-size: 0.9rem;
 }
-
 
 /* =========================================================
    PREGUNTA
@@ -921,20 +693,15 @@ body.capitulo-cinco {
 
 .pregunta-jose {
     margin-bottom: 18px;
-
     border-radius: 20px;
-
     border: 1px solid rgba(245, 220, 130, 0.15);
-
     background:
         linear-gradient(
             135deg,
             rgba(7, 27, 34, 0.90),
             rgba(23, 61, 53, 0.82)
         );
-
     overflow: hidden;
-
     transition:
         border-color 0.35s ease,
         box-shadow 0.35s ease,
@@ -943,23 +710,14 @@ body.capitulo-cinco {
 
 .pregunta-jose summary {
     min-height: 95px;
-
     padding: 20px 25px;
-
     display: grid;
-
     grid-template-columns: 70px 1fr 45px;
-
     align-items: center;
-
     gap: 20px;
-
     cursor: pointer;
-
     list-style: none;
-
     color: var(--blanco-celestial);
-
     user-select: none;
 }
 
@@ -969,9 +727,7 @@ body.capitulo-cinco {
 
 .numero-pregunta {
     color: var(--amarillo-claro);
-
     font-family: "Cinzel", serif;
-
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -979,28 +735,20 @@ body.capitulo-cinco {
 .texto-pregunta {
     font-size: 1rem;
     font-weight: 600;
-
     line-height: 1.5;
 }
 
 .icono-pregunta {
     width: 38px;
     height: 38px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     color: var(--amarillo-brillante);
-
     font-size: 1.4rem;
-
     border: 1px solid rgba(245, 220, 130, 0.35);
-
     background: rgba(228, 189, 79, 0.08);
-
     transition:
         transform 0.3s ease,
         background 0.3s ease,
@@ -1009,32 +757,20 @@ body.capitulo-cinco {
 
 .pregunta-jose:hover {
     border-color: rgba(245, 220, 130, 0.4);
-
     box-shadow:
         0 0 25px rgba(228, 189, 79, 0.09);
 }
 
-
 /* =========================================================
-   ✨ EFECTO CELESTIAL — TODA LA PÁGINA
+   EFECTO CELESTIAL — TODA LA PÁGINA
    ========================================================= */
-
-/*
-   Cuando una pregunta está abierta, aparece una capa
-   de luz blanco + amarillo sobre TODA la pantalla.
-*/
 
 body.capitulo-cinco:has(.pregunta-jose[open])::before {
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     z-index: 10;
-
     pointer-events: none;
-
     background:
         radial-gradient(
             circle at 50% 45%,
@@ -1051,17 +787,14 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
             rgba(255, 215, 80, 0.08),
             transparent 78%
         );
-
     box-shadow:
         inset 0 0 180px rgba(255, 255, 255, 0.14),
         inset 0 0 350px rgba(255, 221, 100, 0.13);
-
     animation:
         aparicionCelestial 1s ease forwards;
 }
 
 @keyframes aparicionCelestial {
-
     0% {
         opacity: 0;
     }
@@ -1071,7 +804,6 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
     }
 }
 
-
 /* =========================================================
    PREGUNTA ABIERTA — FOCO CENTRAL
    ========================================================= */
@@ -1079,9 +811,7 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
 .pregunta-jose[open] {
     position: relative;
     z-index: 30;
-
     border-color: rgba(255, 250, 220, 0.95);
-
     background:
         linear-gradient(
             135deg,
@@ -1089,7 +819,6 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
             rgba(228, 189, 79, 0.18),
             rgba(63, 143, 114, 0.15)
         );
-
     box-shadow:
         0 0 25px rgba(255, 255, 255, 0.30),
         0 0 55px rgba(255, 221, 100, 0.25),
@@ -1103,17 +832,12 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
 
 .pregunta-jose[open] .icono-pregunta {
     transform: rotate(45deg);
-
     color: #ffffff;
-
     border-color: var(--amarillo-brillante);
-
     background: rgba(255, 241, 173, 0.18);
-
     box-shadow:
         0 0 18px rgba(255, 241, 173, 0.30);
 }
-
 
 /* =========================================================
    RESPUESTA
@@ -1121,77 +845,54 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
 
 .respuesta-jose {
     position: relative;
-
     margin: 0 25px 25px;
-
     padding: 35px 35px 30px;
-
     border-radius: 16px;
-
     background:
         linear-gradient(
             135deg,
             rgba(7, 27, 34, 0.62),
             rgba(24, 62, 54, 0.70)
         );
-
     border: 1px solid rgba(255, 241, 173, 0.16);
 }
 
 .respuesta-etiqueta {
     display: inline-block;
-
     margin-bottom: 20px;
-
     color: var(--amarillo-claro);
-
     font-size: 0.68rem;
     font-weight: 700;
-
     letter-spacing: 0.2em;
 }
 
 .numero-respuesta {
     position: absolute;
-
     top: 28px;
     right: 30px;
-
     color: rgba(255, 241, 173, 0.15);
-
     font-family: "Cinzel", serif;
-
     font-size: 4rem;
     font-weight: 600;
-
     line-height: 1;
 }
 
 .respuesta-jose p {
     max-width: 800px;
-
     margin: 0 0 17px;
-
     color: var(--texto-perdon);
-
     font-size: 0.98rem;
-
     line-height: 1.85;
 }
 
 .detalle-respuesta {
     display: inline-block;
-
     margin-top: 15px;
-
     color: rgba(245, 220, 130, 0.58);
-
     font-size: 0.67rem;
     font-weight: 700;
-
     letter-spacing: 0.16em;
 }
-
 
 /* =========================================================
    CIERRE
@@ -1199,18 +900,14 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
 
 .cierre {
     margin-top: 120px;
-
     padding: 70px 20px;
-
     text-align: center;
 }
 
 .cierre-linea {
     width: min(280px, 70%);
     height: 1px;
-
     margin: 0 auto 35px;
-
     background:
         linear-gradient(
             90deg,
@@ -1218,36 +915,26 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
             var(--amarillo-claro),
             transparent
         );
-
     box-shadow:
         0 0 12px rgba(245, 220, 130, 0.25);
 }
 
 .cierre p {
     margin: 0 0 20px;
-
     color: var(--amarillo-claro);
-
     font-size: 0.72rem;
     font-weight: 700;
-
     letter-spacing: 0.25em;
 }
 
 .cierre h2 {
     margin: 0;
-
     color: var(--blanco-celestial);
-
     font-family: "Cinzel", serif;
-
     font-size: clamp(2rem, 4vw, 3.5rem);
-
     font-weight: 500;
-
     line-height: 1.35;
 }
-
 
 /* =========================================================
    NAVEGACIÓN FINAL
@@ -1255,54 +942,37 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
 
 .navegacion-final {
     margin-top: 35px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
 }
 
 .navegacion-final a {
     min-height: 55px;
-
     padding: 0 24px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     color: var(--blanco-hueso);
-
     text-decoration: none;
-
     font-size: 0.82rem;
     font-weight: 700;
-
     letter-spacing: 0.04em;
-
     border-radius: 12px;
-
     border: 1px solid rgba(245, 220, 130, 0.25);
-
     background: rgba(228, 189, 79, 0.07);
-
     transition: all 0.25s ease;
 }
 
 .navegacion-final a:hover {
     color: var(--amarillo-brillante);
-
     transform: translateY(-3px);
-
     background: rgba(228, 189, 79, 0.15);
-
     border-color: var(--amarillo-claro);
-
     box-shadow:
         0 0 22px rgba(228, 189, 79, 0.16);
 }
-
 
 /* =========================================================
    FOOTER
@@ -1310,28 +980,20 @@ body.capitulo-cinco:has(.pregunta-jose[open])::before {
 
 footer {
     margin-top: 50px;
-
     padding-top: 25px;
-
     text-align: center;
-
     color: rgba(245, 220, 130, 0.38);
-
     font-size: 0.65rem;
     font-weight: 600;
-
     letter-spacing: 0.18em;
-
     border-top: 1px solid rgba(245, 220, 130, 0.08);
 }
-
 
 /* =========================================================
    RESPONSIVE — 1100px
    ========================================================= */
 
 @media (max-width: 1100px) {
-
     .pagina-jose {
         width: min(94%, 1000px);
     }
@@ -1356,13 +1018,11 @@ footer {
     }
 }
 
-
 /* =========================================================
    RESPONSIVE — 850px
    ========================================================= */
 
 @media (max-width: 850px) {
-
     .nav-capitulo {
         flex-direction: column;
         padding: 16px;
@@ -1374,21 +1034,15 @@ footer {
 
     .nav-capitulo .capitulos {
         width: 100%;
-
         display: grid;
-
         grid-template-columns: repeat(2, 1fr);
-
         gap: 8px;
     }
 
     .nav-capitulo .capitulos a {
         width: 100%;
-
         min-height: 52px;
-
         padding: 8px;
-
         font-size: 0.75rem;
     }
 
@@ -1402,11 +1056,8 @@ footer {
 
     .introduccion-decoracion {
         min-height: 200px;
-
         border-left: none;
-
         border-top: 1px solid rgba(245, 220, 130, 0.15);
-
         padding-top: 35px;
     }
 
@@ -1424,31 +1075,25 @@ footer {
     }
 }
 
-
 /* =========================================================
    RESPONSIVE — 600px
    ========================================================= */
 
 @media (max-width: 600px) {
-
     .pagina-jose {
         width: 92%;
-
         padding-top: 20px;
         padding-bottom: 50px;
     }
 
     .nav-capitulo {
         margin-bottom: 35px;
-
         padding: 12px;
-
         border-radius: 15px;
     }
 
     .nav-capitulo > a:first-child {
         min-height: 52px;
-
         font-size: 0.82rem;
     }
 
@@ -1458,13 +1103,11 @@ footer {
 
     .nav-capitulo .capitulos a {
         min-height: 48px;
-
         font-size: 0.78rem;
     }
 
     .presentacion {
         padding: 60px 15px;
-
         border-radius: 20px;
     }
 
@@ -1482,9 +1125,7 @@ footer {
 
     .introduccion-jose {
         margin-top: 65px;
-
         padding: 40px 25px;
-
         border-radius: 20px;
     }
 
@@ -1494,7 +1135,6 @@ footer {
 
     .introduccion-texto p {
         font-size: 0.9rem;
-
         line-height: 1.75;
     }
 
@@ -1508,11 +1148,8 @@ footer {
 
     .pregunta-jose summary {
         min-height: 80px;
-
         padding: 18px;
-
         grid-template-columns: 45px 1fr 38px;
-
         gap: 12px;
     }
 
@@ -1531,26 +1168,22 @@ footer {
 
     .respuesta-jose {
         margin: 0 15px 15px;
-
         padding: 28px 20px 25px;
     }
 
     .numero-respuesta {
         top: 23px;
         right: 20px;
-
         font-size: 3rem;
     }
 
     .respuesta-jose p {
         font-size: 0.88rem;
-
         line-height: 1.75;
     }
 
     .cierre {
         margin-top: 80px;
-
         padding: 50px 15px;
     }
 
@@ -1569,7 +1202,6 @@ footer {
     .sol-perdon {
         width: 85px;
         height: 85px;
-
         top: 8%;
         right: 8%;
     }
@@ -1594,7 +1226,6 @@ footer {
     .barca-nilo {
         left: 43%;
         bottom: 32%;
-
         font-size: 2rem;
     }
 
@@ -1604,16 +1235,13 @@ footer {
     }
 }
 
-
 /* =========================================================
    RESPONSIVE — 380px
    ========================================================= */
 
 @media (max-width: 380px) {
-
     .nav-capitulo .capitulos a {
         min-height: 45px;
-
         font-size: 0.72rem;
     }
 
@@ -1639,9 +1267,7 @@ footer {
 
     .pregunta-jose summary {
         grid-template-columns: 38px 1fr 32px;
-
         gap: 8px;
-
         padding: 15px;
     }
 
@@ -1659,7 +1285,182 @@ footer {
 
     footer {
         font-size: 0.55rem;
-
         letter-spacing: 0.12em;
+    }
+}
+/* =========================================================
+   REFERENCIAS CIC
+   ========================================================= */
+
+.referencias-cic {
+    margin-top: 110px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.referencias-cic .titulo-seccion {
+    grid-column: 1 / -1;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.referencias-cic .titulo-seccion span {
+    color: var(--amarillo-claro);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+.referencias-cic .titulo-seccion h2 {
+    margin: 15px 0 0;
+    color: var(--blanco-celestial);
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+}
+
+.referencia-cic {
+    position: relative;
+    padding: 32px 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(245, 220, 130, 0.22);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 39, 40, 0.92),
+            rgba(25, 67, 58, 0.78)
+        );
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.28),
+        0 0 25px rgba(245, 220, 130, 0.05);
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.referencia-cic::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 241, 173, 0.16),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.referencia-cic:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255, 241, 173, 0.65);
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(255, 241, 173, 0.12),
+        inset 0 0 25px rgba(255, 241, 173, 0.04);
+}
+
+.numero-cic {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 15px;
+    margin-bottom: 22px;
+    color: var(--amarillo-brillante);
+    text-decoration: none;
+    font-family: "Cinzel", serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(255, 241, 173, 0.4);
+    border-radius: 10px;
+    background: rgba(228, 189, 79, 0.08);
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.numero-cic:hover {
+    transform: translateY(-2px);
+    background: rgba(228, 189, 79, 0.16);
+    box-shadow:
+        0 0 20px rgba(255, 241, 173, 0.18);
+}
+
+.referencia-cic h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 18px;
+    color: var(--blanco-celestial);
+    font-family: "Cinzel", serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.referencia-cic p {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 15px;
+    color: var(--texto-perdon);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+.referencia-cic p:last-child {
+    margin-bottom: 0;
+    color: rgba(222, 223, 206, 0.72);
+}
+
+/* =========================================================
+   REFERENCIAS CIC — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+    .referencias-cic {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .referencia-cic {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .referencias-cic {
+        margin-top: 75px;
+    }
+
+    .referencias-cic .titulo-seccion {
+        margin-bottom: 15px;
+    }
+
+    .referencias-cic .titulo-seccion h2 {
+        font-size: 2rem;
+    }
+
+    .referencia-cic {
+        padding: 27px 22px;
+        border-radius: 18px;
+    }
+
+    .referencia-cic h3 {
+        font-size: 1.2rem;
+    }
+
+    .referencia-cic p {
+        font-size: 0.86rem;
     }
 }
