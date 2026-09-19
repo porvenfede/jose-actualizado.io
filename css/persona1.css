@@ -422,7 +422,7 @@ body {
     margin: -35px auto 80px;
     padding: 8px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 8px;
     border: 1px solid rgba(212, 167, 44, 0.28);
     border-radius: 16px;
@@ -523,7 +523,7 @@ body {
 .preguntas-jose {
     scroll-margin-top: 30px;
     max-width: 1150px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
 }
 
 .titulo-seccion {
@@ -677,14 +677,24 @@ body {
     }
 }
 
+/* =========================================================
+   CIC
+   ========================================================= */
+
 .referencias-cic {
     scroll-margin-top: 30px;
     max-width: 1000px;
     margin: 0 auto 100px;
 }
 
-.referencias-cic .titulo-seccion {
-    margin-bottom: 45px;
+.leyenda-cic {
+    text-align: center;
+    margin: -18px auto 32px;
+    max-width: 560px;
+    color: rgba(216, 204, 176, 0.55);
+    font-size: 0.82rem;
+    font-style: italic;
+    line-height: 1.6;
 }
 
 .referencia-cic {
@@ -704,7 +714,6 @@ body {
         border-color 0.3s ease,
         transform 0.3s ease,
         box-shadow 0.3s ease;
-    scroll-margin-top: 30px;
 }
 
 .referencia-cic:hover {
@@ -738,12 +747,11 @@ body {
     margin-bottom: 16px;
     padding: 7px 16px;
     color: var(--negro-egipto);
-    background:
-        linear-gradient(
-            135deg,
-            var(--oro-brillante),
-            var(--oro-jose)
-        );
+    background: linear-gradient(
+        135deg,
+        var(--oro-brillante),
+        var(--oro-jose)
+    );
     font-family: 'Cinzel', serif;
     font-size: 0.78rem;
     font-weight: 800;
@@ -771,6 +779,76 @@ body {
 .numero-cic:focus-visible {
     outline: 2px solid var(--oro-brillante);
     outline-offset: 3px;
+}
+
+.numero-cic::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 12px);
+    width: max-content;
+    max-width: 260px;
+    padding: 12px 15px;
+    color: var(--blanco-jose);
+    background: var(--negro-suave);
+    border: 1px solid rgba(212, 167, 44, 0.5);
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: none;
+    white-space: normal;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 6px);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.numero-cic:hover::before,
+.numero-cic:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.referencia-cic-enlace {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: rgba(216, 204, 176, 0.62);
+    font-size: 0.72rem;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+
+.referencia-cic-enlace a {
+    color: var(--oro-claro);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(241, 207, 103, 0.45);
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.referencia-cic-enlace a:hover {
+    color: var(--oro-brillante);
+    border-color: var(--oro-brillante);
 }
 
 .cierre {
@@ -1051,15 +1129,6 @@ footer p {
         font-size: 0.9rem;
     }
 
-    .referencias-cic {
-        margin-bottom: 70px;
-    }
-
-    .referencia-cic {
-        padding: 26px 22px;
-        border-radius: 16px;
-    }
-
     .cierre {
         margin-top: 70px;
         padding: 45px 15px;
@@ -1088,6 +1157,26 @@ footer p {
     footer p {
         font-size: 0.65rem;
         line-height: 1.6;
+    }
+
+    .referencia-cic {
+        padding: 26px 22px;
+        border-radius: 16px;
+    }
+
+    .referencias-cic {
+        margin-bottom: 70px;
+    }
+
+    .numero-cic::before {
+        left: 0;
+        transform: translate(0, 6px);
+        max-width: 220px;
+    }
+
+    .numero-cic:hover::before,
+    .numero-cic:focus-visible::before {
+        transform: translate(0, 0);
     }
 }
 
