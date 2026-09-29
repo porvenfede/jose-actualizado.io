@@ -1,4 +1,5 @@
 :root {
+
     --oro-jose: #d4a72c;
     --oro-claro: #f1cf67;
     --oro-brillante: #ffe39a;
@@ -222,6 +223,7 @@ body {
 }
 
 @keyframes caminar-oveja {
+
     0% {
         left: -10%;
         transform: translateY(0);
@@ -666,6 +668,7 @@ body {
 }
 
 @keyframes aparecer-respuesta {
+
     from {
         opacity: 0;
         transform: translateY(-8px);
@@ -779,45 +782,6 @@ body {
 .numero-cic:focus-visible {
     outline: 2px solid var(--oro-brillante);
     outline-offset: 3px;
-}
-
-.numero-cic::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 12px);
-    width: max-content;
-    max-width: 260px;
-    padding: 12px 15px;
-    color: var(--blanco-jose);
-    background: var(--negro-suave);
-    border: 1px solid rgba(212, 167, 44, 0.5);
-    border-radius: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: normal;
-    line-height: 1.5;
-    text-align: left;
-    text-transform: none;
-    white-space: normal;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, 6px);
-    transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
-    pointer-events: none;
-    z-index: 20;
-}
-
-.numero-cic:hover::before,
-.numero-cic:focus-visible::before {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 0);
 }
 
 .referencia-cic-enlace {
@@ -1166,17 +1130,6 @@ footer p {
 
     .referencias-cic {
         margin-bottom: 70px;
-    }
-
-    .numero-cic::before {
-        left: 0;
-        transform: translate(0, 6px);
-        max-width: 220px;
-    }
-
-    .numero-cic:hover::before,
-    .numero-cic:focus-visible::before {
-        transform: translate(0, 0);
     }
 }
 

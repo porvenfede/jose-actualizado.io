@@ -1,0 +1,999 @@
+/* =========================================================
+   ROCÍO [APELLIDO] · CATEQUESIS 2026
+   TEMA: CIELO NOCTURNO · AZUL · PLATA
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    color: #edf3ff;
+    background:
+        linear-gradient(
+            180deg,
+            #050814 0%,
+            #0b1226 38%,
+            #111d3b 70%,
+            #172852 100%
+        );
+}
+
+/* =========================================================
+   FONDO
+   ========================================================= */
+
+.cielo {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(117, 156, 230, 0.16),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #040711 0%,
+            #091126 40%,
+            #101d3a 72%,
+            #182950 100%
+        );
+}
+
+.luz-celestial {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(154, 188, 255, 0.20),
+            rgba(92, 126, 205, 0.07) 40%,
+            transparent 70%
+        );
+    filter: blur(20px);
+    animation: respirar-luz 7s ease-in-out infinite;
+}
+
+@keyframes respirar-luz {
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+/* =========================================================
+   LUNA
+   ========================================================= */
+
+.sol {
+    position: absolute;
+    top: 9%;
+    right: 12%;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff,
+            #dce8ff 45%,
+            #9eb7e8 100%
+        );
+    box-shadow:
+        0 0 30px rgba(205, 222, 255, 0.65),
+        0 0 100px rgba(135, 170, 235, 0.28);
+    animation: flotar-luna 8s ease-in-out infinite;
+}
+
+@keyframes flotar-luna {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(166, 195, 255, 0.65) 1px,
+            transparent 1px
+        );
+    background-size:
+        100px 100px,
+        170px 170px;
+    background-position:
+        15px 20px,
+        70px 80px;
+    opacity: 0.55;
+    animation: estrellas-mover 35s linear infinite;
+}
+
+@keyframes estrellas-mover {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(70px);
+    }
+}
+
+/* =========================================================
+   NUBES
+   ========================================================= */
+
+.nube {
+    position: absolute;
+    width: 300px;
+    height: 85px;
+    border-radius: 50%;
+    background: rgba(202, 218, 255, 0.045);
+    filter: blur(20px);
+}
+
+.nube::before,
+.nube::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: inherit;
+}
+
+.nube::before {
+    width: 130px;
+    height: 105px;
+    left: 45px;
+    bottom: 10px;
+}
+
+.nube::after {
+    width: 150px;
+    height: 110px;
+    right: 35px;
+    bottom: 5px;
+}
+
+.nube-1 {
+    top: 20%;
+    left: -120px;
+    animation: nube-izquierda 50s linear infinite;
+}
+
+.nube-2 {
+    top: 48%;
+    right: -150px;
+    transform: scale(0.8);
+    animation: nube-derecha 60s linear infinite;
+}
+
+.nube-3 {
+    top: 70%;
+    left: -180px;
+    transform: scale(1.15);
+    animation: nube-izquierda 70s linear infinite;
+}
+
+@keyframes nube-izquierda {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 450px));
+    }
+}
+
+@keyframes nube-derecha {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100vw - 450px));
+    }
+}
+
+/* =========================================================
+   PARTÍCULAS
+   ========================================================= */
+
+.particulas {
+    position: absolute;
+    inset: 0;
+}
+
+.particulas span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #d9e7ff;
+    box-shadow:
+        0 0 12px rgba(190, 216, 255, 0.9);
+    animation: particula 8s ease-in-out infinite;
+}
+
+.particulas span:nth-child(1) {
+    left: 8%;
+    top: 25%;
+}
+
+.particulas span:nth-child(2) {
+    left: 18%;
+    top: 65%;
+    animation-delay: 1s;
+}
+
+.particulas span:nth-child(3) {
+    left: 30%;
+    top: 35%;
+    animation-delay: 2s;
+}
+
+.particulas span:nth-child(4) {
+    left: 42%;
+    top: 75%;
+    animation-delay: 3s;
+}
+
+.particulas span:nth-child(5) {
+    left: 54%;
+    top: 20%;
+    animation-delay: 4s;
+}
+
+.particulas span:nth-child(6) {
+    left: 65%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.particulas span:nth-child(7) {
+    left: 76%;
+    top: 32%;
+    animation-delay: 1s;
+}
+
+.particulas span:nth-child(8) {
+    left: 88%;
+    top: 70%;
+    animation-delay: 3s;
+}
+
+.particulas span:nth-child(9) {
+    left: 12%;
+    top: 82%;
+    animation-delay: 4s;
+}
+
+.particulas span:nth-child(10) {
+    left: 36%;
+    top: 15%;
+    animation-delay: 2s;
+}
+
+.particulas span:nth-child(11) {
+    left: 70%;
+    top: 80%;
+    animation-delay: 5s;
+}
+
+.particulas span:nth-child(12) {
+    left: 92%;
+    top: 45%;
+    animation-delay: 1s;
+}
+
+@keyframes particula {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-25px);
+        opacity: 0.8;
+    }
+}
+
+/* =========================================================
+   SÍMBOLOS
+   ========================================================= */
+
+.simbolos span {
+    position: absolute;
+    font-size: 32px;
+    color: rgba(174, 202, 255, 0.14);
+    animation: simbolo-flotar 7s ease-in-out infinite;
+}
+
+.simbolos span:nth-child(1) {
+    top: 18%;
+    left: 18%;
+}
+
+.simbolos span:nth-child(2) {
+    top: 38%;
+    right: 18%;
+    animation-delay: 2s;
+}
+
+.simbolos span:nth-child(3) {
+    bottom: 20%;
+    left: 12%;
+    animation-delay: 4s;
+}
+
+.simbolos span:nth-child(4) {
+    bottom: 12%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+@keyframes simbolo-flotar {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+        opacity: 0.1;
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+        opacity: 0.25;
+    }
+}
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.perfil-contenedor {
+    width: min(1250px, 92%);
+    margin: 0 auto;
+    padding: 70px 0 35px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.perfil-header {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.perfil-numero {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #a9c5f4;
+    margin-bottom: 20px;
+}
+
+.ornamento-perfil {
+    color: #b9cff5;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.perfil-header h1 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(2.7rem, 6vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    color: #eaf2ff;
+    text-shadow:
+        0 4px 25px rgba(0, 0, 0, 0.65);
+}
+
+.edad {
+    margin-top: 18px;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: #a9c3ef;
+}
+
+/* =========================================================
+   PERFIL PRINCIPAL
+   ========================================================= */
+
+.perfil-principal {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 90px;
+    margin-bottom: 70px;
+}
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.foto-contenedor {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.halo-foto {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(116, 159, 235, 0.24),
+            transparent 68%
+        );
+    filter: blur(18px);
+    animation: halo 6s ease-in-out infinite;
+}
+
+@keyframes halo {
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+.marco-foto {
+    position: relative;
+    width: min(390px, 80vw);
+    aspect-ratio: 3 / 4;
+    padding: 8px;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            #718ab9,
+            #e1ebff,
+            #8199ca,
+            #c3d5f7
+        );
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(125, 166, 239, 0.22);
+    overflow: hidden;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.brillo-foto {
+    position: absolute;
+    top: -100%;
+    left: -80%;
+    width: 70%;
+    height: 250%;
+    z-index: 2;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(240, 247, 255, 0.35),
+            transparent
+        );
+    transform: rotate(25deg);
+    animation: brillo-foto 6s ease-in-out infinite;
+}
+
+@keyframes brillo-foto {
+    0% {
+        left: -100%;
+    }
+
+    35%,
+    100% {
+        left: 150%;
+    }
+}
+
+.decoracion-foto {
+    position: absolute;
+    color: #c8dcff;
+    font-size: 30px;
+    text-shadow:
+        0 0 15px rgba(170, 204, 255, 0.7);
+    z-index: 3;
+}
+
+.decoracion-1 {
+    top: 8%;
+    left: 4%;
+    animation: decoracion 4s ease-in-out infinite;
+}
+
+.decoracion-2 {
+    bottom: 8%;
+    right: 4%;
+    animation: decoracion 4s ease-in-out infinite reverse;
+}
+
+@keyframes decoracion {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.informacion {
+    padding: 10px 0;
+}
+
+.etiqueta {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #a9c4f0;
+    margin-bottom: 16px;
+}
+
+.informacion h2 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 500;
+    color: #e4edff;
+    margin-bottom: 15px;
+}
+
+.linea-dorada {
+    width: 90px;
+    height: 2px;
+    margin-bottom: 25px;
+    background:
+        linear-gradient(
+            90deg,
+            #9bbcf1,
+            transparent
+        );
+}
+
+.descripcion {
+    max-width: 650px;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: rgba(227, 237, 255, 0.78);
+    margin-bottom: 35px;
+}
+
+/* =========================================================
+   INTERESES
+   ========================================================= */
+
+.intereses {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.interes {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 20px;
+    border: 1px solid rgba(144, 177, 232, 0.23);
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(180, 205, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+    backdrop-filter: blur(8px);
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.interes:hover {
+    transform: translateX(8px);
+    border-color: rgba(166, 198, 251, 0.58);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(143, 181, 245, 0.1),
+            rgba(255, 255, 255, 0.035)
+        );
+}
+
+.icono {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(126, 166, 235, 0.1);
+    border: 1px solid rgba(157, 193, 247, 0.3);
+    font-size: 23px;
+}
+
+.interes strong {
+    display: block;
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #c9dcfb;
+    margin-bottom: 5px;
+}
+
+.interes p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(225, 236, 255, 0.65);
+}
+
+/* =========================================================
+   DATO / FRASE
+   ========================================================= */
+
+.dato-curioso {
+    position: relative;
+    text-align: center;
+    padding: 55px 30px;
+    margin-bottom: 60px;
+    border-top: 1px solid rgba(153, 190, 247, 0.22);
+    border-bottom: 1px solid rgba(153, 190, 247, 0.22);
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(117, 159, 228, 0.08),
+            transparent 70%
+        );
+}
+
+.destello-dato {
+    margin-bottom: 15px;
+    color: #c0d7fa;
+    font-size: 25px;
+    animation: destello-dato 3s ease-in-out infinite;
+}
+
+@keyframes destello-dato {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+.dato-curioso h2 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+    font-weight: 500;
+    color: #dbe8ff;
+    margin-bottom: 15px;
+    line-height: 1.35;
+}
+
+.dato-curioso p {
+    color: rgba(224, 236, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   REDES
+   ========================================================= */
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 65px;
+}
+
+.instagram {
+    width: min(500px, 100%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 22px;
+    text-decoration: none;
+    color: #e5efff;
+    border: 1px solid rgba(155, 191, 245, 0.28);
+    border-radius: 14px;
+    background: rgba(180, 205, 255, 0.045);
+    backdrop-filter: blur(10px);
+}
+
+.instagram-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    border: 1px solid rgba(174, 207, 255, 0.4);
+    color: #bfd8ff;
+    font-size: 25px;
+}
+
+.instagram-text {
+    flex: 1;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.instagram-flecha {
+    color: #aac8f5;
+    font-size: 20px;
+}
+
+.instagram-deshabilitado {
+    opacity: 0.65;
+}
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.navegacion-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.boton-perfil {
+    min-width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 22px;
+    border: 1px solid rgba(157, 194, 249, 0.35);
+    border-radius: 10px;
+    background: rgba(190, 213, 255, 0.045);
+    color: #e0ebff;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    backdrop-filter: blur(8px);
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton-perfil:hover {
+    transform: translateY(-4px);
+    background: rgba(137, 179, 244, 0.12);
+    border-color: rgba(188, 216, 255, 0.7);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.boton-perfil span {
+    color: #b6d1fa;
+    font-size: 1.1rem;
+}
+
+/* =========================================================
+   CIERRE
+   ========================================================= */
+
+.cierre-perfil {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.cierre-perfil .ornamento-perfil {
+    margin-bottom: 15px;
+}
+
+.cierre-perfil p {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: rgba(203, 220, 248, 0.45);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .perfil-principal {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .foto-contenedor {
+        order: 1;
+    }
+
+    .informacion {
+        order: 2;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .perfil-header {
+        margin-bottom: 50px;
+    }
+
+    .perfil-contenedor {
+        padding-top: 50px;
+    }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .perfil-contenedor {
+        width: 90%;
+        padding-top: 40px;
+    }
+
+    .perfil-header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+    .perfil-numero {
+        letter-spacing: 3px;
+    }
+
+    .edad {
+        letter-spacing: 3px;
+    }
+
+    .halo-foto {
+        width: 330px;
+        height: 330px;
+    }
+
+    .marco-foto {
+        width: min(330px, 82vw);
+    }
+
+    .descripcion {
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .interes {
+        padding: 15px;
+    }
+
+    .dato-curioso {
+        padding: 45px 20px;
+    }
+
+    .instagram {
+        padding: 15px;
+    }
+
+    .navegacion-perfil {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boton-perfil {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .sol {
+        width: 70px;
+        height: 70px;
+        right: 8%;
+    }
+}
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .perfil-header h1 {
+        font-size: 2.1rem;
+    }
+
+    .marco-foto {
+        width: 280px;
+    }
+
+    .halo-foto {
+        width: 290px;
+        height: 290px;
+    }
+
+    .interes {
+        gap: 12px;
+    }
+
+    .icono {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .interes strong {
+        font-size: 0.9rem;
+    }
+
+    .interes p {
+        font-size: 0.78rem;
+    }
+}
