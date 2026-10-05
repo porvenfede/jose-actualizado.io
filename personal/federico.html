@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Federico Porven | Catequesis 2026</title>
+    <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
+    <!-- Avisa al CSS que hay JavaScript (para las animaciones al hacer scroll) -->
+    <script>document.documentElement.classList.add("js");</script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../css/federico.css">
 </head>
@@ -22,38 +26,37 @@
 <body class="pagina-federico">
 
     <!-- =====================================================
-         FONDO ANIMADO
+         CIELO ANIMADO
          ===================================================== -->
 
-    <div class="cielo">
+    <div class="cielo" aria-hidden="true">
 
         <div class="luz-celestial"></div>
+        <div class="rayos-luz"></div>
 
         <div class="luna"></div>
+
+        <div class="estrellas"></div>
+
+        <div class="estrella-fugaz fugaz-1"></div>
+        <div class="estrella-fugaz fugaz-2"></div>
+        <div class="estrella-fugaz fugaz-3"></div>
 
         <div class="nube nube-1"></div>
         <div class="nube nube-2"></div>
         <div class="nube nube-3"></div>
         <div class="nube nube-4"></div>
 
-        <div class="estrellas"></div>
-
         <div class="particulas">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="rayos-luz"></div>
+        <div class="mar-nubes">
+            <div class="capa capa-2"></div>
+            <div class="capa capa-1"></div>
+        </div>
 
     </div>
 
@@ -91,17 +94,47 @@
         </header>
 
 
+        <!-- CINTA DE DATOS -->
+
+        <ul class="cinta-datos">
+
+            <li>
+                <span>20</span>
+                <small>AÑOS</small>
+            </li>
+
+            <li>
+                <span>UTN</span>
+                <small>UNIVERSIDAD</small>
+            </li>
+
+            <li>
+                <span>Sistemas</span>
+                <small>INGENIERÍA EN</small>
+            </li>
+
+            <li>
+                <span>1.º</span>
+                <small>AÑO DE CARRERA</small>
+            </li>
+
+        </ul>
+
+
         <!-- =================================================
              INFORMACIÓN PRINCIPAL
              ================================================= -->
 
-        <section class="perfil-principal">
+        <section class="perfil-principal revelar">
 
             <!-- FOTO -->
 
             <div class="foto-contenedor">
 
+                <div class="rayos-foto"></div>
                 <div class="halo-foto"></div>
+                <div class="orbita orbita-1"></div>
+                <div class="orbita orbita-2"></div>
 
                 <div class="marco-foto">
 
@@ -116,6 +149,11 @@
                 <span class="decoracion-foto">
                     ✦
                 </span>
+
+                <span class="chispa chispa-1">✦</span>
+                <span class="chispa chispa-2">✧</span>
+                <span class="chispa chispa-3">✦</span>
+                <span class="chispa chispa-4">✧</span>
 
             </div>
 
@@ -136,7 +174,8 @@
 
                 <p class="descripcion">
                     Soy estudiante de primer año de Ingeniería en Sistemas
-                    en la UTN.
+                    en la UTN. Me gusta crear, diseñar y armar cosas desde
+                    cero, y esta página es una prueba de eso.
                 </p>
 
 
@@ -210,10 +249,159 @@
 
 
         <!-- =================================================
+             MI MATE · 1 CORINTIOS 13
+             ================================================= -->
+
+        <section class="mate revelar">
+
+            <div class="mate-visual">
+
+                <div class="vapor" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <svg
+                    class="mate-svg"
+                    viewBox="0 0 300 360"
+                    role="img"
+                    aria-label="Un mate con la cita de 1 Corintios 13 grabada">
+
+                    <defs>
+
+                        <linearGradient id="calabaza" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#2a190d" />
+                            <stop offset="0.35" stop-color="#7d5532" />
+                            <stop offset="0.62" stop-color="#5a3a21" />
+                            <stop offset="1" stop-color="#21130a" />
+                        </linearGradient>
+
+                        <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#f4e2b0" />
+                            <stop offset="0.45" stop-color="#b8923f" />
+                            <stop offset="0.7" stop-color="#f0dca6" />
+                            <stop offset="1" stop-color="#8a6a2a" />
+                        </linearGradient>
+
+                        <radialGradient id="yerba" cx="50%" cy="40%" r="65%">
+                            <stop offset="0" stop-color="#7a8a30" />
+                            <stop offset="1" stop-color="#2f3a12" />
+                        </radialGradient>
+
+                        <path id="curvaVerso" d="M 62 232 Q 150 276 238 232" />
+
+                    </defs>
+
+                    <!-- sombra -->
+                    <ellipse cx="150" cy="332" rx="84" ry="10" fill="rgba(0,0,0,0.35)" />
+
+                    <!-- base de metal -->
+                    <rect x="108" y="296" width="84" height="22" rx="7" fill="url(#metal)" />
+
+                    <!-- calabaza -->
+                    <path
+                        d="M52 128 C 36 200, 62 292, 150 304 C 238 292, 264 200, 248 128 Z"
+                        fill="url(#calabaza)" />
+
+                    <!-- brillo de la calabaza -->
+                    <path
+                        d="M84 162 C 74 212, 88 256, 114 282"
+                        fill="none"
+                        stroke="rgba(255,230,180,0.2)"
+                        stroke-width="8"
+                        stroke-linecap="round" />
+
+                    <!-- yerba -->
+                    <ellipse cx="150" cy="128" rx="92" ry="20" fill="url(#yerba)" />
+
+                    <!-- bombilla -->
+                    <line
+                        x1="178" y1="124" x2="236" y2="28"
+                        stroke="url(#metal)"
+                        stroke-width="5"
+                        stroke-linecap="round" />
+
+                    <line
+                        x1="231" y1="37" x2="241" y2="21"
+                        stroke="#f4e2b0"
+                        stroke-width="8"
+                        stroke-linecap="round" />
+
+                    <!-- borde de metal -->
+                    <ellipse
+                        cx="150" cy="128" rx="98" ry="24"
+                        fill="none"
+                        stroke="url(#metal)"
+                        stroke-width="7" />
+
+                    <!-- decoración y cita grabada -->
+                    <text
+                        x="150" y="214"
+                        text-anchor="middle"
+                        font-size="16"
+                        fill="#f2dfae"
+                        opacity="0.9">✦</text>
+
+                    <path
+                        d="M 70 250 Q 150 294 230 250"
+                        fill="none"
+                        stroke="rgba(242,223,174,0.35)"
+                        stroke-width="1" />
+
+                    <text
+                        font-family="Cinzel, serif"
+                        font-size="12"
+                        font-weight="600"
+                        letter-spacing="3"
+                        fill="#f2dfae">
+                        <textPath href="#curvaVerso" startOffset="50%" text-anchor="middle">
+                            1 CORINTIOS 13
+                        </textPath>
+                    </text>
+
+                </svg>
+
+            </div>
+
+
+            <div class="mate-texto">
+
+                <span class="etiqueta">
+                    LO QUE LLEVO CONMIGO
+                </span>
+
+                <h2>
+                    Un verso en mi mate
+                </h2>
+
+                <div class="linea-dorada"></div>
+
+                <p>
+                    Hay una cita que me acompaña a todos lados:
+                    la llevo grabada en mi mate. Es de 1 Corintios 13,
+                    el capítulo del amor.
+                </p>
+
+                <blockquote class="verso">
+                    “El amor es paciente, es bondadoso.”
+                    <cite>1 CORINTIOS 13:4</cite>
+                </blockquote>
+
+                <p class="agape">
+                    <span>ἀγάπη</span> la palabra griega para el amor
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
              DETALLE ESPECIAL · CREADOR
              ================================================= -->
 
-        <section class="detalle-creador">
+        <section class="detalle-creador revelar">
 
             <div class="detalle-icono">
                 ✦
@@ -245,7 +433,7 @@
              DATO CURIOSO
              ================================================= -->
 
-        <section class="dato-curioso">
+        <section class="dato-curioso revelar">
 
             <div class="destello-dato">
                 ✦
@@ -270,7 +458,7 @@
              INSTAGRAM
              ================================================= -->
 
-        <section class="redes">
+        <section class="redes revelar">
 
             <span class="etiqueta">
                 ENCONTRAME EN
@@ -304,13 +492,13 @@
              NAVEGACIÓN
              ================================================= -->
 
-        <nav class="navegacion-perfil">
+        <nav class="navegacion-perfil revelar">
 
             <a
                 href="../index.html#integrantes"
                 class="boton-perfil">
 
-                <span>←</span>
+                <span>↑</span>
 
                 Volver a integrantes
 
@@ -358,6 +546,30 @@
         </div>
 
     </main>
+
+
+    <!-- Hace que las secciones aparezcan suavemente al bajar -->
+    <script>
+        (function () {
+            var items = document.querySelectorAll(".revelar");
+
+            if (!("IntersectionObserver" in window)) {
+                items.forEach(function (el) { el.classList.add("visible"); });
+                return;
+            }
+
+            var observador = new IntersectionObserver(function (entradas) {
+                entradas.forEach(function (entrada) {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add("visible");
+                        observador.unobserve(entrada.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            items.forEach(function (el) { observador.observe(el); });
+        })();
+    </script>
 
 </body>
 
